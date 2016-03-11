@@ -564,6 +564,11 @@ a {
 }
 
 
+.top_line {
+
+    border-top: 1px solid #000;
+}
+
 // -------------------------- BOTONES -----------------------------------
 
 
@@ -582,6 +587,29 @@ a {
         color: #d02251 !important;
     }
 
+}
+
+.btn_filtro {
+
+    padding: 5px 10px;
+
+    border: 2px solid @color-principal; 
+
+    border-radius: 0.4em; 
+
+    color: @color-principal; 
+
+    &:hover {
+
+        color: @color-principal;
+    }
+
+    &.active {
+
+        background-color: @color-principal; 
+
+        color: @color-light; 
+    }
 }
 
 
@@ -1255,7 +1283,7 @@ nav {
 
     .logo-principal {
 
-        max-width: 450px;
+        max-width: 200px;
 
         width: 50%;
 
@@ -3560,10 +3588,6 @@ a, a:hover, a:active, a:focus {
 
 }
 
-.top_line {
-
-    border-top: 1px solid #000;
-}
 
 .organizan {
 
