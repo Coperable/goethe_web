@@ -72,30 +72,27 @@ PÁGINAS INTERNAS:
 
 --------------------------------------------------------------------- */
 
-@color-principal: 	#37abc8;
+@color-principal: 	#d02251;
 @color-light:		#fff;
 @color-fondo: 		#ffffff;
 @color-gris: 		#838383;
 @color-dark: 		#000;
 @color-gris-claro:  #ddd;
 
-@color-gris-fondo:  #f7f7da;
+@color-gris-fondo:  #f9f9e8;
 
 
 @color-celeste: 	#37abc8;
 @color-rojo:		#ee441e;
 @color-verde:		#8fc521;
-@color-amarillo:	#d4aa00;
+@color-amarillo:	#f6bf19; //#d4aa00;
+@color-mostaza:     #dfb52f;
 @color-fucsia:      #f3558a;
 
 
 @screen-sm-min:     768px;
 @screen-md-min:     992px; 
 @screen-lg-min:     1370px;
-
-
-
-
 
 
 /*----------------------------------------------------------------------
@@ -147,6 +144,672 @@ PÁGINAS INTERNAS:
 }
 
 
+/*----------------------------------------------------------------------
+ 
+	02.
+	BÁSICO - GENERAL
+
+--------------------------------------------------------------------- */
+
+body {
+
+    font-family: raleway; 
+
+}
+
+.width_80 {
+
+    width: 80%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+.width_90 {
+
+    width: 100; 
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) { 
+
+        width: 100%; 
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+
+        width: 90%;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+}
+
+h4 {
+
+    font-size: 16px;
+}
+
+.bold {
+
+    //font-weight: 600 !important;
+
+    font-family: raleway-bold; 
+}
+
+div .etiquetas {
+
+    color: @color-mostaza;
+    
+    span {
+    
+        border: 1px solid @color-mostaza;
+
+        font-family: raleway-medium;
+
+        font-size: 10pt; 
+
+        border-radius: 0.2em;
+
+        padding: 5px 10px;
+
+        margin: 5px 2px;
+
+        display: inline-block;
+
+        //opacity: 0.8;
+    }
+}
+
+.gap {
+
+    height: 50px;
+
+    clear: both;
+
+}
+
+.mini_gap {
+
+    height: 25px;
+
+    clear: both;
+
+}
+
+.antigap {
+
+    margin-bottom: -20px;
+
+    clear: both;
+
+}
+
+.clear {
+
+    clear: both;
+
+}
+
+.fondo_gris {
+
+    background-color: @color-gris-fondo;
+}
+
+
+.fondo_claro {
+
+    background-color: @color-light;
+}
+
+
+.sombra_gris_blanco {
+
+    text-shadow: 2px 2px 0px #f7f7da, 4px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.sombra_blanco_gris {
+
+    text-shadow: 2px 2px 0px #fff, 4px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+a {
+
+    &:hover {
+
+        opacity: 0.6;
+
+    }
+
+    &.link_simple {
+
+        color: @color-principal !important;
+    }
+
+    &.link_sin_color {
+
+        color: #000 !important;
+    }
+
+    &.link2modal {
+
+        cursor: pointer;
+    }
+
+}
+
+.no_padding {
+
+    padding: 0 !important; 
+}
+
+.entrada-0s5 {
+
+    -webkit-animation-delay: 0.5s; /* Chrome, Safari, Opera */
+        
+    animation-delay: 0.5s;
+}
+
+.entrada-1s {
+
+    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+        
+    animation-delay: 1s;
+
+}
+
+.entrada-1s5 {
+
+    -webkit-animation-delay: 1.5s; /* Chrome, Safari, Opera */
+        
+    animation-delay: 1.5s;
+
+}
+
+.entrada-2s {
+
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+        
+    animation-delay: 2s;
+
+}
+
+.izq { 
+
+    float: none;
+
+    display: block; 
+
+}
+
+
+// --------------------------- ENCABEZADOS --------------------------------
+
+
+@-moz-document url-prefix() {
+
+    .first_image, .speakers_image {
+
+        display: inline-table;
+
+    }
+
+}
+
+// LÍNEA DEBAJO DE LOS TÍUTLOS
+.first_line {
+
+    height: 60px;
+
+    border-bottom: 1px solid @color-gris;
+
+    display: inline-block;
+
+    float: left;
+
+    /* Extra small devices (phones, less than 768px) */
+    width: 4%;
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) { 
+
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+
+        width: 8%;
+
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) {
+
+        width: 16%;
+
+    }
+
+}
+
+// TÍTULOS DE TODAS LAS SECCIONES
+.titulo {
+
+    display: inline-block;
+
+    //font-weight: 700;
+
+    font-family: raleway;
+
+    color: @color-dark;
+
+    //line-height: 30px;
+
+    letter-spacing: 1px;
+
+    text-align: left;
+
+
+    h2 {
+
+        font-size: 22px;
+
+        margin-bottom: 20px;
+
+        text-transform: uppercase;
+    }
+
+    i {
+
+        padding-right: 10px;
+    }
+
+    /* Extra small devices (phones, less than 768px) */
+    font-size: 12px;
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) { 
+
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+
+
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) {
+
+        font-size: 16px;
+
+    }
+
+}
+
+.ver_mas {
+
+    display: inline-block;
+
+    float: right;
+
+    vertical-align: middle;
+
+    i {
+
+        padding-right: 10px;
+    }
+
+    h3 {
+
+        font-family: raleway-semi-bold;
+
+        font-size: 1em; 
+    }
+}
+
+.label_region {
+
+    margin-left: 10px;
+
+    border-top: 1px dashed @color-principal;
+
+    //border-opacity: 0.8;
+
+    //font-family: raleway-semi-bold;
+
+    color: @color-principal;
+
+    padding: 4px 0;
+
+    //border-radius: 0 0.6em 0 0.6em; 
+
+    text-shadow: none; 
+
+    letter-spacing: 3px;
+
+    text-transform: none;
+
+    opacity: 0.8;
+}
+
+
+// --------------------------- SECCIONES GENERAL -----------------------------------
+
+
+.seccion {
+
+    margin-top: 0px;
+
+    padding-top: 20px;
+
+}
+
+.tab-content h4{
+
+    color: @color-dark !important;
+}
+
+.contenedor_sec {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding-top: 20px;
+
+    padding-bottom: 20px;
+
+    /* Extra small devices (phones, less than 768px) */
+    width: 90%;
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) { 
+
+        //width: 91%;
+
+    }
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+
+        //width: 86%;
+
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) {
+
+        width: 80%;
+
+    }
+
+}
+
+.icono-principal {
+
+    font-size: 2.8em;
+
+    position: absolute;
+    
+    top: 20px;
+}
+
+
+.en_color_principal {
+
+    color: @color-principal;
+
+}
+
+
+// -------------------------- BOTONES -----------------------------------
+
+
+.btn {
+
+    margin-left: 0;
+
+}
+
+.btn_fondo_claro {
+
+    color: #d02251 !important; 
+
+    &:hover {
+
+        color: #d02251 !important;
+    }
+
+}
+
+
+.eventime_button,
+
+.reservation_button {
+
+    border-width: 3px;
+
+    border-style: solid;
+
+    border-radius: 0.4em;
+
+    font-weight: 700;
+
+    font-size: 18px;
+
+    padding: 10px 25px;
+
+    letter-spacing: 3px;
+
+    margin: auto 20px;
+
+    overflow: hidden;
+
+    -webkit-backface-visibility: hidden;
+
+    -moz-osx-font-smoothing: grayscale;
+
+    position: relative;
+
+    z-index: 999;
+
+    text-transform: uppercase;
+
+    -webkit-transition: all .2s ease-in-out;
+
+    -moz-transition: all .2s ease-in-out;
+
+    -o-transition: all .2s ease-in-out;
+
+    transition: all .2s ease-in-out;
+
+}
+
+.eventime_button,
+
+.reservation_button {
+
+    overflow: hidden;
+
+    width: 245px;
+
+    -webkit-transition: border-color 0.3s, color 0.3s;
+
+    transition: border-color 0.3s, color 0.3s;
+
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+
+    z-index: 999;
+
+    &:hover {
+
+        opacity: 1;
+    }
+
+}
+
+.eventime_button::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 150%;
+
+    height: 100%;
+
+    z-index: -1;
+
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+
+    -webkit-transform-origin: 0% 100%;
+
+    transform-origin: 0% 100%;
+
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+
+}
+
+.eventime_button:hover::before {
+
+    opacity: 1;
+
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+
+    transform: rotate3d(0, 0, 1, 0deg);
+
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+
+}
+
+.eventime_button.btn_basico {
+
+    color: @color-principal;
+
+    font-weight: 700;
+
+    margin: auto 0;
+
+    font-size: 14px;
+
+    padding: 6px 18px;
+
+    letter-spacing: 3px;
+
+    width: auto;
+
+}
+
+.btn_cancelar {
+
+    border-color: @color-gris;
+
+    color: @color-gris;
+
+    border-width: 3px;
+
+    border-style: solid;
+
+    border-radius: 0.4em;
+
+    font-weight: 700;
+
+    font-size: 18px;
+
+    padding: 10px 25px;
+
+    letter-spacing: 3px;
+
+    margin: auto 20px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    text-transform: uppercase;
+
+    &:hover {
+
+        opacity: 1;
+
+        border-color: @color-dark;
+
+        color: @color-dark;
+    }
+
+}
+
+// --------------------------- TOOLTIPS --------------------------------
+
+.tooltip.bottom .tooltip-arrow {
+
+    top: 0;
+
+    left: 50%;
+
+    margin-left: -5px;
+
+    border-bottom-color: @color-principal;
+
+    border-width: 0 5px 5px;
+
+    opacity: 0.9;
+}
+
+
+.tooltip-inner {
+
+    color: @color-principal;
+
+    background: @color-light;
+
+    border: solid 1px @color-principal;
+
+    opacity: 0.9;
+
+    padding: 0.4em 1em;
+
+    font-family: raleway;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-weight: 400;
+
+    font-size: 10pt;
+}
+
+
+
+/*----------------------------------------------------------------------
+ 
+	03.
+	PRELOADER
+
+--------------------------------------------------------------------- */
+
+
+//ESTO ES PARA ATAJAR ERRORES EN PANTALLA 768X1024 - QUE YA NO SE USA MÁS
+@media (min-width:769px) and (max-width:1024px){
+    // your code
+}
+
+
 
 /*----------------------------------------------------------------------
  
@@ -170,7 +833,7 @@ PÁGINAS INTERNAS:
 
 }
 
-.eventime_button.btn_filtro {
+.eventime_button.btn_peque {
 
     width: auto; 
 
@@ -195,7 +858,7 @@ PÁGINAS INTERNAS:
 
 
 
-a.btn_principal {
+.btn_simple {
 
     border-width: 3px;
     
@@ -218,7 +881,7 @@ a.btn_principal {
 }
 
 
-a.btn.btn_principal:hover {
+a.btn.btn_simple:hover {
 
     opacity: 0.8;
 
@@ -263,13 +926,6 @@ a.btn.btn_principal:hover {
     .usr-menu {
 
         font-size: 10pt 
-
-    }
-
-    .nav > li > a {
-
-            padding: 21px 6px 15px 6px !important;  
-            
 
     }
 
@@ -323,13 +979,13 @@ nav {
 
 .navbar a {
 
-    -webkit-transition: all 1s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
 
-    -moz-transition: all 1s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
 
-    -o-transition: all 1s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
 }
 
@@ -359,13 +1015,36 @@ nav {
 
 }
 
+.navbar-nav {
+
+    margin-top: 1%; 
+}
+
 .navbar-nav>li>a {
 
-    font-size: 18pt;
+    font-size: 10pt;
 
-    font-weight: 300;
+    font-weight: 400;
 
-    padding: 1px;
+    //padding: 1px;
+
+    i {
+
+        font-size: 18pt;
+
+        position: relative;
+
+        display: inline-block;
+
+        width: 1em;
+
+        height: 1em;
+
+        line-height: 1em;
+
+        vertical-align: middle;
+
+    }
 
 }
 
@@ -627,1031 +1306,13 @@ nav {
 }
 
 
-
-
-/*----------------------------------------------------------------------
- 
-	02.
-	BÁSICO - GENERAL
-
---------------------------------------------------------------------- */
-
-body {
-
-  color: red;
-
-}
-
-// --------------------------- TOOLTIPS --------------------------------
-
-.tooltip.bottom .tooltip-arrow {
-
-  	top: 0;
-
-  	left: 50%;
-
-  	margin-left: -5px;
-
-  	border-bottom-color: @color-principal;
-
-  	border-width: 0 5px 5px;
-
-  	opacity: 0.9;
-}
-
-
-.tooltip-inner {
-
-	color: @color-principal;
-
-	background: @color-light;
-
-	border: solid 1px @color-principal;
-
-	opacity: 0.9;
-
-	padding: 0.4em 1em;
-
-	font-family: raleway;
-
-	text-transform: uppercase;
-
-	letter-spacing: 2px;
-
-	font-weight: 400;
-
-	font-size: 10pt;
-}
-
-// ESPACIO DE TÍTULO DE FICHAS INTERNAS
-.TIT-centrado {
-
-    width: 50%;
-
-    vertical-align: middle;
-
-    padding: 20px 0;
-
-    //VALORES PARA DISPOSITIVOS GRANDES
-
-    .titulo {
-
-        padding-left: 2%;
-
-    }
-
-    .first_description {
-
-        padding-left: 18%;
-
-    }
-
-    //VALORES PARA DISPOSITIVOS PEQUEÑOS
-    @media (max-width: 992px) {
-
-        width: 100%;
-
-        display: block;
-
-
-        /* ESTO ES PARA FIRST_LINEE
-        .first_line {
-
-            width: 8%;
-
-        }
-
-        .encabezado {
-
-            padding-left: 1%;
-
-        }
-
-        .first_description {
-
-            padding-left: 9%;
-
-        }*/
-    }
-}
-
-
-// -------------------------- BOTONES -----------------------------------
-
-.eventime_button,
-
-.reservation_button {
-
-    border-width: 3px;
-
-    border-style: solid;
-
-    border-radius: 0.4em;
-
-    font-weight: 700;
-
-    font-size: 18px;
-
-    padding: 10px 25px;
-
-    letter-spacing: 3px;
-
-    margin: auto 20px;
-
-    overflow: hidden;
-
-    -webkit-backface-visibility: hidden;
-
-    -moz-osx-font-smoothing: grayscale;
-
-    position: relative;
-
-    z-index: 999;
-
-    text-transform: uppercase;
-
-    -webkit-transition: all .2s ease-in-out;
-
-    -moz-transition: all .2s ease-in-out;
-
-    -o-transition: all .2s ease-in-out;
-
-    transition: all .2s ease-in-out;
-
-}
-
-.eventime_button,
-
-.reservation_button {
-
-    overflow: hidden;
-
-    width: 245px;
-
-    -webkit-transition: border-color 0.3s, color 0.3s;
-
-    transition: border-color 0.3s, color 0.3s;
-
-    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-
-    z-index: 999;
-
-    &:hover {
-
-        opacity: 1;
-    }
-
-}
-
-.eventime_button::before {
-
-    content: '';
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 150%;
-
-    height: 100%;
-
-    z-index: -1;
-
-    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-
-    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-
-    -webkit-transform-origin: 0% 100%;
-
-    transform-origin: 0% 100%;
-
-    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
-
-    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
-
-}
-
-.eventime_button:hover::before {
-
-    opacity: 1;
-
-    -webkit-transform: rotate3d(0, 0, 1, 0deg);
-
-    transform: rotate3d(0, 0, 1, 0deg);
-
-    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-
-}
-
-.eventime_button.btn_basico {
-
-    color: @color-principal;
-
-    font-weight: 700;
-
-    margin: auto 0;
-
-    font-size: 14px;
-
-    padding: 6px 18px;
-
-    letter-spacing: 3px;
-
-    width: auto;
-
-}
-
-.btn_cancelar {
-
-    border-color: @color-gris;
-
-    color: @color-gris;
-
-    border-width: 3px;
-
-    border-style: solid;
-
-    border-radius: 0.4em;
-
-    font-weight: 700;
-
-    font-size: 18px;
-
-    padding: 10px 25px;
-
-    letter-spacing: 3px;
-
-    margin: auto 20px;
-
-    overflow: hidden;
-
-    position: relative;
-
-    text-transform: uppercase;
-
-    &:hover {
-
-        opacity: 1;
-
-        border-color: @color-dark;
-
-        color: @color-dark;
-    }
-
-}
-
-
-// --------------------------- OTROS -----------------------------------
-
-.gap {
-
-    height: 50px;
-
-    clear: both;
-
-}
-
-.mini_gap {
-
-    height: 25px;
-
-    clear: both;
-
-}
-
-.antigap {
-
-    margin-bottom: -20px;
-
-    clear: both;
-
-}
-
-.clear {
-
-    clear: both;
-
-}
-
-.fondo_gris {
-
-    background-color: @color-gris-fondo;
-}
-
-
-.fondo_claro {
-
-    background-color: @color-light;
-}
-
-
-.sombra_gris_blanco {
-
-    text-shadow: 2px 2px 0px #f7f7da, 4px 3px 1px rgba(0, 0, 0, 0.2);
-}
-
-.sombra_blanco_gris {
-
-    text-shadow: 2px 2px 0px #fff, 4px 3px 1px rgba(0, 0, 0, 0.2);
-}
-
-
-// --------------------------- ENCABEZADOS --------------------------------
-
-
-@-moz-document url-prefix() {
-
-    .first_image, .speakers_image {
-
-        display: inline-table;
-
-    }
-
-}
-
-// LÍNEA DEBAJO DE LOS TÍUTLOS
-.first_line {
-
-    height: 60px;
-
-    border-bottom: 1px solid @color-gris;
-
-    display: inline-block;
-
-    float: left;
-
-    /* Extra small devices (phones, less than 768px) */
-    width: 4%;
-
-    /* Small devices (tablets, 768px and up) */
-    @media (min-width: @screen-sm-min) { 
-
-    }
-
-    /* Medium devices (desktops, 992px and up) */
-    @media (min-width: @screen-md-min) {
-
-        width: 8%;
-
-    }
-
-    /* Large devices (large desktops, 1200px and up) */
-    @media (min-width: @screen-lg-min) {
-
-        width: 16%;
-
-    }
-
-}
-
-// TÍTULOS DE TODAS LAS SECCIONES
-.titulo {
-
-    display: inline-block;
-
-    //font-weight: 700;
-
-    font-family: raleway;
-
-    color: @color-dark;
-
-    //line-height: 30px;
-
-    letter-spacing: 1px;
-
-    text-align: left;
-
-
-    h2 {
-
-        font-size: 22px;
-
-        margin-bottom: 20px;
-
-        text-transform: uppercase;
-    }
-
-    i {
-
-        padding-right: 10px;
-    }
-
-    /* Extra small devices (phones, less than 768px) */
-    font-size: 12px;
-
-    /* Small devices (tablets, 768px and up) */
-    @media (min-width: @screen-sm-min) { 
-
-    }
-
-    /* Medium devices (desktops, 992px and up) */
-    @media (min-width: @screen-md-min) {
-
-
-    }
-
-    /* Large devices (large desktops, 1200px and up) */
-    @media (min-width: @screen-lg-min) {
-
-        font-size: 16px;
-
-    }
-
-}
-
-.ver_mas {
-
-    display: inline-block;
-
-    float: right;
-
-    vertical-align: middle;
-
-    i {
-
-        padding-right: 10px;
-    }
-
-    h3 {
-
-        font-family: raleway-semi-bold;
-
-        font-size: 1em; 
-    }
-}
-
-.label_region {
-
-    margin-left: 10px;
-
-    border-top: 1px dashed @color-principal;
-
-    //border-opacity: 0.8;
-
-    //font-family: raleway-semi-bold;
-
-    color: @color-principal;
-
-    padding: 4px 0;
-
-    //border-radius: 0 0.6em 0 0.6em; 
-
-    text-shadow: none; 
-
-    letter-spacing: 3px;
-
-    text-transform: none;
-
-    opacity: 0.8;
-}
-
-// --------------------------- SECCIONES GENERAL -----------------------------------
-
-.seccion {
-
-    margin-top: 0px;
-
-    padding-top: 20px;
-
-    a {
-
-        color: @color-principal;
-
-        &:hover {
-
-            opacity: 0.6;
-        }
-
-    }
-
-    .btn {
-
-        margin-left: 0;
-
-    }
-
-}
-
-
-h4.pruebaaaaaaa {
-
-    font-size: 100px; 
-
-    color: @color-principal;
-}
-
-.tab-content {
-
-    padding-top: 200px;
-}
-
-.tab-content h4{
-
-    color: @color-dark !important;
-}
-
-a {
-    
-    .tarjeta_torneo, .resumen {
-
-        &:hover {
-
-            opacity: 1;
-        }
-    }
-}
-
-.icon-box {
-
-    display: inline-block;
-
-    text-align: center;
-
-    width: 30px; 
-
-    font-size: 1.3em;
-
-    //color: @color-dark;
-
-    margin: 0;
-
-}
-
-.contenedor_sec {
-
-    margin-left: auto;
-
-    margin-right: auto;
-
-    padding-top: 20px;
-
-    padding-bottom: 20px;
-
-    /* Extra small devices (phones, less than 768px) */
-    width: 90%;
-
-    /* Small devices (tablets, 768px and up) */
-    @media (min-width: @screen-sm-min) { 
-
-        //width: 91%;
-
-    }
-
-    /* Medium devices (desktops, 992px and up) */
-    @media (min-width: @screen-md-min) {
-
-        //width: 86%;
-
-    }
-
-    /* Large devices (large desktops, 1200px and up) */
-    @media (min-width: @screen-lg-min) {
-
-        width: 80%;
-
-    }
-
-}
-
-.izq { 
-
-    float: none;
-
-    display: block; 
-
-}
-
-.icono-6x {
-
-    font-size: 8em; 
-    line-height: 0.9;
-}
-
-.icono-principal {
-
-    font-size: 2.8em;
-
-    position: absolute;
-    
-    top: 20px;
-}
-
-
-.en_color_principal {
-
-    color: @color-principal;
-
-}
-
-.selector_region {
-
-    float: left;
-
-    margin-top: 20px;
-    
-    margin-left: 86px;
-
-    letter-spacing: 1px;
-
-    a#dLabel {
-
-        padding-left: 20px;
-
-        color: @color-principal;
-
-        font-size: 0.8em;
-
-        font-family: raleway-semi-bold;
-
-        text-decoration: none;
-    }
-
-    .dropdown-menu {
-
-        background-color: @color-dark;
-
-        border-radius: 0.6em; 
-
-        opacity: 0.7;
-
-        a {
-
-            font-size: 1em;
-
-            transition: all 0.5s ease-in-out 0s;
-
-            color: @color-light;
-
-            &:hover {
-
-                background-color: @color-principal;
-
-            }
-        }
-    }
-
-    a.color_cordoba:hover {
-
-        background-color: @color-rojo;
-
-    }
-
-    a.color_rosario:hover {
-
-        background-color: @color-verde;
-
-    }
-
-    a.color_usuaia:hover {
-
-        background-color: @color-fucsia;
-
-    }
-
-    a.color_mendoza:hover {
-
-        background-color: @color-amarillo;
-
-    }
-
-
-
-}
-
-
-
-/*----------------------------------------------------------------------
- 
-	03.
-	PRELOADER
-
---------------------------------------------------------------------- */
-
-
-//ESTO ES PARA ATAJAR ERRORES EN PANTALLA 768X1024 - QUE YA NO SE USA MÁS
-@media (min-width:769px) and (max-width:1024px){
-    // your code
-}
-
 /*----------------------------------------------------------------------
  
     05.HOME 
 
-        A) TORNEOS
-
-
 --------------------------------------------------------------------- */
 
-//settings generales para las fichas de torneos
-.torneo_info_inside {
-
-    color: @color-dark;
-
-    font-family: raleway-light;
-
-    h4.torneo_nombre {
-
-        font-size: 1.2em; 
-
-        font-family: raleway-semi-bold;
-
-        margin-top: 0;
-
-    }
-
-    p {
-
-        //font-size: 0.8em;
-
-        //text-transform: lowercase;
-    }
-
-    .torneo_descripcion {
-
-        font-size: 14px;
-
-        border-left: 1px solid @color-gris-claro;
-
-        padding-left: 26px;
-
-    }
-
-    .torneo_fecha {
-
-        .num {
-
-            margin-left: 10px;
-
-            font-size: 1.4em;
-
-            font-family: raleway-semi-bold;
-
-        }
-
-        .mes {
-
-            font-size: 1em;
-
-            font-family: raleway-semi-bold;
-        }
-
-        .linea {
-
-            font-family: raleway-light;
-
-            font-weight: 100;
-
-            margin-left: 6px;
-
-            font-size: 2em;
-
-            opacity: 0.8
-        }
-
-        .hora {
-
-            margin-left: 6px;
-
-            font-size: 1.2em;
-        }
-
-    }
-
-    .torneo_lugar {
-
-        padding-top: 20px;
-
-        .lugar-nombre {
-
-            font-size: 1em;
-
-            font-family: raleway-semi-bold;
-
-            display: inline-block;    
-
-            width: 75%;
-            
-            vertical-align: middle;
-            
-            line-height: 1.1;
-
-        }
-
-        .direccion {
-
-            display: block;
-            
-            margin-left: 34px;
-
-            font-size: 0.9em;
-        }
-
-    }
-
-    .torneo_hashtag {
-
-        //border-top: 1px solid rgba(0, 0, 0, 0.1);
-
-        //padding-top: 20px;
-
-        font-size: 14pt;
-
-        font-family: raleway-semi-bold;
-
-        span {
-
-            //margin-left: 20px;
-
-        }
-
-        .icon-box {
-
-            font-family: Raleway-Bold;
-
-        }
-
-        .aclaracion {
-
-            font-family: raleway;
-
-            //margin-left: 30px;
-            
-            font-size: 10pt;
-            
-            //display: inline-block;
-        
-        }
-
-    }
-
-    .fb-event {
-
-        padding-top: 20px;
-
-        font-size: 14pt;
-
-        font-family: raleway-semi-bold;
-
-        margin-left: 20px;
-    }
-
-    .organiza {
-
-        padding-top: 30px;
-
-        //padding-bottom: 30px;
-
-        font-size: 14pt;
-
-        span {
-
-            display: block;
-
-            margin-left: 20px;
-        }
-
-        .o-tit {
-
-            font-family: raleway-semi-bold;
-        }
-    }
-
-    .localidad {
-
-        padding-top: 15px;
-
-        color: @color-principal;
-
-        font-size: 24pt;
-
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-
-        span {
-
-            display: block;
-
-            margin-left: 20px;
-
-            line-height: 40pt;
-        }
-
-        .icono {
-
-            font-size: 70pt;
-
-            margin-left: -10px;
-
-            text-shadow: 3px 3px 0px #f7f7da, 6px 5px 2px rgba(0, 0, 0, 0.1);
-
-        }
-    }
-
-}
-
-//settings para RESUMEN
-.data-box {
-
-    color: @color-dark;
-
-    //width: 100%;
-
-    position: relative;
-
-    padding-bottom: 20px;
-
-    margin-top: 20px;
-
-    margin-bottom: 20px;
-
-    @media (max-width: 1366px) {
-
-        width: 90%;
-
-        padding-bottom: 20px;
-    
-    }
-
-    .icon-box {
-
-        width: 34px;
-
-        font-size: 34px;
-    }
-
-    h4 {
-
-        position: relative;
-
-        float: right;
-
-        width: 78%;
-
-        border-bottom: 1px solid @color-gris-claro;
-
-        margin-top: 7px;
-
-        margin-bottom: 0px;
-
-        margin-bottom: 0;
-
-        padding-bottom: 4px;
-
-        text-align: right;
-
-        @media (max-width: 1366px) {
-
-            font-size: 12pt;
-
-        }
-
-    }
-
-    p {
-
-        font-family: raleway-semi-bold;
-
-        float: right;
-
-        margin-top: -14px;
-
-        padding: 0;
-
-        font-size: 24pt;
-
-        line-height: 0.6;
-
-        width: 100%;
-
-        text-align: right;
-
-        color: @color-dark;
-
-        font-size: 18pt;
-        
-    }
-
-    &.deshabilitado {
-
-        h4, p, i {
-
-            color: @color-gris-claro;
-
-        }
-
-    }
-
-}
-
-
-
-
-.tarjeta_torneo {
+.tarjeta_actividad {
 
     background-color: @color-light;
 
@@ -1663,160 +1324,31 @@ a {
 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
 
-    margin-top: 30px;
+    margin: 30px; 
 
-    margin-bottom: 30px; 
+    .inner {
 
-    .fondo_claro & {
-
-        border: 1px solid rgba(0, 0, 0, 0.1);
-
-        &::after { 
-
-            border-color: @color-light;
-
-        }
+        padding: 15px 20px 20px 20px;
 
     }
 
+    img {
 
+        width: 100%;
 
-    h4.torneo_nombre {
-
-        padding: 20px 40px 0px 20px;
+        border-radius: 0.6em 0.6em 0 0;
     }
 
-    .ver_mas {
+    div .etiquetas {
 
-        margin-top: -45px;
+        min-height: 82px;
 
-        margin-right: 15px;
+        max-height: 82px;
 
-        border-left: 1px dashed @color-principal;
-
-        border-top: 1px dashed @color-principal;
-
-        border-radius: 0.4em 0 0 0;
-
-        padding: 10px 5px 5px 12px; 
-
-        h3 {
-
-            margin: 0;
-        }
-
-    }
-
-    &::after {
-
-        content: attr(fecha); 
-
-        position: absolute;
-
-        display: inline-block;
-
-        vertical-align: middle;
-
-        background: @color-principal;
-
-        color: @color-light;
-
-        font-family: raleway-bold;
-
-        font-size: 12pt;
-
-        line-height: 1.1;
-        
-        word-spacing: 9999999px;
-
-        padding: 12px;
-
-        height: 80px;
-
-        width: 80px;
-
-        border-radius: 50%;
-
-        border: 6px solid @color-gris-fondo;
-
-        text-align: center;
-
-        top: -10px;
-
-        right: 8%;
-
-    }
-}
-
-.torneo_resumen {
-
-    display: inline-block;
-
-    vertical-align: top;
-
-    width: 50%; 
-
-    max-width: 190px;
-
-    padding-left: 20px;
-
-    padding-right: 0;
-
-    padding-bottom: 10px;
-
-    opacity: 0.6;
-
-    .icon-box {
-
-        width: 24px; 
-
-        font-size: 24px;
-    }
-
-    .data-box {
-
-        margin-top: 6px;
-
-        margin-bottom: 6px;
-
-        padding-bottom: 20px;
-
-        h4{
-
-            font-size: 90% !important;
-        }
-
-        p {
-
-            margin-top: -4px;
-        }
-
-    }
-
-    /* Large devices (large desktops, 1200px and up) */
-    @media (min-width: @screen-lg-min) {
-
-        margin-right: 4%;
     }
 
 }
 
-.torneo_datos {
-
-    display: inline-block;
-
-    width: 48%;
-
-    height: 100%;
-
-    padding-left: 5px;
-
-    padding-top: 10px;
-
-    border-left: 1px solid @color-gris-claro;
-
-    opacity: 0.6;
-}
 
 // --------------------------- TORNEO PRINCIPAL -----------------------------------
 #sec_torneoPrincipal {
@@ -1923,13 +1455,28 @@ a {
 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
 
-    margin-top: 20px; 
+    margin: 20px; 
 
-    margin-bottom: 20px; 
+    overflow: hidden;
+
+    padding-bottom: 10px; 
+
+    height: 37.2vw; 
+
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-sm-min) {
+
+        height: 14.2vw; 
+    }
+
+    @media (min-width: @screen-lg-min) {
+
+        height: 12.2vw; 
+    }
 
     img {
 
-        width: 55%;
+        width: 42%;
 
         border-radius: 0.6em 0 0 0.6em;
     }
@@ -1940,58 +1487,68 @@ a {
 
         vertical-align: top;
 
-        width: 40%;
+        width: 50%;
 
-        padding-left: 10px;
+        padding: 10px 0 0 15px;
     }
 
-    h3 {
+    p {
 
-        //text-align: right;
+        font-size: 10pt; 
 
-        font-size: 1em;
+        font-style: italic; 
 
-        font-family: raleway-semi-bold;
+        opacity: 0.8;
 
-        margin-top: 10px;
+        text-overflow: ellipsis;
+    
+        overflow: hidden;
 
-        margin-bottom: 20px;
-
-    }
-
-    .icon-box {
-
-        width: 20px; 
-
-        font-size: 20px;
-    }
-
-    .data-box {
-
-        margin-top: 0;
-
-        margin-bottom: 0;
-
-        h4 {
-
-            margin-top: -2px; 
-
-            margin-left: 0;
-
-            width: 70%;
-
-            font-size: 80%;
-        }
-
-        p {
-
-            font-size: 1em;
-
-            margin-top: -8px;
-        }
     }
 
 }
+
+.modal-body {
+
+    overflow: hidden;
+}
+
+.modal-dialog {
+
+    img {
+
+        width: 40%; 
+
+        border-radius: 0.6em; 
+
+        //box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+
+        margin-left: 20px; 
+    }
+
+    p {
+
+        font-size: 12pt; 
+
+        font-style: italic; 
+
+        padding: 0 20px;
+
+    }
+
+    .links {
+
+        color: @color-principal; 
+
+        font-style: normal;
+
+        a:hover {
+
+            text-decoration: none !important;
+        }
+    }
+}
+
 
 /*----------------------------------------------------------------------
  
@@ -2056,8 +1613,7 @@ a {
 
 #about_menu {
 
-	color: #000;
-
+	//color: #000;
 
 	.container {
 	
@@ -2065,62 +1621,53 @@ a {
 	
 	}
 
-	.localidad-container {
-
-		position: relative;
-
-		width: 80%;
-
-		margin-left: auto;
-
-		margin-right: auto;
-
-		height: 160px;
-
-		.localidad-dropdown {
-
-			margin-top: 10px;
-		}
-
-		.localidad-seleccionada {
-
-			color: @color-principal;
-
-			margin-top: -100px;
-
-			padding-right: 10%;
-
-			text-align: right;
-
-			vertical-align: middle;
-
-			h2{
-				vertical-align: middle;
-			}
-
-			i {
-
-				font-size: 180px;
-				vertical-align: middle;
-
-			}
-		}
-
-	}
-
 }
 
-.about {
+mask {
 
-    .localidades-titulo {
-
-	    padding-top: 30px;
-
-	    padding-bottom: 80px;
-
-	}
-
+    min-height: 500px !important;
 }
+
+.about_columns {
+
+    .list {
+
+        color: @color-light;
+
+        font-weight: 300;
+
+        h4 {
+
+            color: @color-light !important;
+
+            text-transform: none;
+            
+            font-weight: 300;
+
+            line-height: 1.3;
+
+            letter-spacing: 0.6px;
+        }
+
+        .fa {
+            
+            width: 20px;
+            
+            margin-left: -20px;
+        }
+    }
+
+    .con_sangria {
+
+
+    }
+}
+
+.uppercase {
+
+    text-transform: uppercase !important;
+}
+
 
 .tabs_about {
 
@@ -2163,8 +1710,6 @@ a {
 	    margin-right: -4px;
 
 	}
-
-
 
 }
 
@@ -4015,6 +3560,30 @@ a, a:hover, a:active, a:focus {
 
 }
 
+.top_line {
+
+    border-top: 1px solid #000;
+}
+
+.organizan {
+
+    img {
+
+        width: 150px; 
+
+        margin-right: 100px; 
+
+        &.width_100p {
+
+            width: 100px !important; 
+        }
+
+        &.width_200p {
+
+            width: 200px !important; 
+        }
+    }
+}
 
 
 #torneo-descripcion {
@@ -4023,28 +3592,22 @@ a, a:hover, a:active, a:focus {
 
     //padding-top: 40px;
 
-    a {
-
-        color: @color-principal;
-
-    }
-
     .datos-generales {
 
         color: @color-dark;
 
-        padding-bottom: 60px;
+        padding-bottom: 30px;
 
         h1 {
 
-            font-size: 24pt;
+            font-size: 14pt;
 
             font-family: raleway-semi-bold;
 
             margin-top: 0;
 
-            color: @color-principal
-;        }
+            color: @color-principal; 
+        }
 
         p {
 
@@ -4088,16 +3651,51 @@ a, a:hover, a:active, a:focus {
 
     }
 
-    .panel-lateral {
+}
 
-        padding-bottom: 40px;
 
-        border-left: 1px solid #333333;
 
-        color: @color-dark;
+.panel-lateral {
 
+    padding-bottom: 40px;
+
+    border-left: 1px solid #333333;
+
+    color: @color-dark;
+
+    //margin-top: 44px;
+
+}
+
+.itemBox {
+
+    div {
+
+        display: inline-block;
+
+        h4 {
+
+            margin: 0; 
+        }
     }
 
+    .titulo {
+        
+        h2 {
+
+            margin: 0; 
+
+            font-weight: 600; 
+
+            text-transform: none;
+        }
+
+    }
+}
+
+.onTop {
+
+    vertical-align: top; 
 }
 
 #jugador-descripcion {
@@ -4116,7 +3714,7 @@ a, a:hover, a:active, a:focus {
 
         color: @color-dark;
 
-        padding-bottom: 60px;
+        padding-bottom: 30px;
 
         h1 {
 
@@ -4533,37 +4131,6 @@ a, a:hover, a:active, a:focus {
 
 }
 
-.entrada-0s5 {
-
-    -webkit-animation-delay: 0.5s; /* Chrome, Safari, Opera */
-        
-    animation-delay: 0.5s;
-}
-
-.entrada-1s {
-
-    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
-        
-    animation-delay: 1s;
-
-}
-
-.entrada-1s5 {
-
-    -webkit-animation-delay: 1.5s; /* Chrome, Safari, Opera */
-        
-    animation-delay: 1.5s;
-
-}
-
-.entrada-2s {
-
-    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
-        
-    animation-delay: 2s;
-
-}
-
 
 .form-control .separador {
 
@@ -4707,100 +4274,6 @@ label {
 
 
 
-
-
-
-
-
-
-
-
-
-//COSAS QUE NO ESTAMOS USANDO DEL TEMPLATE: 
-
-// VALORES DEL template PARA TÍTULOS CENTRADOS
-// POR AHORA NO LO NECESITAMOS
-/*
-.centred {
-
-    width: 50%;
-
-    display: table-cell;
-
-    vertical-align: middle;
-
-    padding: 20px 0;
-
-    .first_line {
-
-        width: 16%;
-
-    }
-
-    .titulo {
-
-        padding-left: 2%;
-
-    }
-
-    .first_description {
-
-        padding-left: 18%;
-
-    }
-
-
-    @media (max-width: 992px) {
-
-        .centred {
-
-            width: 100%;
-
-            display: block;
-
-        }
-
-        & > .first_line {
-
-            width: 8%;
-
-        }
-
-        & > .titulo {
-
-            padding-left: 1%;
-
-        }
-
-        & > .first_description {
-
-            padding-left: 9%;
-
-        }
-    }
-}
-
-
-
-.firstrow {
-
-    height: 400px;
-
-    display: table;
-
-    @media (max-width: 992px) {
-
-        display: block;
-
-        height: auto;
-
-    }
-
-}
-
-
-
-*/
 
 
 

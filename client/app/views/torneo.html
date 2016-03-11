@@ -2,61 +2,212 @@
 
 <div id="ficha-torneo" class="seccion fondo_gris">
 
-    <div class="contenedor_sec torneo_info_inside">
-	    <div class="titulo wow fadeInDown">
-	      	<h2 class="sombra_gris_blanco">
-	        	<i class="icon-copa"></i>Torneo
-	      	</h2>
+    <div class="contenedor_sec">
+
+	    <div class="wow fadeInDown">
+
+		    <div class="itemBox wow fadeInDown">
+
+				<div class="onTop"><i class="fa fa-calendar fa-fw fa-2x"></i></div>
+
+	            <div class="titulo">
+
+	            	<h2>Nombre de la Actividad</h2> 
+
+	           		<h4>Tipo de Actividad</h4>
+
+	           	</div>
+
+			</div>	      
+
 	    </div>
 
+	    <div class="mini_gap"></div>
+
 		<div id="torneo-descripcion">
+
 			<div class="row">
-				<div class="col-md-8">
+
+				<div class="col-md-6">
+
 					<div class="datos-generales">
-						<h1 class="wow fadeInLeft">{{competition.title}}</h1>
+
 						<div class="wow fadeInLeft afiche">
-                            <img ng-src="http://images.collab-dev.com/490x/smart/slam/{{competition.cover_photo}}">
+
+                            <img ng-src="/images/IMG_ACT01.jpg">
+
 						</div>
+
 					</div>
+
 				</div>
 
-				<div class="panel-lateral col-md-4">
-					<div class="fecha wow fadeInDown">
-						<span class="icono" ><i class="fa fa-clock-o"></i></span>
-                        <span class="num">{{competition.event_date | moment: 'DD'}}</span> 
-                        <span class="mes">{{competition.event_date | moment: 'MMM'}}</span> 
-                        <span class="linea">|</span> 
-                        <span class="hora">{{competition.event_date | moment: 'HH:mm'}}</span> 
-					</div>
+				<div class="panel-lateral col-md-6">
 
-					<div class="lugar wow fadeInDown">
-						<span class="icono" ><i class="fa fa-map-marker"></i></span>
-                        <span class="lugar-nombre">{{competition.place}}</span>
-                        <span class="direccion"><a href="">{{competition.location.formatted_address}}</a></span>
+					<div class="mini_gap"></div>
+
+					<div class="itemBox wow fadeInDown">
+
+						<div><i class="fa fa-clock-o fa-fw fa-2x"></i></div>
+
+                        <div>
+
+                        	<h4>Jueves 20 Marzo</h4> 
+
+                       		<h4><strong>20:30 - 22:30</strong></h4>
+
+                       	</div>
+
 					</div>
 
 					<div class="mini_gap"></div>
-					<a style="visibility: visible; animation-name: bounceInRight;" class="wow bounceInRight btn btn_principal animated entrada-1s animated" href role="button"  ng-click="participate(competition)">PARTICIPAR</a>
-					<div class="gap"></div>
-					<div class="hashtag-info wow fadeInRight">
-						<span class="icono">#</span>
-						<span>{{competition.hashtag}}</span>
-						<span class="aclaracion">fb - twitter - instagram - youtube</span>
+
+					<div class="itemBox wow fadeInDown">
+
+						<div><i class="fa fa-map-marker fa-fw fa-2x"></i></div>
+
+                        <div>
+
+                        	<h4><strong>Nombre del Lugar</strong></h4> 
+
+                       		<h4>
+                       			<a class="link2modal link_sin_color"  data-toggle="modal" data-target="#modalMapa01">Dirección</a>
+                       		</h4>
+
+                       	</div>
+
 					</div>
 
-					<div class="fb-event wow fadeInRight">
-						<a href="">
-							<span class="icono"><i class="fa fa-facebook-square"></i></span>
-							<span>ver evento</span>
-						</a>
+					<!-- Modal -->
+					<div class="modal fade" id="modalMapa01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						
+						<div class="modal-dialog" role="document">
+						
+							<div class="modal-content">
+
+								<div class="modal-header">
+
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+									<h4 class="modal-title" id="myModalLabel">
+
+										<strong>Nombre del Lugar</strong> | Dirección
+
+									</h4>
+
+								</div>
+
+								<div class="modal-body no_padding">
+						        	
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.464339945833!2d-58.440316084994805!3d-34.59241806440685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58af2810127%3A0x234dfab6182921c1!2sThames+940%2C+C1414DCT+CABA!5e0!3m2!1ses-419!2sar!4v1457660303348" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+						        </div>
+
+						        <div class="modal-footer">
+
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+						    	</div>
+							</div>
+						</div>
 					</div>
 
-					<div class="organiza wow fadeInRight">
-						<span class="o-tit">ORGANIZADO POR:</span>
-						<a href="">
-							<span>{{competition.author.name}} {{competition.author.lastname}}</span>
-						</a>
+					<div class="mini_gap"></div>
+
+					<div class="itemBox wow fadeInDown">
+
+						<div><i class="fa fa-user fa-fw fa-2x"></i></div>
+
+                        <div>
+
+                        	<h4><a class="link2modal link_sin_color"  data-toggle="modal" data-target="#modal01">
+
+                        		<strong>Nombre del Orador</strong>
+                        	
+                        	</a></h4>
+
+                       		<h4>País de Origen</h4>
+
+                       	</div>
+
 					</div>
+
+					<!-- Modal -->
+					<div class="modal fade" id="modal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						
+						<div class="modal-dialog" role="document">
+						
+							<div class="modal-content">
+
+								<div class="modal-header">
+
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+									<h4 class="modal-title" id="myModalLabel">
+
+										<strong>Nombre del Invitado</strong> | País de origen
+
+									</h4>
+
+								</div>
+
+								<div class="modal-body">
+						        	
+									<img src="/images/IMG-USR04.jpg">
+
+									<div class="mini_gap"></div>
+
+									<p>
+										Doctor en matemática, informático y emprendedor. Ya durante sus estudios en Bonn y Erlangen comenzó a experimentar con routers inalámbricos y sistemas operativos de routers. En especial, empezó a interesarse por la construcción de redes libres comunitarias, no comerciales. Así fue que en 2007 co-fundó la comunidad Freifunk en la ciudad de Erlangen. Más tarde se mudó a Berlín y desde entonces se dedica al desarrollo de software libre y a la expansión de redes de datos comunitarias en el marco de Freifunk-Berlín. Actualmente Freifunk es el principal canal de comunicación para miles de refugiados. Gaul es además fundador de la plataforma de internet PaperHive, que promueve la cooperación abierta entre científicos y académicos.</p>
+
+									<p>
+										Freifunk es una iniciativa sin fines de lucro para el desarrollo de redes libres, en la que cualquiera puede participar. Funciona a través de una red de routers que son montados por particulares en sus hogares y se conectan a internet a través de nodos. Mientras que la política debate hace años la implementación de un proyecto de este tipo, Freifunk se propuso poner a disposición de todos acceso libre a internet. Para proteger a los voluntarios de posibles penalidades en el caso de que algún usuario utilice la red libre para actividades ilegales, los datos se direccionan a través de un servidor de Freifunk o bien de uno en Suecia. Entretanto, Freifunk ha ganado socios incluso en la política: desde la azotea del municipio de Berlin-Kreuzberg, un router de Freifunk garantiza el acceso libre a internet en la zona.</p>
+
+									<p class="links">
+										<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" href="https://andre.gaul.io/" target="_blank"><strong>andre.gaul.io</strong></a>
+									</p>
+
+									<p class="links">
+										<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" href="https://freifunk.net/en/" target="_blank"><strong>freifunk.net</strong></a>
+									</p>
+
+									<p class="links">
+										<a href="#" class="link_simple fa fa-2x fa-facebook-square" target="_blank">
+								        </a> &nbsp;
+
+								        <a href="#" class="link_simple fa fa-2x fa-twitter-square" target="_blank">
+								        </a>
+
+							        </p>
+
+						        </div>
+
+						        <div class="modal-footer">
+
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+						    	</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="mini_gap"></div>
+
+					<div class="etiquetas">
+
+                    	<i class="fa fa-tag fa-2x fa-fw"></i>
+
+                    	<span class="etiqueta">Etiqueta 01</span>
+
+                    	<span class="etiqueta">Etiqueta 02</span>
+
+                    	<span class="etiqueta">Etiqueta 03</span>
+
+                    	<span class="etiqueta">Etiqueta 04</span>
+
+                    	<span class="etiqueta">..</span>
+
+                    </div>
 
 				</div>
 
@@ -74,12 +225,13 @@
 	
 	<!-- Nav tabs -->
 	<div class="tabs_lookeadas">
+	  	
 	  	<ul class="nav nav-tabs panel_selector" role="tablist">
+		    
 		    <li role="presentation" class="active"><a data-target="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab"><i class="fa fa-angle-right"></i> Info</a></li>
-		    <li role="presentation"><a data-target="#tab_jugadores" aria-controls="tab_jugadores" role="tab" data-toggle="tab"><i class="icon-jugador"></i>Jugadores</a></li>
+
 		    <li role="presentation"><a data-target="#tab_videos" aria-controls="tab_videos" role="tab" data-toggle="tab"><i class="icon-video"></i>Videos</a></li>
-		    <li role="presentation"><a data-target="#tab_fotos" aria-controls="tab_fotos" role="tab" data-toggle="tab"><i class="fa fa-camera-retro"></i>Fotos</a></li>
-		    <li role="presentation"><a data-target="#tab_comentarios" aria-controls="tab_comentarios" role="tab" data-toggle="tab"><i class="fa fa-comment-o"></i>Comentarios</a></li>
+
 	  	</ul>
 
   	</div>
@@ -89,14 +241,7 @@
     	<div role="tabpanel" class="tab-pane fade in active" id="tab_info">
     		<div class="descripcion">
 				<p>
-                    {{competition.description}}
-				</p>
-			</div>
-
-			<div class="reglas">
-				<h2><small><i class="fa fa-chevron-right"></i></small> REGLAS:</h2>
-				<p>
-                    {{competition.rules}}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at mi nunc. Ut a feugiat nulla. Vivamus rhoncus euismod tortor. Praesent id commodo magna, a rhoncus nisi. Nullam sit amet sodales sem, nec sollicitudin tellus. Nunc at enim semper, consectetur ipsum vel, ultricies erat. Aliquam a enim ante. Ut eu imperdiet velit. Nulla eu enim posuere, mattis mauris id, pharetra felis. Curabitur aliquet orci non justo dictum porttitor. Integer a egestas ex, at elementum nunc. Donec dictum risus eu eleifend iaculis. Morbi eu viverra tortor. Maecenas ac quam felis. 
 				</p>
 			</div>
 

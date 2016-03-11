@@ -10,7 +10,9 @@ Primary use:    Eventime HTML Template
 
 
 
-/*!------------------------------ Main color of template #ff4949 ------------------------------*/
+
+
+/*!------------------------------ Main color of template #d02251 ------------------------------*/
 
 .navbar-nav>.active>a,
 
@@ -51,7 +53,7 @@ a.navbar-brand:hover,
 
 .copyright span{
 
-    color: #ff4949;
+    color: #d02251;
 
 }
 
@@ -62,7 +64,7 @@ a.navbar-brand:hover,
 
 .contact_icon:hover  {
    
-    background: #ff4949;
+    background: #d02251;
 
 }
 
@@ -96,7 +98,7 @@ figure.eventime_img figcaption::before,
 
 .center_line {
 
-    border-color: #ff4949;
+    border-color: #d02251;
 
 }
 
@@ -108,21 +110,21 @@ footer,
 
 .navbar-toggle{
 
-    background: #ff4949;
+    background: #d02251;
   
-    background: -moz-linear-gradient(-45deg,  #ff4949 0%, #e55e74 100%);
+    background: -moz-linear-gradient(-45deg,  #d02251 0%, #e55e74 100%);
    
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ff4949), color-stop(100%,#e55e74));
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#d02251), color-stop(100%,#e55e74));
   
-    background: -webkit-linear-gradient(-45deg,  #ff4949 0%,#e55e74 100%);
+    background: -webkit-linear-gradient(-45deg,  #d02251 0%,#e55e74 100%);
    
-    background: -o-linear-gradient(-45deg,  #ff4949 0%,#e55e74 100%);
+    background: -o-linear-gradient(-45deg,  #d02251 0%,#e55e74 100%);
    
-    background: -ms-linear-gradient(-45deg,  #ff4949 0%,#e55e74 100%);
+    background: -ms-linear-gradient(-45deg,  #d02251 0%,#e55e74 100%);
    
-    background: linear-gradient(135deg,  #ff4949 0%,#e55e74 100%);
+    background: linear-gradient(135deg,  #d02251 0%,#e55e74 100%);
    
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4949', endColorstr='#e55e74',GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d02251', endColorstr='#e55e74',GradientType=1 );
   
 }
 
@@ -145,7 +147,7 @@ footer,
 
 #home_slider .right_arrow {
 
-    fill: #ff4949;
+    fill: #d02251;
 
 }
 
