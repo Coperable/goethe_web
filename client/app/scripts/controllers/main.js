@@ -128,7 +128,7 @@ angular.module('slamApp')
     };
 
     $scope.goProfile = function() {
-        $location.path('/jugador/'+Account.profile.id);
+        $location.path('/invitado/'+Account.profile.id);
     };
 
 
@@ -190,7 +190,7 @@ angular.module('slamApp')
     $scope.processSummary();
 
 })
-.controller('jugador-list', function ($scope, $rootScope, $http, api_host, Region, Account) {
+.controller('invitado-list', function ($scope, $rootScope, $http, api_host, Region, Account) {
 	$rootScope.home_page = false;
 
 	$scope.predicate = 'lastname';
@@ -313,7 +313,7 @@ angular.module('slamApp')
 
 
 })
-.controller('jugador-view', function ($scope, $rootScope, $routeParams, $http, $sce, api_host, Participant) {
+.controller('invitado-view', function ($scope, $rootScope, $routeParams, $http, $sce, api_host, Participant) {
 	$rootScope.home_page = false;
     
     $scope.participant = {};
@@ -340,7 +340,7 @@ angular.module('slamApp')
     });
 
 })
-.controller('torneo-view', function ($scope, $rootScope, $routeParams, $http, $sce, api_host, Competition) {
+.controller('actividad-view', function ($scope, $rootScope, $routeParams, $http, $sce, api_host, Competition) {
 	$rootScope.home_page = false;
     
     $scope.competition = {};
@@ -372,7 +372,7 @@ angular.module('slamApp')
 
 })
 
-.controller('torneo-list', function ($scope, $rootScope, $http, api_host, Region, Account) {
+.controller('actividad-list', function ($scope, $rootScope, $http, api_host, Region, Account) {
 	$rootScope.home_page = false;
 
     $rootScope.$on("region_summary", function(event, summary) {

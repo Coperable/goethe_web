@@ -39,21 +39,21 @@ angular
         templateUrl: 'views/revista.html',
         controller: 'revista-view'
     })
-    .when('/torneo/:id', {
-        templateUrl: 'views/torneo.html',
-        controller: 'torneo-view'
+    .when('/actividad/:id', {
+        templateUrl: 'views/actividad.html',
+        controller: 'actividad-view'
     })
-    .when('/jugador/:id', {
-        templateUrl: 'views/jugador.html',
-        controller: 'jugador-view'
+    .when('/invitado/:id', {
+        templateUrl: 'views/invitado.html',
+        controller: 'invitado-view'
     })
-    .when('/jugadores', {
-        templateUrl: 'views/jugadores.html',
-        controller: 'jugador-list'
+    .when('/invitados', {
+        templateUrl: 'views/invitados.html',
+        controller: 'invitado-list'
     })
-    .when('/torneos', {
-        templateUrl: 'views/torneos.html',
-        controller: 'torneo-list'
+    .when('/actividades', {
+        templateUrl: 'views/actividades.html',
+        controller: 'actividad-list'
     })
     .when('/videos', {
         templateUrl: 'views/videos.html',
