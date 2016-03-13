@@ -18,6 +18,8 @@ Route::get('api/region/{regionId}/summary', ['uses' => 'RegionController@summary
 Route::post('api/users/assign/roles',  ['middleware' => 'auth', 'uses' => 'UserController@assignRoles']);
 Route::post('api/users/assign/regions',  ['middleware' => 'auth', 'uses' => 'UserController@assignRegions']);
 
+Route::post('api/competition/{competitionId}/assign/{participantId}',  ['middleware' => 'auth', 'uses' => 'CompetitionController@assignParticipant']);
+
 Route::resource('api/users', 'UserController');
 
 Route::resource('api/participants', 'ParticipantController');

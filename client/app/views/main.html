@@ -293,17 +293,13 @@
                                 <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
 								<div class="mini_gap"></div>
                                 <p>{{invitado.about}}</p>
-								<p class="links">
-									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.twitter}}" target="_blank"><strong>{{invitado.twitter}}</strong></a>
+								<p class="links" ng-if="invitado.google">
+									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
 								</p>
 								<p class="links">
-									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" href="https://freifunk.net/en/" target="_blank"><strong>freifunk.net</strong></a>
-								</p>
-								<p class="links">
-									<a href="#" class="link_simple fa fa-2x fa-facebook-square" target="_blank">
-							        </a> &nbsp;
-							        <a href="#" class="link_simple fa fa-2x fa-twitter-square" target="_blank">
-							        </a>
+									<a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> </a> &nbsp;
+							        <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> </a> &nbsp;
+									<a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a> 
 						        </p>
 					        </div>
 
@@ -576,7 +572,7 @@
     	</div>
 
 
-    	<div class="row top_line organizan width_90">
+    	<div id="apoyan" class="row top_line organizan width_90">
 
     		<h4>Apoyan: </h4>
 

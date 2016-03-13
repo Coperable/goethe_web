@@ -17,13 +17,11 @@
 
 	    <div class="form-group ">
 
-	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="fa fa-sort-alpha-asc"></i></a>
+	    	<a class="btn btn_filtro" href role="button" ng-click="direction(false)"><i class="fa fa-sort-alpha-asc"></i></a>
 
-	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="fa fa-sort-alpha-desc"></i></a>
+	    	<a class="btn btn_filtro" href role="button" ng-click="direction(true)"><i class="fa fa-sort-alpha-desc"></i></a>
 
-	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="fa fa-clock-o"></i> Recientes</a>
-
-	    	<a class="btn btn_filtro" href="#about_menu" role="button"><i class="icon-copa"></i> Ranking</a>
+	    	<!--a class="btn btn_filtro" href="#about_menu" role="button"><i class="fa fa-clock-o"></i> Recientes</a-->
 
 	    	<div class="input-group busqueda">
 
@@ -39,51 +37,29 @@
 
     	<div class="row">
 
-    		<div class="col-xs-10 col-sm-5 col-md-4">
 
-                <div class="tarjeta_actividad">
+    		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="actividad in summary.competitions| orderBy:predicate:reverse">
+                <a ng-href="/#/actividad/{{actividad.id}}">
+                    <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
+                </a>
 
-                    <a ng-href="/#/torneo/222">
-                        
-                        <img src="/images/IMG_ACT01.jpg">
-
+                <div class="inner">
+                    <a ng-href="/#/actividad/{{actividad.id}}">
+                        <h4 class="bold">{{actividad.title}}</h4>
                     </a>
 
-                    <div class="inner">
-                        
-                        <a ng-href="/#/torneo/222">
-
-                            <h4 class="bold">Nombre de la Actividad</h4>
-
-                        </a>
-
-                        <h5>Tipo de actividad</h5>
-
-                        <div class="etiquetas">
-
-                            <i class="fa fa-tag"></i>
-
-                            <span class="etiqueta">Etiqueta 01</span>
-
-                            <span class="etiqueta">Etiqueta 02</span>
-
-                            <span class="etiqueta">Etiqueta 03</span>
-
-                            <span class="etiqueta">Etiqueta 04</span>
-
-                            <span class="etiqueta">..</span>
-
-                        </div>
-
-                        <h5><i class="fa fa-clock-o fa-fw"></i>Jueves 22 Feb <i class="fa fa-caret-right"></i> <span style="font-size:14pt">20:30</span></h5>
-
-                        <h5><i class="fa fa-map-marker fa-fw"></i>Nombre del Lugar | Lambarí 376</h5>
-
+                    <h5>{{actividad.description}}</h5>
+                    <div class="etiquetas">
+                        <i class="fa fa-tag"></i>
+                        <span class="etiqueta" ng-if="actividad.hashtag">{{actividad.hashtag}}</span>
                     </div>
 
+                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'DD MMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
+                    <h5><i class="fa fa-map-marker fa-fw"></i>{{actividad.place}} | {{actividad.location.formatted_address}}</h5>
                 </div>
 
             </div>
+
 	
         </div>
 

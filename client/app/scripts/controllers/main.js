@@ -72,7 +72,7 @@ angular.module('slamApp')
 
 
 })
-.controller('site-controller', function ($scope, $rootScope, $http, $auth, Region, Account) {
+.controller('site-controller', function ($scope, $rootScope, $http, $auth, $location, $anchorScroll, Region, Account) {
     /*
     $scope.current_region = {};
 
@@ -87,6 +87,11 @@ angular.module('slamApp')
     $scope.isAuthenticated = function() {
         return $auth.isAuthenticated();
     };
+
+    $scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorScroll();
+   }
 
 
 })
@@ -201,19 +206,10 @@ angular.module('slamApp')
     };
 
     $scope.sort = function(field) {
-        if(field === 'date') {
-            $scope.predicate = 'id';
-        }
-        if(field === 'ranking') {
-            $scope.predicate = 'competitions';
-        }
+
     };
 
     $scope.participants = [];
-
-    $rootScope.$on("region_summary", function(event, summary) {
-        $scope.processSummary();
-    });
 
     $scope.processSummary = function() {
         if($rootScope.region_summary) {
@@ -345,8 +341,15 @@ angular.module('slamApp')
     
     $scope.competition = {};
 
-    $scope.getYoutubeSrc = function(video) {
-        return $sce.trustAsResourceUrl("http://www.youtube.com/embed/"+video.name);
+    $scope.getMapSrc = function() {
+        console.log('getMapSrc');
+        //return $sce.trustAsResourceUrl('https://www.google.com/maps/embed/v1/view?center='+$scope.competition.location.latitude+','+$scope.competition.location.longitude+'&zoom=18&maptype=satellite');
+        if(_.isEmpty($scope.competition)) {
+            return '';
+        }
+        console.log('https://www.google.com/maps/embed?center='+$scope.competition.location.latitude+','+$scope.competition.location.longitude+'&zoom=13');
+        //return $sce.trustAsResourceUrl('https://www.google.com/maps/embed?center='+$scope.competition.location.latitude+','+$scope.competition.location.longitude+'&zoom=13');
+        return $sce.trustAsResourceUrl('https://www.google.com/maps/embed/v1/place?q=place_id:'+$scope.competition.location.place_id+'&zoom=13');
     };
 
     Competition.get({
@@ -387,6 +390,24 @@ angular.module('slamApp')
     };
 
     $scope.processSummary();
+
+	$scope.predicate = 'title';
+	$scope.reverse = false;
+
+    $scope.direction = function(direction) {
+        $scope.reverse = direction;
+    };
+
+    $scope.sort = function(field) {
+        if(field === 'date') {
+            $scope.predicate = 'id';
+        }
+        if(field === 'ranking') {
+            $scope.predicate = 'competitions';
+        }
+    };
+
+
 
 })
 

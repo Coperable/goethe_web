@@ -62,12 +62,8 @@ class RegionController extends Controller {
         }
         $competitions->each(function($competition) use ($past_competitions, $next_competitions, $participants, $user)  {
             $competition->users->each(function($participant) use ($participants, $competition, $user) {
-                if($user && $user->id == $participant->id) {
-                    $competition->already_participating = true;
-                }
                 $participant->medias;
                 $participant->competitions;
-                $participants->push($participant);
             });
             $competition->location;
             $competition->videos;

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Config;
 use Log;
 use DB;
+use Hash;
+use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Slam\User;
 use GuzzleHttp;
@@ -79,8 +81,25 @@ class ParticipantController extends Controller {
 
         DB::transaction(function() use ($request, $participant, $user) {
 
-            $participant->username = $request->input('name');
+            $participant->name = $request->input('name');
+            $participant->lastname = $request->input('lastname');
+            $participant->username = Str::slug($participant->name. "-" . $participant->lastname);
+            $participant->cover_photo = $request->input('cover_photo');
+            $participant->photo = $request->input('photo');
+            $participant->place = $request->input('place');
+            $participant->about = $request->input('about');
+            $participant->participant = 1;
+
+            $participant->email = $request->input('email');
+            $participant->facebook = $request->input('facebook');
+            $participant->twitter = $request->input('twitter');
+            $participant->instagram = $request->input('instagram');
+            $participant->google = $request->input('google');
+
+            $participant->password = Hash::make('none');
             $participant->save();
+
+
                  
         });
 
@@ -88,13 +107,35 @@ class ParticipantController extends Controller {
 	}
 
 	public function update(Request $request, $id) {
+        $user = User::find($request['user']['sub']);
         $participant = User::find($id);
+
         DB::transaction(function() use ($request, $participant, $user) {
-            $participant->username = $request->input('name');
+
+            $participant->name = $request->input('name');
+            $participant->lastname = $request->input('lastname');
+            $participant->username = Str::slug($participant->name. "-" . $participant->lastname);
+            $participant->cover_photo = $request->input('cover_photo');
+            $participant->photo = $request->input('photo');
+            $participant->place = $request->input('place');
+            $participant->about = $request->input('about');
+            $participant->participant = 1;
+
+            $participant->email = $request->input('email');
+            $participant->facebook = $request->input('facebook');
+            $participant->twitter = $request->input('twitter');
+            $participant->instagram = $request->input('instagram');
+            $participant->google = $request->input('google');
+
+            $participant->password = Hash::make('none');
             $participant->save();
+
+
+                 
         });
 
         return $participant;
+
 	}
 
 	public function destroy($id) {

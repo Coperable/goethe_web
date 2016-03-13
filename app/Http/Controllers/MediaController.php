@@ -64,7 +64,7 @@ class MediaController extends Controller {
             'type' => 'IMAGE'
         ]);
         
-        $filename = 'torneo_media_'.$image->id . '.' . $image->ext;
+        $filename = 'goethe_media_'.$image->id . '.' . $image->ext;
 
         $image->name = $filename;
         $image->save();

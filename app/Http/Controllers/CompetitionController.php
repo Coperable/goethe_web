@@ -144,6 +144,11 @@ class CompetitionController extends Controller {
                 }
             }
         }
+
+        if(isset($geo['geometry']) && isset($geo['geometry']['location'])) {
+            $result['latitude'] = $geo['geometry']['location']['lat'];
+            $result['longitude'] = $geo['geometry']['location']['lng'];
+        }
     
         Log::info($result);
         return $result;
@@ -231,6 +236,20 @@ class CompetitionController extends Controller {
         $media->users;
     
         return $media;
+    }
+
+	public function assignParticipant(Request $request, $competitionId, $participantId) {
+        $user = User::find($request['user']['sub']);
+        DB::transaction(function() use ($request, $competitionId, $participantId) {
+            $userCompetition =  UserCompetition::firstOrCreate(array(
+                'user_id' => $participantId,
+                'competition_id' => $competitionId
+            ));
+
+        });
+ 
+        return response()->json(['message' => 'Usuario participando'], 200);
+
     }
 
 
