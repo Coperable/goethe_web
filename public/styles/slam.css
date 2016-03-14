@@ -164,13 +164,13 @@ div .etiquetas span {
   background-color: #f9f9e8;
 }
 .fondo_claro {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .sombra_gris_blanco {
   text-shadow: 2px 2px 0px #f7f7da, 4px 3px 1px rgba(0, 0, 0, 0.2);
 }
 .sombra_blanco_gris {
-  text-shadow: 2px 2px 0px #ffffff, 4px 3px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 0px #fff, 4px 3px 1px rgba(0, 0, 0, 0.2);
 }
 a:hover {
   opacity: 0.6;
@@ -188,22 +188,18 @@ a.link2modal {
   padding: 0 !important;
 }
 .entrada-0s5 {
-  -webkit-animation-delay: 0.5s;
   /* Chrome, Safari, Opera */
   animation-delay: 0.5s;
 }
 .entrada-1s {
-  -webkit-animation-delay: 1s;
   /* Chrome, Safari, Opera */
   animation-delay: 1s;
 }
 .entrada-1s5 {
-  -webkit-animation-delay: 1.5s;
   /* Chrome, Safari, Opera */
   animation-delay: 1.5s;
 }
 .entrada-2s {
-  -webkit-animation-delay: 2s;
   /* Chrome, Safari, Opera */
   animation-delay: 2s;
 }
@@ -241,7 +237,7 @@ a.link2modal {
 .titulo {
   display: inline-block;
   font-family: raleway;
-  color: #000000;
+  color: #000;
   letter-spacing: 1px;
   text-align: left;
   /* Extra small devices (phones, less than 768px) */
@@ -290,7 +286,7 @@ a.link2modal {
   padding-top: 20px;
 }
 .tab-content h4 {
-  color: #000000 !important;
+  color: #000 !important;
 }
 .contenedor_sec {
   margin-left: auto;
@@ -302,6 +298,10 @@ a.link2modal {
   /* Small devices (tablets, 768px and up) */
   /* Medium devices (desktops, 992px and up) */
   /* Large devices (large desktops, 1200px and up) */
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
 }
 @media (min-width: 1370px) {
   .contenedor_sec {
@@ -339,7 +339,7 @@ a.link2modal {
 }
 .btn_filtro.active {
   background-color: #d02251;
-  color: #ffffff;
+  color: #fff;
 }
 .eventime_button,
 .reservation_button {
@@ -357,18 +357,13 @@ a.link2modal {
   position: relative;
   z-index: 999;
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .eventime_button,
 .reservation_button {
   overflow: hidden;
   width: 245px;
-  -webkit-transition: border-color 0.3s, color 0.3s;
   transition: border-color 0.3s, color 0.3s;
-  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   z-index: 999;
 }
@@ -384,18 +379,13 @@ a.link2modal {
   width: 150%;
   height: 100%;
   z-index: -1;
-  -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
   transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
-  -webkit-transform-origin: 0% 100%;
   transform-origin: 0% 100%;
-  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
   transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
 }
 .eventime_button:hover::before {
   opacity: 1;
-  -webkit-transform: rotate3d(0, 0, 1, 0deg);
   transform: rotate3d(0, 0, 1, 0deg);
-  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .eventime_button.btn_basico {
@@ -424,8 +414,8 @@ a.link2modal {
 }
 .btn_cancelar:hover {
   opacity: 1;
-  border-color: #000000;
-  color: #000000;
+  border-color: #000;
+  color: #000;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
@@ -437,7 +427,7 @@ a.link2modal {
 }
 .tooltip-inner {
   color: #d02251;
-  background: #ffffff;
+  background: #fff;
   border: solid 1px #d02251;
   opacity: 0.9;
   padding: 0.4em 1em;
@@ -453,6 +443,8 @@ a.link2modal {
 	PRELOADER
 
 --------------------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
 /*----------------------------------------------------------------------
  
     04.
@@ -471,8 +463,8 @@ a.link2modal {
   border-width: 1px;
   font-size: 11pt;
   border-radius: 0.4em;
-  border-color: #dddddd;
-  background-color: #ffffff;
+  border-color: #ddd;
+  background-color: #fff;
   text-transform: none;
   letter-spacing: 0;
 }
@@ -485,7 +477,7 @@ a.link2modal {
   padding: 10px 25px;
   letter-spacing: 3px;
   background-color: #d02251;
-  color: #ffffff !important;
+  color: #fff !important;
 }
 a.btn.btn_simple:hover {
   opacity: 0.8;
@@ -535,9 +527,6 @@ nav {
   outline: none;
 }
 .navbar a {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 .nav > li > a:focus,
@@ -570,9 +559,6 @@ nav {
   vertical-align: middle;
 }
 .navbar_bg {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 .navbar-toggle {
@@ -599,8 +585,6 @@ nav {
   width: 100%;
   height: 100%;
   background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
@@ -717,7 +701,7 @@ nav {
 
 --------------------------------------------------------------------- */
 .tarjeta_actividad {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 0.6em;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
   margin: 30px;
@@ -734,7 +718,7 @@ nav {
   max-height: 82px;
 }
 #sec_torneoPrincipal {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
 }
 #sec_torneoPrincipal img {
   width: 100%;
@@ -751,7 +735,7 @@ nav {
   margin-left: -6px;
 }
 #sec_torneoPrincipal .data-box.featured {
-  color: #000000;
+  color: #000;
   max-width: 220px;
 }
 #sec_torneoPrincipal .data-box.featured h4 {
@@ -765,10 +749,10 @@ nav {
 }
 #sec_torneoPrincipal .data-box.featured p small {
   padding-right: 34px;
-  color: #000000;
+  color: #000;
 }
 #sec_torneosAnteriores .titulo {
-  color: #000000;
+  color: #000;
 }
 /*----------------------------------------------------------------------
  
@@ -779,12 +763,12 @@ nav {
 
 --------------------------------------------------------------------- */
 #sec_jugadores {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
 }
 .tarjeta_jugador {
-  color: #000000;
-  background-color: #ffffff;
+  color: #000;
+  background-color: #fff;
   border-radius: 0.6em;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
   margin: 20px;
@@ -849,7 +833,7 @@ nav {
 
 --------------------------------------------------------------------- */
 #sec_videos {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
 }
 #sec_videos .btn {
@@ -863,7 +847,7 @@ nav {
   border-radius: 0.6em;
 }
 .contacto_tit {
-  color: #ffffff;
+  color: #fff;
   margin-left: 8%;
 }
 /*----------------------------------------------------------------------
@@ -879,11 +863,11 @@ mask {
   min-height: 500px !important;
 }
 .about_columns .list {
-  color: #ffffff;
+  color: #fff;
   font-weight: 300;
 }
 .about_columns .list h4 {
-  color: #ffffff !important;
+  color: #fff !important;
   text-transform: none;
   font-weight: 300;
   line-height: 1.3;
@@ -924,7 +908,7 @@ mask {
 
 --------------------------------------------------------------------- */
 .blanquito {
-  background: #ffffff;
+  background: #fff;
   position: absolute;
   top: 0;
   height: 40%;
@@ -958,7 +942,7 @@ mask {
   font-size: 26pt;
 }
 #carousel-torneos .caption {
-  background-color: #dddddd;
+  background-color: #ddd;
   background-image: url("../images/mask.svg");
   border-radius: 0.6em;
   padding: 6px 20px 10px 20px;
@@ -970,8 +954,8 @@ mask {
     font-size: 12pt;
     padding: 30px 8px 5px 10px;
     border-radius: 0em;
-    background: #ffffff;
-    border-left: 1px solid #dddddd;
+    background: #fff;
+    border-left: 1px solid #ddd;
   }
 }
 #carousel-torneos .caption i {
@@ -1006,7 +990,7 @@ mask {
   content: attr(fecha);
   position: absolute;
   background: #d02251;
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   font-size: 12pt;
   line-height: 1;
@@ -1015,7 +999,7 @@ mask {
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  border: 5px solid #ffffff;
+  border: 5px solid #fff;
   text-align: center;
   top: 0px;
   right: 8%;
@@ -1031,12 +1015,10 @@ mask {
   }
 }
 #carousel-torneos .caption.proximo {
-  background: #ffffff;
+  background: #fff;
 }
 @media (min-width: 992px) {
   #carousel-torneos .caption.proximo {
-    -webkit-box-shadow: inset 0px 0px 0px 3px #d02251;
-    -moz-box-shadow: inset 0px 0px 0px 3px #d02251;
     box-shadow: inset 0px 0px 0px 3px #d02251;
   }
 }
@@ -1048,8 +1030,7 @@ mask {
   margin-bottom: auto;
   height: 100%;
   text-align: center;
-  color: #000000;
-  -webkit-animation-delay: 1.5s;
+  color: #000;
   /* Chrome, Safari, Opera */
   animation-delay: 1.5s;
 }
@@ -1139,7 +1120,7 @@ mask {
   display: table;
   margin: 0px auto;
   height: 28px;
-  border-left: 2px solid #dddddd;
+  border-left: 2px solid #ddd;
   overflow: hidden;
 }
 @media (max-width: 990px) {
@@ -1177,7 +1158,7 @@ mask {
 .info_seccion {
   padding: 40px 0 20px 0;
   overflow: hidden;
-  color: #ffffff;
+  color: #fff;
 }
 .info_seccion .info_contenedor {
   padding: 10px 20px;
@@ -1197,7 +1178,7 @@ mask {
   font-family: raleway-semi-bold;
 }
 .info_seccion h4 small {
-  color: #ffffff;
+  color: #fff;
   font-family: raleway;
 }
 .info_seccion i {
@@ -1211,7 +1192,7 @@ mask {
 }
 .info_seccion .btn {
   border: 0px solid #d02251;
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   font-size: 18px;
   padding: 10px 25px;
@@ -1220,14 +1201,12 @@ mask {
   border: 2px dashed rgba(255, 255, 255, 0.3);
 }
 .info_seccion .btn:hover {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #d02251;
 }
 #info01 {
   background: #d02251;
   background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
@@ -1277,9 +1256,6 @@ mask {
 }
 .right_arrow svg,
 .left_arrow svg {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 #carousel_jugadores {
@@ -1303,9 +1279,6 @@ mask {
   color: #fff !important;
   text-transform: uppercase;
   -webkit-appearance: none;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 #carousel_jugadores input[type=text]:focus {
@@ -1334,9 +1307,6 @@ mask {
   margin-top: 10px;
 }
 #carousel_jugadores .speakers_image {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -1364,7 +1334,6 @@ mask {
 #carousel_jugadores figure figcaption {
   padding: 0.4em;
   font-size: 1.25em;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 #carousel_jugadores figure figcaption::before,
@@ -1407,12 +1376,10 @@ mask {
 }
 #carousel_jugadores figure.eventime_img img {
   opacity: 0.9;
-  -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
 #carousel_jugadores figure.eventime_img figcaption {
   background-color: rgba(0, 0, 0, 0);
-  -webkit-transition: background-color 0.35s;
   transition: background-color 0.35s;
 }
 #carousel_jugadores figure.eventime_img figcaption::before {
@@ -1427,28 +1394,22 @@ mask {
 }
 #carousel_jugadores figure.eventime_img h2 {
   opacity: 0;
-  -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
-  -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
 #carousel_jugadores figure.eventime_img figcaption::before,
 #carousel_jugadores figure.eventime_img p {
   opacity: 0;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: scale(0);
   transform: scale(0);
 }
 #carousel_jugadores figure.eventime_img:hover h2 {
   opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 #carousel_jugadores figure.eventime_img:hover figcaption::before,
 #carousel_jugadores figure.eventime_img:hover p {
   opacity: 1;
-  -webkit-transform: scale(1);
   transform: scale(1);
 }
 #carousel_jugadores figure.eventime_img:hover figcaption {
@@ -1459,8 +1420,6 @@ mask {
 }
 .speakers {
   background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   min-height: 650px;
@@ -1494,7 +1453,6 @@ mask {
 #past_menu figure figcaption {
   padding: 0.4em;
   font-size: 1.25em;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 #past_menu figure figcaption::before,
@@ -1537,12 +1495,10 @@ mask {
 }
 #past_menu figure.eventime_img img {
   opacity: 0.9;
-  -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
 #past_menu figure.eventime_img figcaption {
   background-color: rgba(0, 0, 0, 0);
-  -webkit-transition: background-color 0.35s;
   transition: background-color 0.35s;
 }
 #past_menu figure.eventime_img figcaption::before {
@@ -1557,28 +1513,22 @@ mask {
 }
 #past_menu figure.eventime_img h2 {
   opacity: 0;
-  -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
-  -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
 #past_menu figure.eventime_img figcaption::before,
 #past_menu figure.eventime_img p {
   opacity: 0;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: scale(0);
   transform: scale(0);
 }
 #past_menu figure.eventime_img:hover h2 {
   opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 #past_menu figure.eventime_img:hover figcaption::before,
 #past_menu figure.eventime_img:hover p {
   opacity: 1;
-  -webkit-transform: scale(1);
   transform: scale(1);
 }
 #past_menu figure.eventime_img:hover figcaption {
@@ -1600,7 +1550,7 @@ mask {
   width: 90px;
 }
 .creditos .segunda-linea {
-  color: #ffffff;
+  color: #fff;
   display: inline-block;
   vertical-align: middle;
   text-align: left;
@@ -1610,7 +1560,7 @@ mask {
   margin-bottom: 0px;
 }
 .creditos .segunda-linea a {
-  color: #ffffff;
+  color: #fff;
   font-size: 24pt;
   padding-right: 10px;
 }
@@ -1675,15 +1625,10 @@ footer,
 .navbar-toggle {
   background: #d02251;
   /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #d02251 0%, #efa52d 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #d02251), color-stop(100%, #efa52d));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, #d02251 0%, #efa52d 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, #d02251 0%, #efa52d 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, #d02251 0%, #efa52d 100%);
   /* IE10+ */
   background: linear-gradient(135deg, #d02251 0%, #efa52d 100%);
   /* W3C */
@@ -1720,7 +1665,7 @@ footer,
 .sec-fondo-oscuro .buttons a.active,
 .sec-fondo-oscuro .contact_information,
 .sec-fondo-oscuro .copyright {
-  color: #ffffff;
+  color: #fff;
 }
 .sec-fondo-claro .navbar,
 .sec-fondo-claro .navbar a,
@@ -1741,24 +1686,24 @@ footer,
 .sec-fondo-claro .buttons a.active,
 .sec-fondo-claro .contact_information,
 .sec-fondo-claro .copyright {
-  color: #000000;
+  color: #000;
 }
 .sponsor_basic,
 .sponsor_featured {
-  outline-color: #ffffff;
+  outline-color: #fff;
 }
 .speakers_row {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .tabs_about .graybtn {
-  border-color: #ffffff;
+  border-color: #fff;
 }
 /*!------ SVG ------ */
 .photo_carousel .right_arrow svg,
 .photo_carousel .left_arrow svg,
 #home_slider .left_arrow:hover,
 #home_slider .right_arrow:hover {
-  fill: #ffffff;
+  fill: #fff;
 }
 .sec-fondo-oscuro a,
 .sec-fondo-oscuro a:hover,
@@ -1786,7 +1731,7 @@ footer,
 .sec-fondo-claro .blog_button,
 .sec-fondo-claro .schedule_reservation,
 .sec-fondo-claro .panel-collapse p b {
-  color: #000000;
+  color: #000;
 }
 .eventime_button:hover {
   color: #ffffff !important;
@@ -1880,10 +1825,10 @@ a:focus {
   width: 200px !important;
 }
 #torneo-descripcion {
-  color: #000000;
+  color: #000;
 }
 #torneo-descripcion .datos-generales {
-  color: #000000;
+  color: #000;
   padding-bottom: 30px;
 }
 #torneo-descripcion .datos-generales h1 {
@@ -1906,7 +1851,7 @@ a:focus {
   top: -30px;
   right: 7.5%;
   z-index: 10000;
-  text-shadow: 4px 3px 0px #ffffff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
 }
 #torneo-descripcion .afiche .slam-indicador img {
   width: 100%;
@@ -1914,7 +1859,7 @@ a:focus {
 .panel-lateral {
   padding-bottom: 40px;
   border-left: 1px solid #333333;
-  color: #000000;
+  color: #000;
 }
 .itemBox div {
   display: inline-block;
@@ -1931,13 +1876,13 @@ a:focus {
   vertical-align: top;
 }
 #jugador-descripcion {
-  color: #000000;
+  color: #000;
 }
 #jugador-descripcion a {
   color: #d02251;
 }
 #jugador-descripcion .datos-generales {
-  color: #000000;
+  color: #000;
   padding-bottom: 30px;
 }
 #jugador-descripcion .datos-generales h1 {
@@ -1959,19 +1904,19 @@ a:focus {
 #jugador-descripcion .panel-lateral {
   padding-bottom: 40px;
   border-left: 1px solid #333333;
-  color: #000000;
+  color: #000;
 }
 #torneo_content .descripcion {
   padding: 40px 120px 40px 20px;
   width: 90%;
   font-size: 16pt;
-  color: #000000;
+  color: #000;
 }
 #torneo_content .info_jugador a {
   display: inline-block;
 }
 #torneo_content .reglas {
-  color: #000000;
+  color: #000;
   font-size: 14pt;
   padding: 5px 40px 10px 30px;
   width: 80%;
@@ -1984,12 +1929,12 @@ a:focus {
   padding-bottom: 20px;
 }
 #torneo_content .reglas h2 small {
-  color: #000000;
+  color: #000;
   padding-right: 10px;
 }
 .tabs_lookeadas {
-  border-bottom: 1px solid #dddddd;
-  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
   text-align: center;
 }
 .tabs_lookeadas .nav-tabs {
@@ -2005,6 +1950,10 @@ a:focus {
   padding: 0;
   border: 0;
 }
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
 @media (min-width: 1370px) {
   .tabs_lookeadas .nav-tabs {
     width: 80%;
@@ -2013,7 +1962,7 @@ a:focus {
 .tabs_lookeadas .nav-tabs > li > a {
   text-align: center;
   padding: 20px;
-  color: #000000;
+  color: #000;
   font-size: 11pt;
   letter-spacing: 1pt;
   line-height: 30pt;
@@ -2040,7 +1989,7 @@ a:focus {
   opacity: 1;
 }
 #torneo-content {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 #torneo-content a {
   color: #d02251;
@@ -2062,7 +2011,7 @@ a:focus {
   margin-right: auto;
 }
 #torneo-content .content-selector a {
-  color: #000000;
+  color: #000;
 }
 #torneo-content .content-selector a:hover {
   color: #838383;
@@ -2070,7 +2019,7 @@ a:focus {
 #torneo-content .content-selector .item {
   text-align: center;
   padding: 20px 0px 20px 0px;
-  color: #000000;
+  color: #000;
   font-size: 14pt;
   letter-spacing: 1pt;
   line-height: 40pt;
@@ -2096,7 +2045,7 @@ a:focus {
 }
 #content-jugadores .info {
   padding-bottom: 30px;
-  color: #000000;
+  color: #000;
 }
 #content-jugadores .info span {
   display: inline-block;
@@ -2139,7 +2088,7 @@ a:focus {
   bottom: 0;
   width: 100%;
   background: #d02251;
-  color: #ffffff;
+  color: #fff;
   opacity: 0.9;
   padding: 10px 10px 5px 20px;
   border-radius: 0 0 0.4em 0.4em;
@@ -2172,7 +2121,7 @@ a:focus {
 .input-group-addon {
   background-color: #d02251;
   border: 0px solid #d02251;
-  color: #ffffff;
+  color: #fff;
   font-size: 14pt;
 }
 label {
@@ -2218,7 +2167,7 @@ label {
 .planilla .torneo-inner {
   margin-left: auto;
   margin-right: auto;
-  color: #000000;
+  color: #000;
 }
 .planilla input,
 .planilla textarea,
@@ -2227,7 +2176,7 @@ label {
   border-width: 2px;
 }
 .planilla .checkbox label {
-  color: #000000;
+  color: #000;
 }
 .planilla .checkbox a {
   color: #d02251;
