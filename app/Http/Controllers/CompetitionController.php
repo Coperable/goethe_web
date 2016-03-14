@@ -109,6 +109,7 @@ class CompetitionController extends Controller {
 	}
 
 	public function destroy($id) {
+        DB::table('users_competitions')->where('competition_id', '=', $id)->delete();
         Competition::destroy($id);
 	}
 

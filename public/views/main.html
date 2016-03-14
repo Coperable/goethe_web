@@ -1,112 +1,13 @@
 
-<!-- SEC: TORNEO PRINCIPAL -->
-<div id="sec_torneoPrincipal" class="seccion"  ng-if="summary.next_competition">
-
-    <div class="contenedor_sec torneo_principal torneo_info_inside">
-
-	    <div class="titulo wow fadeInDown">
-
-	      	<h2 class="en_color_principal sombra_blanco_gris">
-	        	
-	        	<i class="icon-copa"></i>Próximo Torneo
-
-	        	<small class="label_region">en {{summary.name}}</small>
-	      	
-	      	</h2>
-	    
-	    </div>
-
-	    <div class="ver_mas wow bounceInRight entrada-1s">
-
-	    	<a ng-href="/#/torneos">
-
-	    		<h3><i class="fa fa-caret-right"></i>ver todos los torneos</h3>
-	    	
-	    	</a>
-	    	
-	    </div>
-
-    	<div class="row wow fadeInLeftBig">
-
-    		<div class="col-sm-12 col-md-5">
-    			
-    			<img ng-src="http://images.collab-dev.com/190x/smart/slam/{{summary.next_competition.cover_photo}}">
-
-    			<div class="ver_mas izq"><a ng-href="/#/torneo/{{summary.next_competition.id}}"><h3><i class="fa fa-caret-right"></i>ver más</h3></a></div>
-
-    		</div>
-
-    		<div class="col-xs-12 col-sm-6 col-md-3">
-
-    			<a ng-href="/#/torneo/{{summary.next_competition.id}}">
-
-    				<h4 class="torneo_nombre">{{summary.next_competition.title}}</h4>
-
-    			</a>
-
-    			<div class="torneo_fecha">
-
-					<span class="icon-box" ><i class="fa fa-clock-o"></i></span>
-				
-					<span class="num">{{summary.next_competition.event_date | moment: 'DD'}}</span> 
-					<span class="mes">{{summary.next_competition.event_date | moment: 'MMM'}}</span> 
-					<span class="linea">|</span> 
-					<span class="hora">{{summary.next_competition.event_date | moment: 'HH:mm'}}</span> 
-
-				</div>
-
-				<div class="torneo_lugar">
-				
-					<span class="icon-box" ><i class="fa fa-map-marker"></i></span>
-
-					<span class="lugar-nombre">{{summary.next_competition.place}}</span>
-
-					<span class="direccion"><a href="">{{summary.next_competition.location.formatted_address}}</a></span>
-
-				</div>
-
-        		<div class="data-box featured">
-
-        			<span class="icon-box"><i class="icon-jugador"></i></span>
-
-        			<h4><small>JUGADORES</small>CUPOS</h4>
-
-        			<p><small>+{{summary.next_competition.users.length || 0}}</small>+{{summary.next_competition.users_amount - summary.next_competition.users.length}}</p>
-				
-				</div>
-
-				<h3 ng-if="summary.next_competition.already_participating" class="wow bounceInRight animated entrada-1s animated text-center"><b>ESTÁS PARTICIPANDO!</b></h3>
-				<a ng-if="!summary.next_competition.already_participating" ng-show="isAuthenticated()" style="animation-name: bounceInRight;" class="wow bounceInRight btn btn_principal animated entrada-1s animated" href role="button" ng-click="participate(summary.next_competition)">PARTICIPAR</a>
-				<a ng-show="!isAuthenticated()" style="animation-name: bounceInRight;" class="wow bounceInRight btn btn_principal animated entrada-1s animated"  href="#/#planilla-registro" role="button">PARTICIPAR</a>
-
-				<div class="mini_gap"></div>
-
-    		</div>
-
-    		<div class="col-xs-12 col-sm-6 col-md-4 torneo_descripcion">
-    			<p>
-                    {{summary.next_competition.description}}
-    			</p>
-    		</div>
-    		
-    	</div>    	
-
-    </div>
-
-</div>
-
-<!-- SEC: TORNEOS ANTERIORES -->
 <div id="sec_torneosAnteriores" class="seccion fondo_gris">
 
-    <div class="contenedor_sec torneo_info_inside wow fadeInLeftBig">
+    <div class="contenedor_sec wow fadeInLeftBig">
 
 	    <div class="titulo wow fadeInDown">
 
 	      	<h2 class="sombra_gris_blanco">
 	        	
-	        	<i class="icon-copa"></i>Torneos Anteriores
-
-	        	<small class="label_region">en {{summary.name}}</small>
+	        	<i class="fa fa-calendar"></i>ACTIVIDADES DESTACADAS
 	      	
 	      	</h2>
 	    
@@ -114,112 +15,60 @@
 
 	    <div class="ver_mas wow bounceInRight entrada-1s">
 
-	    	<a href="/#/torneos">
+	    	<a class="link_simple" href="/#/actividades">
 
-	    		<h3><i class="fa fa-caret-right"></i>ver todos los torneos</h3>
+	    		<h3><i class="fa fa-caret-right "></i>ver todas las Actividades</h3>
 	    	
 	    	</a>
 	    	
 	    </div>
 
-    	<div class="row">
+    	<div class="row width_90">
 
-    		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="past in summary.past_competitions">
+    		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="actividad in summary.competitions">
 
-    			<a ng-href="/#/torneo/{{past.id}}" class="no_opacity_hover">
+    			<div class="tarjeta_actividad">
 
-    			<div class="tarjeta_torneo torneo_info_inside" fecha="{{past.event_date | moment: 'DD MMM'}}">
-                 	
-                    <h4 class="torneo_nombre">{{past.title}}</h4>
+    				<a ng-href="/#/torneo/{{actividad.id}}">
+    					
+    					<img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
 
-                	<div class="torneo_resumen">
+    				</a>
 
-                		<div class="data-box">
+    				<div class="inner">
+	                 	
+	                    <a ng-href="/#/torneo/{{actividad.id}}">
 
-		        			<span class="icon-box"><i class="icon-jugador"></i></span>
+	                    	<h4 class="bold">{{actividad.title}}</h4>
 
-		        			<h4>JUGADORES</h4>
+	                    </a>
 
-		        			<p>+{{past.users.length || 0}}</p>
-						
-						</div>
+	                    <h5>{{actividad.description}}</h5>
 
-                		<div class="data-box">
+	                    <div class="etiquetas">
 
-		        			<span class="icon-box"><i class="icon-video"></i></span>
+	                    	<i class="fa fa-tag"></i>
 
-		        			<h4>VIDEOS</h4>
+	                    	<span class="etiqueta" ng-if="actividad.hashtag">{{actividad.hashtag}}</span>
 
-		        			<p>+{{past.videos.length || 0}}</p>
-						
-						</div>
+	                    </div>
 
-                		<!--div class="data-box">
+	                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'DD MMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
 
-		        			<span class="icon-box"><i class="fa fa-camera"></i></span>
+	                    <h5><i class="fa fa-map-marker fa-fw"></i>{{actividad.place}} | {{actividad.location.formatted_address}}</h5>
 
-		        			<h4>FOTOS</h4>
-
-		        			<p>+12</p>
-						
-						</div>
-
-                		<div class="data-box">
-
-		        			<span class="icon-box"><i class="fa fa-comment-o"></i></span>
-
-		        			<h4>COMENTARIOS</h4>
-
-		        			<p>+12</p>
-						
-						</div-->
-
-                	</div>
-
-                	<div class="torneo_datos">
-
-                		<div class="torneo_fecha">
-
-							<span class="icon-box" ><i class="fa fa-clock-o"></i></span>
-
-							<span class="hora">{{past.event_date | moment: 'HH:mm'}}</span>
-						
-						</div>
-
-						<div class="torneo_lugar">
-						
-							<span class="icon-box" ><i class="fa fa-map-marker"></i></span>
-
-							<span class="lugar-nombre">{{past.place}}</span>
-
-							<span class="direccion">{{past.location.formatted_address}}</span>
-
-						</div>
-
-						<div class="torneo_hashtag">
-							
-							<span class="icon-box">#</span>
-
-							<span class="aclaracion">{{past.hashtag}}</span>
-
-						</div>
-
-                	</div>
-
-                	<div class="ver_mas"><h3><i class="fa fa-caret-right"></i>ver más</h3></div>
+	                </div>
 
             	</div>
 
-            	</a>
-	    	
-	    	</div>
+            </div>
 
-	
+
 	    </div>
 
 	    <div class="mini_gap"></div>
 
-	    <a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn eventime_button animated" href="/#/torneos" role="button">VER TODOS</a>
+	    <a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn btn_fondo_claro eventime_button animated" href="/#/actividades" role="button">VER TODAS</a>
 
 	    <div class="mini_gap"></div>
 	
@@ -242,7 +91,7 @@
 		        <li class="active">
 
 		        	<a class="wow fadeInDown btn eventime_button graybtn active" data-toggle="tab" role="button" data-target="#sectionA">
-		        		DATOS 
+		        		ACERCA DE 
 		        	</a>
 
 		        </li>
@@ -250,7 +99,7 @@
 		        <li>
 
 		        	<a class="wow fadeInDown btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionB">
-		        		REGLAS 
+		        		TEMAS 
 		        	</a>
 
 		        </li>
@@ -258,194 +107,123 @@
 		        <li>
 
 		        	<a class="wow fadeInDown btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionC">
-		        		ACERCA DE 
+		        		PARTICIPAR 
 		        	</a>
 
 		        </li>
 
 	      	</ul>
 
+	      	<div class="gap"></div>
+
 			<div class="tab-content">
 
 		        <div id="sectionA" class="tab-pane fade in active">
 
-			        <ul class="stats">
+		        	 <ul class="about_columns">
 
-			            <li class="icon-jugador icono-6x">
+		        	 	<li class="list right">
 
-				            <p>
-				            	<span class="count">
-				              		{{summary.participants_count}}	
-				              	</span>
-				              	<span class="count_plus">
-				              		+ 
-				              	</span>
-				            </p>
+		        	 		<h4 class="uppercase">Los sistemas de <strong>producción</strong>, <strong>distribución</strong> y <strong>consumo</strong> están cambiando, y nosotros con ellos.</h4>
 
-				            <p class="count_dscrp">
-				               participantes
-				            </p>
+	        	 			<ol><li>
 
+        	 					Nuevos modelos de intercambio y tecnologías abren el juego y nos invitan a repensar cómo nos comunicamos, cómo aprendemos y cómo compartimos recursos de todo tipo. Siguiendo el modelo de producción del software libre, se generan formas de creación entre pares que proponen nuevos roles participativos. En ese horizonte cobra fuerza la idea de los comunes, la riqueza compartida al margen del mercado y el estado.
+
+	        	 			</li></ol>
+			            
 			            </li>
 
-			            <li class="icon-copa icono-6x">
+			            <li class="list con_sangria">
 
-				            <p>
-				              	<span class="count">
-				              		{{summary.competitions.length || 0}}	
-				              	</span>
-				              	<span class="count_plus">
-				              		+ 
-				              	</span>
-				            </p>
+				            <h4><i class="fa fa-caret-right"></i>¿Qué significa hablar de economías colaborativas, y qué relación tienen con los comunes? </h4>
 
-				            <p class="count_dscrp">
-				               torneos
-				            </p>
+				            <div class="mini_gap"></div>
 
-			            </li>
+				            <h4><i class="fa fa-caret-right"></i>¿Por qué hablamos cada vez más de compartir?</h4>
+				            
+				            <div class="mini_gap"></div>
 
-			            <!--li class="fa fa-comment-o fa-6x">
+				            <h4><i class="fa fa-caret-right"></i>¿Quiénes hablan hoy de economías colaborativas y qué modelo de vida nos proponen? </h4>
 
-			            	<p>
-				            	<span class="count">
-				              		55 
-				              	</span>
-				              	<span class="count_plus">
-				              		+ 
-				              	</span>
-				            </p>
+				            <ol><li>
 
-				            <p class="count_dscrp">
-				               conversaciones
-				            </p>
-
-			            </li-->
-
-			            <li class="icon-video icono-6x">
-
-				            <p>
-					            <span class="count">
-				              		{{summary.videos_count || 0}}	
-					            </span>
-					            <span class="count_plus">
-					            	+ 
-					            </span>
-				            </p>
-
-				            <p class="count_dscrp">
-				               videos
-				            </p>
-
-			            </li>
+				            </li></ol>
+				        
+				        </li>
 
 			        </ul>
 
 		        </div>
 
 			    <div id="sectionB" class="tab-pane fade">
+			          
 			          <ul class="about_columns">
-			            <li class="list right">
-			            <h4>
-			            Design Education </h4>
-			            <div class="fa fa-star fa-1x">
-			            </div>
-			            <ol>
-			              <li>Design thinking: cognitive modes and learning styles</li>
-			              <li>Design approaches, strategies, methodologies and tactics</li>
-			              <li>Problem solving: recognition procedures, hypothesis developmen</li>
-			              <li>The meaning of innovation and creativity, in theory and practice</li>
-			            </ol>
+
+		        	 	<li class="list right">
+
+		        	 		<h4 class="uppercase">Inspirados tanto por prácticas ancestrales como por tecnologías innovadoras, <strong>nuevos conceptos</strong> toman el centro de la escena, en un entramado complejo de <strong>tendencias</strong> y <strong>cambios sociales</strong>.</h4>
+			            
 			            </li>
-			            <li class="list">
-			            <div class="fa fa-briefcase fa-1x">
-			            </div>
-			            <h4>
-			            Design in Society </h4>
-			            <ol>
-			              <li>Design in social policy, planning, and politics</li>
-			              <li>Health, safety, and public welfare in design practice</li>
-			              <li>Design as business</li>
-			              <li>Markets for design and designing for markets</li>
-			            </ol>
-			            </li>
-			            <li class="list right">
-			            <h4>
-			            Designed Objects </h4>
-			            <div class="fa fa-camera fa-1x">
-			            </div>
-			            <ol>
-			              <li>Fashion design and development</li>
-			              <li>Product design philosophy</li>
-			              <li>Industrial and Interior design</li>
-			              <li>Engineering and design</li>
-			            </ol>
-			            </li>
-			            <li class="list">
-			            <div class="fa fa-graduation-cap fa-1x">
-			            </div>
-			            <h4>
-			            Visual Design </h4>
-			            <ol>
-			              <li>Communications design</li>
-			              <li>Visual arts</li>
-			              <li>Typography</li>
-			              <li>Graphic design</li>
-			            </ol>
-			            </li>
-			            <li class="list right">
-			            <h4>
-			            Design Management </h4>
-			            <div class="fa fa-key fa-1x">
-			            </div>
-			            <ol>
-			              <li>People and artifacts: exploring uses and usability</li>
-			              <li>Participatory design systems</li>
-			              <li>Professional ethics</li>
-			              <li>Design knowledge management</li>
-			            </ol>
-			            </li>
-			            <li class="list ">
-			            <div class="fa fa-line-chart fa-1x">
-			            </div>
-			            <h4>
-			            Environmental Design </h4>
-			            <ol>
-			              <li>Eco design: environmental and green design</li>
-			              <li>Theater and set design</li>
-			              <li>Interaction design</li>
-			              <li>Landscape architecture</li>
-			            </ol>
-			            </li>
-			          </ul>
+
+			            <li class="list con_sangria">
+
+				            <h4><i class="fa fa-caret-right"></i>Los escenarios de la colaboración</h4>
+
+				            <h4><i class="fa fa-caret-right"></i>Trending Topics</h4>
+
+				            <h4><i class="fa fa-caret-right"></i>Ciudades Comunes</h4>
+
+				            <h4><i class="fa fa-caret-right"></i>Cultura Libre y Open Todo</h4>
+
+				            <h4><i class="fa fa-caret-right"></i>Activismo en red</h4>
+
+				            <h4><i class="fa fa-caret-right"></i>Viví la colaboración</h4>
+
+				            <ol><li>
+
+				            </li></ol>
+				        
+				        </li>
+
+			        </ul>
+
 			    </div>
 
 
 			    <div id="sectionC" class="tab-pane fade">
-			          <ul class="about_columns">
-			            <li class="list right">
-			            <h4><strong>Slam!</strong>
-			            Argentina </h4>
-			            <ol>
-			              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor hendrerit sagittis. <br>
-			              <br>
-			               Sed maximus ligula in nunc rutrum, et pretium ex commodo. Nam faucibus est felis, a convallis urna dictum eu. Aenean at erat libero. Fusce ac mattis odio, et laoreet nulla. Vestibulum arcu mauris, sollicitudin non nunc sed, fermentum pharetra velit. Suspendisse facilisis sem quis molestie maximus. Sed consectetur vestibulum est vitae maximus. Nam vestibulum erat non mauris ultrices congue. Nulla at nisi eu arcu dignissim sodales.<br>
-			              <br>
-			               Duis at dui in urna aliquet finibus. Phasellus placerat mi orci, mattis pharetra arcu scelerisque sit amet. Proin varius volutpat ante, a imperdiet erat. Nunc eget risus vestibulum, porta est nec, fermentum libero. Nulla fermentum leo id nunc porttitor, volutpat pharetra nisl pretium. Nunc aliquet feugiat lorem, non semper felis gravida non. Sed libero mi, laoreet eu urna venenatis, ornare euismod nulla. </li>
-			            </ol>
+
+			    	<ul class="about_columns">
+
+		        	 	<li class="list right">
+
+	        	 			<h4>
+
+        	 					Con el objetivo de visibilizar experiencias a nivel nacional e internacional y reflexionar sobre los desafíos de la cultura colaborativa, el <strong>Goethe-Institut</strong>, <strong>Minka</strong>, <strong>El Plan C</strong> y <strong>Cultura Senda</strong> te invitan a ser parte de <strong>“COMUNES. Los caminos de la colaboración”</strong>
+
+        	 				</h4>
+
+	        	 			<ol><li>
+
+	        	 			</li></ol>
+			            
 			            </li>
-			            <li class="list">
-			            <h4>
-			            SLAM<strong>??</strong></h4>
-			            <ol>
-			              <li>
-			               Nunc arcu ante, ultrices non maximus sit amet, imperdiet quis lorem. Donec eleifend, libero ac luctus semper, quam justo sagittis libero, non gravida arcu arcu sit amet odio. Proin ac scelerisque est, eu sodales purus. Phasellus bibendum velit libero, id scelerisque purus auctor porttitor. Fusce vitae ullamcorper lacus. Nulla id quam eu ligula tincidunt pulvinar eu non nisl. 
-			               <br>
-			               <br>
-			               Nunc gravida facilisis urna, vel blandit urna dictum sit amet. Phasellus pretium neque id nunc elementum, vel dapibus odio venenatis. Curabitur quam nulla, finibus quis ultrices vel, lacinia non mi. Aliquam aliquam molestie elit maximus imperdiet. Pellentesque sed finibus ligula. Pellentesque eget tristique augue, non fermentum nulla. Vestibulum placerat dui non nibh posuere, et porttitor nibh dapibus. Curabitur vitae dapibus odio. Morbi tempus tempus arcu, at egestas turpis vulputate bibendum. Donec eu hendrerit augue, rhoncus suscipit magna. Vivamus nec sem in lectus pulvinar accumsan in vel nibh. Integer ut mattis nibh. Ut euismod eros in arcu porta tempus. Suspendisse sem massa, faucibus vitae magna at, luctus interdum magna. </li>
-			            </ol>
-			            </li>
-			          </ul>
+
+			            <li class="list con_sangria">
+
+				            <h4 class="uppercase">Inscribite al evento completando el formulario de registro.</h4>
+
+				            <div class="mini_gap"></div>
+
+				            <ol><li>
+
+				            	texto..
+
+				            </li></ol>
+				        
+				        </li>
+
+			        </ul>
 
 			    </div>
 
@@ -457,72 +235,96 @@
 
 </div>
 
-<!-- SEC: JUGADORES -->
-<div id="sec_jugadores" class="seccion fondo_gris" ng-show="summary.participants_count">
 
-    <div class="contenedor_sec torneo_info_inside">
+<!-- SEC: INVITADOS -->
+<div id="sec_jugadores" class="seccion fondo_gris">
+
+    <div class="contenedor_sec">
+
 	    <div class="titulo wow fadeInDown">
+
 	      	<h2 class="sombra_gris_blanco">
-	        	<i class="icon-jugador"></i>Jugadores
-	        	<small class="label_region">en {{summary.name}}</small>
+
+	        	<i class="fa fa-users"></i>INVITADOS
+
 	      	</h2>
+
 	    </div>
 
 	    <div class="ver_mas wow bounceInRight entrada-1s">
-	    	<a ng-href="/#/jugadores">
-	    		<h3><i class="fa fa-caret-right"></i>ver todos los jugadores</h3>
+
+	    	<a class="link_simple" ng-href="/#/invitados">
+
+	    		<h3><i class="fa fa-caret-right"></i>ver todos los Invitados</h3>
+
 	    	</a>
+
 	    </div>
 
-    	<div class="row">
-    		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="participant in summary.participants">
+    	<div class="row width_90">
+    		
 
+
+    		<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="invitado in summary.participants">
     			<div class="tarjeta_jugador wow fadeInLeft">
-
-    				<a ng-href="/#/jugador/{{participant.id}}"><img ng-src="http://images.collab-dev.com/150x/smart/slam/profiles/{{participant.photo}}"></a>
-
+    				<a class="link2modal"  href data-toggle="modal" data-target="#invitado-{{invitado.id}}">
+    					<img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
+    				</a>
                 	<div class="jug_resumen">
-
-                		<h3>{{participant.name}} {{participant.lastname}}</h3>
-
-                		<div class="data-box">
-
-		        			<span class="icon-box"><i class="icon-copa"></i></span>
-
-		        			<h4>TORNEOS</h4>
-
-		        			<p>+{{participant.competitions.length}}</p>
-						
-						</div>
-
-						<div class="data-box">
-
-		        			<span class="icon-box"><i class="icon-video"></i></span>
-
-		        			<h4>VIDEOS</h4>
-
-		        			<p>+{{participant.medias.length}}</p>
-						
-						</div>
-
+                		<a class="link2modal" data-toggle="modal" data-target="#modal01">
+                			<h4 class="bold">{{invitado.name}} {{invitado.lastname}}</h4>
+                		</a>
+                		<h5>{{invitado.place}}</h5>
+                		<p>{{invitado.about}}</p>
 					</div>
+				</div>
 
+				<!-- Modal -->
+				<div class="modal fade" id="invitado-{{invitado.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">
+									<strong>{{invitado.name}} {{invitado.lastname}}</strong> | {{invitado.place}}
+								</h4>
+							</div>
+							<div class="modal-body">
+                                <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
+								<div class="mini_gap"></div>
+                                <p>{{invitado.about}}</p>
+								<p class="links" ng-if="invitado.google">
+									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
+								</p>
+								<p class="links">
+									<a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> </a> &nbsp;
+							        <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> </a> &nbsp;
+									<a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a> 
+						        </p>
+					        </div>
+
+					        <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					    	</div>
+						</div>
+					</div>
 				</div>
 
 			</div>
+
 
 		</div>
 
 		<div class="mini_gap"></div>
 
-		<a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn eventime_button animated entrada-0s5" href="/#/jugadores" role="button">VER TODOS</a>
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn btn_fondo_claro eventime_button animated entrada-0s5" href="/#/invitados" role="button">VER TODOS</a>
 
 	</div>
 
 </div>
 
 
-<!-- SEC: REGISTRO -->
+<!-- SEC: REGISTRO 
 <div id="planilla-registro" class="seccion planilla row" ng-show="!isAuthenticated()">
     <div class="contenedor_sec">
 
@@ -608,21 +410,19 @@
         </div>
 	</div>
 
-</div>
+</div> -->
 
 
 <!-- SEC: INFORMACIÓN -->
-<div id="info01" class="info_seccion wow slideInRight" ng-if="current_region.id == 1">
+<div id="info01" class="info_seccion wow slideInRight">
 
 	<div class="info_contenedor wow bounceInRight entrada-0s5">
 
-		<h2><i class="fa fa-arrow-up"></i> Seleccioná tu región!</h2>
+		<h2><i class="fa fa-star"></i>INFORMACIÓN</h2>
 
-		<h3>Seleccioná para ver qué está pasando cerca tuyo. </h3>
+		<h3>Texto informativo</h3>
 
-		<h4>DATO +33</h4>
-
-		<p>Texto promocional de algo interesante.. </p>
+		<p>Loren ipsum verbala itsangur rutinae marisinico andarolio amaru yla costandi.  </p>
 
 		<a style="visibility: visible; animation-name: fadeInUpBig;" class="wow fadeInUpBig btn animated" href="#about_menu" role="button">VER MÁS</a>
 
@@ -632,57 +432,67 @@
 
 </div>
 
-<!-- SEC: VIEDEO -->
-<div id="sec_videos" class="seccion fondo_gris" ng-show="summary.videos_count">
 
-    <div class="contenedor_sec torneo_info_inside">
+<!-- SEC: APOYO -->
+<div id="sec_apoyo" class="seccion">
+
+    <div class="contenedor_sec">
 
 	    <div class="titulo wow fadeInDown">
 
 	      	<h2 class="sombra_gris_blanco">
-	        	
-	        	<i class="icon-jugador"></i>Videos
 
-	        	<small class="label_region">en {{summary.name}}</small>
-	      	
+	        	<i class="fa fa-users"></i>APOYOS
+
 	      	</h2>
-	    
+
 	    </div>
 
-	    <div class="ver_mas wow bounceInRight entrada-1s5">
+	    <div class="gap"></div>
 
-	    	<a ng-href="/#/videos">
+    	<div class="row top_line organizan width_90">
 
-	    		<h3><i class="fa fa-caret-right"></i>ver todos los videos</h3>
-	    	
-	    	</a>
-	    	
-	    </div>
+    		<h4>Organizan: </h4>
 
-	    
+    		<div class="mini_gap"></div>
 
-    	<div class="row">
+   			<img class="width_100p" src="/images/LOGO-goethe.png">
 
-    		<div class="col-xs-11 col-md-6 col-lg-4" ng-repeat="video in summary.videos |limitTo: 6">
+   			<img src="/images/LOGO-Minka.png">
 
-    			<div class="tarjeta_video wow fadeInLeft">
+   			<img src="/images/LOGO-planC.png">
 
-    				<div class="embed-responsive embed-responsive-16by9" style="min-height:246px;">
+   			<img src="/images/LOGO-CulturaSenda.png">
 
-					  	<iframe class="embed-responsive-item" ng-src="{{getYoutubeSrc(video)}}" allowfullscreen></iframe>
-					</div>
+   			<div class="gap"></div>
 
-				</div>
+    	</div>
 
-			</div>
 
-		</div>
+    	<div id="apoyan" class="row top_line organizan width_90">
 
-		<a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn eventime_button animated" href="/#/videos" role="button">VER TODOS</a>
+    		<h4>Apoyan: </h4>
 
-	</div>
+    		<div class="mini_gap"></div>
 
+   			<img src="/images/LOGO-CEEBA.jpg">
+
+   			<img class="width_100p" src="/images/LOGO-Usina.png">
+
+   			<img class="width_100p" src="/images/LOGO-Matienzo.png">
+
+   			<img class="width_100p" src="/images/LOGO-Coperable.png">
+
+   		</div>
+
+   		<div class="gap"></div>
+
+    </div>
 </div>
+
+
+
+
 
 
 
@@ -796,7 +606,7 @@
   <div class="contact">
     <div class="mask">
 
-	 	<div class="titulo wow fadeInDown">
+	 	<div class="titulo wow fadeIn">
 
 	      	<h2 class="contacto_tit">
 	        	

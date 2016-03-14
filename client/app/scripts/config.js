@@ -2,7 +2,7 @@
 
 angular.module('config', [])
 
-.constant('api_host', 'http://semanaminka.coperable.org')
+.constant('api_host', 'http://goethe.app')
 
 .constant('instagram_token', '')
 
