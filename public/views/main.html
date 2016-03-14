@@ -53,7 +53,7 @@
 
 	                    </div>
 
-	                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'DD MMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
+	                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
 
 	                    <h5><i class="fa fa-map-marker fa-fw"></i>{{actividad.place}} | {{actividad.location.formatted_address}}</h5>
 
@@ -268,7 +268,7 @@
     		<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="invitado in summary.participants">
     			<div class="tarjeta_jugador wow fadeInLeft">
     				<a class="link2modal"  href data-toggle="modal" data-target="#invitado-{{invitado.id}}">
-    					<img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
+    					<img ng-src="http://images.collab-dev.com/300x320/smart/slam/{{invitado.cover_photo}}">
     				</a>
                 	<div class="jug_resumen">
                 		<a class="link2modal" href data-toggle="modal" data-target="#invitado-{{invitado.id}}">

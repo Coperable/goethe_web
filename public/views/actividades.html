@@ -39,6 +39,7 @@
 
 
     		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="actividad in summary.competitions| orderBy:predicate:reverse">
+            <div class="tarjeta_actividad">
                 <a ng-href="/#/actividad/{{actividad.id}}">
                     <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
                 </a>
@@ -54,10 +55,11 @@
                         <span class="etiqueta" ng-if="actividad.hashtag">{{actividad.hashtag}}</span>
                     </div>
 
-                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'DD MMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
+                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
                     <h5><i class="fa fa-map-marker fa-fw"></i>{{actividad.place}} | {{actividad.location.formatted_address}}</h5>
                 </div>
 
+            </div>
             </div>
 
 	
