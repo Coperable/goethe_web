@@ -90,7 +90,11 @@ class ParticipantController extends Controller {
             $participant->about = $request->input('about');
             $participant->participant = 1;
 
-            $participant->email = $request->input('email');
+            if($request->has('email')) {
+                $participant->email = $request->input('email');
+            } else {
+                $participant->email = $participant->username.'@test.com';
+            }
             $participant->facebook = $request->input('facebook');
             $participant->twitter = $request->input('twitter');
             $participant->instagram = $request->input('instagram');
