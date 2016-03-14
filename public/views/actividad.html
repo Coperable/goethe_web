@@ -34,7 +34,7 @@
 
 						<div class="wow fadeInLeft afiche">
 
-                            <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{competition.cover_photo}}">
+                            <img ng-src="http://images.collab-dev.com/600x400/smart/slam/{{competition.cover_photo}}">
 
 						</div>
 
@@ -71,7 +71,7 @@
                         	<h4><strong>{{competition.place}}</strong></h4> 
 
                        		<h4>
-                       			<a class="link2modal link_sin_color"  data-toggle="modal" data-target="#modalMapa01">{{competition.location.formatted_address}}</a>
+                       			<a href class="link2modal link_sin_color" data-toggle="modal" data-target="#modalMapa01">{{competition.location.formatted_address}}</a>
                        		</h4>
 
                        	</div>
@@ -80,9 +80,7 @@
 
 					<!-- Modal -->
 					<div class="modal fade" id="modalMapa01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						
-						<div class="modal-dialog" role="document">
-						
+						<div class="modal-dialog">
 							<div class="modal-content">
 
 								<div class="modal-header">
@@ -97,11 +95,11 @@
 
 								</div>
 
-								<!--div class="modal-body no_padding" ng-if="competition">
+								<div class="modal-body no_padding" ng-if="competition">
 						        	
 									<iframe ng-src="{{getMapSrc()}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-						        </div-->
+						        </div>
 
 						        <div class="modal-footer">
 
@@ -114,49 +112,61 @@
 
 					<div class="mini_gap"></div>
 
-					<div class="wow fadeInDown">
-                        <div class="itemBox" ng-repeat="invitado in competition.users">
+                    
+                    <div  ng-repeat="invitado in competition.users">
+                        <div class="wow fadeInDown">
+                            <div class="itemBox">
 
-                            <i class="fa fa-user fa-fw fa-2x"></i>
-                            <a href class="link2modal link_sin_color"  data-toggle="modal" data-target="#invitado-{{invitado.id}}">
-                                <h4> <strong>{{invitado.name}} {{invitado.lastname}}</strong> </h4>
-                            </a>
-                            <h4>{{invitado.place}}</h4>
+                                <i class="fa fa-user fa-fw fa-2x"></i>
+                                <h4> <strong>
+                                <a href class="link2modal link_sin_color"  data-toggle="modal" data-target="#invitado-{{invitado.id}}">
+                                    {{invitado.name}} {{invitado.lastname}}
+                                </a>
+                                </strong> </h4>
+                                <h4>{{invitado.place}}</h4>
+                            </div>
+                        </div>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="invitado-{{invitado.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">
-                                                <strong>{{invitado.name}} {{invitado.lastname}}</strong> | {{invitado.place}}
-                                            </h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
-                                            <div class="mini_gap"></div>
-                                            <p>{{invitado.about}}</p>
-                                            <p class="links" ng-if="invitado.google">
-                                                <i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
-                                            </p>
-                                            <p class="links">
-                                                <a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> </a> &nbsp;
-                                                <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> </a> &nbsp;
-                                                <a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a> 
-                                            </p>
-                                        </div>
 
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        </div>
+                             <!-- Modal -->
+                        <div class="modal fade" id="invitado-{{invitado.id}}" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">
+                                            <strong>{{invitado.name}} {{invitado.lastname}}</strong> | {{invitado.place}}
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
+                                        <div class="mini_gap"></div>
+                                        <p>{{invitado.about}}</p>
+                                        <p class="links" ng-if="invitado.google">
+                                            <i class="fa fa-caret-right fa-fw"></i>
+                                            <a class="link_simple" ng-href="{{invitado.google}}" target="_blank">
+                                                <strong>{{invitado.google}}</strong>
+                                            </a>
+                                        </p>
+                                        <p class="links">
+                                            <a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> 
+                                            </a> &nbsp;
+                                            <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> 
+                                            </a> &nbsp;
+                                            <a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> 
+                                            </a> 
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
-					</div>
+
+                    </div>
+
 
 					<div class="mini_gap"></div>
 

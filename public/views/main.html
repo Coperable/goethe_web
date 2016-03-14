@@ -29,7 +29,7 @@
 
     			<div class="tarjeta_actividad">
 
-    				<a ng-href="/#/torneo/{{actividad.id}}">
+    				<a ng-href="/#/actividad/{{actividad.id}}">
     					
     					<img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
 
@@ -37,7 +37,7 @@
 
     				<div class="inner">
 	                 	
-	                    <a ng-href="/#/torneo/{{actividad.id}}">
+	                    <a ng-href="/#/actividad/{{actividad.id}}">
 
 	                    	<h4 class="bold">{{actividad.title}}</h4>
 
@@ -271,7 +271,7 @@
     					<img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
     				</a>
                 	<div class="jug_resumen">
-                		<a class="link2modal" data-toggle="modal" data-target="#modal01">
+                		<a class="link2modal" href data-toggle="modal" data-target="#invitado-{{invitado.id}}">
                 			<h4 class="bold">{{invitado.name}} {{invitado.lastname}}</h4>
                 		</a>
                 		<h5>{{invitado.place}}</h5>
