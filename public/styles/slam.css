@@ -548,11 +548,18 @@ nav {
   font-size: 25px;
   font-weight: 300;
   margin-top: 5px;
+  min-width: 120px;
+  max-width: 180px;
 }
 .navbar-brand img {
-  width: 180px;
+  width: 25%;
   position: fixed;
   top: 10px;
+}
+@media (min-width: 768px) {
+  .navbar-brand {
+    width: 10%;
+  }
 }
 .nav_mask {
   min-height: 59px;
