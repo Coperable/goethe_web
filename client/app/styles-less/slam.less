@@ -72,7 +72,7 @@ PÁGINAS INTERNAS:
 
 --------------------------------------------------------------------- */
 
-@color-principal: 	#d02251;
+@color-principal: 	#e65a3f;
 @color-light:		#fff;
 @color-fondo: 		#ffffff;
 @color-gris: 		#838383;
@@ -88,6 +88,7 @@ PÁGINAS INTERNAS:
 @color-amarillo:	#f6bf19; //#d4aa00;
 @color-mostaza:     #dfb52f;
 @color-fucsia:      #f3558a;
+@color-azul:        #3088b3; 
 
 
 @screen-sm-min:     768px;
@@ -580,11 +581,11 @@ a {
 
 .btn_fondo_claro {
 
-    color: #d02251 !important; 
+    color: @color-principal !important; 
 
     &:hover {
 
-        color: #d02251 !important;
+        color: @color-principal !important;
     }
 
 }
@@ -1033,6 +1034,15 @@ nav {
 
     margin-top: 5px;
 
+    img {
+
+        width: 180px;
+
+        position: fixed;
+
+        top: 10px; 
+    }
+
 }
 
 .nav_mask {
@@ -1093,6 +1103,8 @@ nav {
     margin-top: 12px;
 
 }
+
+
 
 // -------------------------- SLIDER -----------------------------------
 
@@ -1283,15 +1295,44 @@ nav {
 
     .logo-principal {
 
-        max-width: 200px;
+        max-width: 500px;
 
         width: 50%;
+
+        top: 300px; 
 
         //margin-left: 80px;
 
     }
 }
 
+
+//LOGO DEBAJO DE FILTRO
+.logo-principal {
+
+    position: absolute;
+
+    left: 44%;
+
+    top: 22%; 
+
+    img {
+
+        position: relative;
+
+        left: -50%; 
+
+        max-width: 500px;
+
+        width: 50%;
+
+        margin-left: 38%; 
+
+        //margin-left: 80px;
+
+    }
+
+}
 
 .details {
 
@@ -2271,7 +2312,7 @@ mask {
 
     //background-image: url("../images/IMG-HEADER033.jpg"); 
 
-    background: @color-principal;
+    background: @color-azul;
 
     //opacity: 0.6;
 
@@ -3503,11 +3544,16 @@ footer .first_line,
 
 /*!------------------------------ Background settings | Transparents in RGBA and Background images ------------------------------*/
 
-.nav_mask,
+.nav_mask {
+
+    background: rgba(0, 0, 0, 0.8);
+
+}
+
 
 .footer {
 
-    background: rgba(0, 0, 0, 0.8);
+    background: @color-amarillo; 
 
 }
 
@@ -3589,13 +3635,18 @@ a, a:hover, a:active, a:focus {
 }
 
 
-.organizan {
+.logos {
+
+    div {
+
+        margin-top: 20px; 
+
+        text-align: center;
+    }
 
     img {
 
-        width: 150px; 
-
-        margin-right: 100px; 
+        width: 90%; 
 
         &.width_100p {
 
@@ -3605,6 +3656,35 @@ a, a:hover, a:active, a:focus {
         &.width_200p {
 
             width: 200px !important; 
+        }
+
+        &.width_80 {
+
+            width: 80%; 
+        }
+
+        &.width_60 {
+
+            width: 60%; 
+        }
+
+        &.coperable {
+
+            float: right;
+
+            width: 100%; 
+
+            /* Small devices (tablets, 768px and up) */
+            @media (min-width: @screen-sm-min) {
+
+                width: 30%;
+
+            }
+
+            border-left: 1px solid #fff; 
+
+            padding: 20px 0px 20px 20px; 
+
         }
     }
 }

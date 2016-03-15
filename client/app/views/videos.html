@@ -1,61 +1,201 @@
 <div class="gap"></div>
 
-<div id="sec_jugadores" class="seccion fondo_gris">
+<!-- SEC: VIEDEO -->
+<div id="sec_videos" class="seccion fondo_gris">
 
-    <div class="contenedor_sec torneo_info_inside">
+	<!--<div class="first_line wow fadeInDown"></div>-->
+
+    <div class="contenedor_sec">
 
 	    <div class="titulo wow fadeInDown">
+
 	      	<h2 class="sombra_gris_blanco">
-	        	<i class="icon-jugador"></i>Videos
-	        	<small class="label_region">en {{summary.name}} </small>
+	        	
+	        	<i class="fa fa-play-circle"></i>Videos
+	      	
 	      	</h2>
+	    
 	    </div>
 
-	    <div class="mini_gap"></div>
+	    <!--
+	    <div class="ver_mas wow bounceInRight entrada-1s5">
 
-	    <!-- FILTROS: -->
-	    <div class="form-group">
+	    	<a href="">
+
+	    		<h3><i class="fa fa-caret-right"></i>ver todos los videos</h3>
 	    	
-	    	<a class="btn eventime_button btn_filtro" href role="button" ng-click="direction(false)"><i class="fa fa-sort-alpha-asc"></i></a>
-	    	<a class="btn eventime_button btn_filtro" href role="button" ng-click="direction(true)"><i class="fa fa-sort-alpha-desc"></i></a>
-	    	<a class="btn eventime_button btn_filtro" href role="button" ng-click="sort('date')"><i class="fa fa-clock-o"></i> Recientes</a>
-	    	<a class="btn eventime_button btn_filtro" href role="button" ng-click="sort('ranking')"><i class="icon-copa"></i> Ranking</a>
-
-	    	<div class="input-group busqueda">
-	    		<input type="text" ng-model="search_term" class="form-control" id="direccion" placeholder="BÚSQUEDA">
-	    		<div class="input-group-addon" ng-click="doSearch()"><i class="fa fa-search"></i></div>
-	    	</div>
-
+	    	</a>
+	    	
 	    </div>
+	    -->
 
-	    <div class="row">
+    	<div class="row">
 
-    		<div class="col-xs-11 col-md-6 col-lg-4"  ng-repeat="video in videos">
+    		<div class="col-xs-11 col-md-6 col-lg-4">
 
     			<div class="tarjeta_video wow fadeInLeft">
 
     				<div class="embed-responsive embed-responsive-16by9">
 
-					  	<iframe class="embed-responsive-item" ng-src="{{getYoutubeSrc(video)}}" allowfullscreen></iframe>
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HoAi9jjm43w" allowfullscreen></iframe>
 
 					</div>
+
+					<h4><strong>Lala Deheinzelin</strong></h4>
 
 				</div>
 
 			</div>
 
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RbggACxQzO0" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Lala Deheinzelin</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2z4vnXpO4nk" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Lala Deheinzelin</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KkZZlSHU8-E" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Neal Gorenflo</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Zl08ym5pl80" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Neal Gorenflo</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/e3ldyJqFeIQ" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Neal Gorenflo</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3z1NJZom81w" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>David de Ugarte</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WtxNtG0FNTs" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>David de Ugarte</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GjH44IfULXw" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>David de Ugarte</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wmY8-U4vU9c" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>David de Ugarte</strong></h4>
+
+				</div>
+
+			</div>
 
 		</div>
 
-
-
-
-
-		<div class="mini_gap"></div>
-
-		<a style="visibility: visible; animation-name: bounceInRight;" class="wow bounceInRight btn eventime_button animated entrada-0s5" href="#about_menu" role="button">CARGAR MÁS..</a>
-
-		<div class="mini_gap"></div>
+		<!--
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn btn_fondo_claro eventime_button animated" href="/#/videos" role="button">CARGAR MÁS</a>
+		-->
 
 	</div>
 

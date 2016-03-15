@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
 
-    <title>Semana Minka</title>
+    <title>COMUNES</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -24,7 +24,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/custom.css">
-    <link rel="stylesheet" href="styles/colors.css">
+    <!--link rel="stylesheet" href="styles/colors.css"-->
     <link rel="stylesheet" href="styles/slam.css">
     <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,700,300' rel='stylesheet' type='text/css'>
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="./fonts/fontello/css/animation.css">
     <link rel="stylesheet" href="./fonts/fontello/css/slam.css">
 
-    <link ng-if="current_region" rel="stylesheet" ng-href="ccolorss/colors_{{current_region.id}}.css">
+    <link ng-if="current_region" rel="stylesheet" ng-href="ccolorss/colors_1.css">
 
     <base href="/">
 
@@ -64,7 +64,9 @@
                 </button>
                 
                 <a class="navbar-brand" ng-href="/#/">
-                    <!--i class="icon-slam-logo04 icono-principal logo-nav"></i-->
+
+                    <img src="/images/LOGO-COMUNES.png">
+
                 </a>
 
             </div>
@@ -117,25 +119,33 @@
             
             <div class="item active ">
                 
-                <div class="fill" style="background-image:url('images/IMG-HEADER10.jpg');"></div>
+                <!--div class="fill" style="background-image:url('images/IMG-HEADER10.jpg');"></div-->
+
+                <div class="fill" style="background-color: #e65a3f;"></div>
+
+                <div class="logo-principal">
+
+                    <img src="images/LOGO-COMUNES-animated.gif">
+                
+                </div>
                 
                 <div class="fill_mask">
 
                     <div class="description ">
 
-                        <h2 class="details inicial wow fadeInDown entrada-1s5">
+                        <!--h2 class="details inicial wow fadeInDown entrada-1s5">
 
-                            <img class="logo-principal" src="images/LOGO-Minka.png">
+                            <img class="logo-principal" src="images/LOGO-COMUNES-animated.gif">
                         
                         </h2>
                         
-                        <div class="details wow fadeInUp">
+                        <!--div class="details wow fadeInUp">
                         
                             <p>
                                 Argentina
                             </p>
                         
-                        </div>
+                        </div-->
                         <div class="buttons ">
                             <a class="wow fadeInLeft btn eventime_button" href ng-click="scrollTo('about_menu')" role="button">
                                 Conocer más </a>
@@ -241,17 +251,51 @@
 
         <div class="footer">
 
-            <div class="creditos">
+            <div class="logos row">
 
-                <!--img src="/images/slam-logo-blanco.png"-->
+                <div class="col-xs-3 col-md-1">
 
-                <div class="segunda-linea">
-                
-                    <p></p>
-                
+                    <img src="/images/LOGO-COMUNES-blanco.png">
+
+                </div>
+
+                <div class="col-xs-3 col-md-1">
+
+                </div>
+
+                <div class="col-xs-3 col-md-1">
+
+                    <img class="width_80" src="/images/LOGO-goethe-blanco.png">
+
+                </div>
+
+                <div class="col-xs-3 col-md-1">
+
+                    <img src="/images/LOGO-Minka-blanco.png">
+
+                </div>
+
+                <div class="col-xs-6 col-md-2">
+
+                    <img class="width_80" src="/images/LOGO-planC-blanco.png">
+
+                </div>
+
+                <div class="col-xs-3 col-md-1">
+
+                    <img src="/images/LOGO-cSenda-blanco.png">
+
+                </div>
+
+                <div class="col-xs-3 col-md-5">
+
+                    <img class="coperable" src="/images/LOGO-coperable-blanco.png">
+
                 </div>
 
             </div>
+
+            <div class="gap"></div>
 
         </div>
 
