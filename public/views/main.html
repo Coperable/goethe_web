@@ -43,13 +43,13 @@
 
 	                    </a>
 
-	                    <h5>{{actividad.description}}</h5>
+	                    <h5>{{actividad.description|words:10}}</h5>
 
-	                    <div class="etiquetas">
+	                    <div class="etiquetas" ng-if="actividad.hashtag">
 
 	                    	<i class="fa fa-tag"></i>
 
-	                    	<span class="etiqueta" ng-if="actividad.hashtag">{{actividad.hashtag}}</span>
+	                    	<span class="etiqueta">{{actividad.hashtag}}</span>
 
 	                    </div>
 
@@ -265,7 +265,7 @@
     		
 
 
-    		<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="invitado in summary.participants">
+    		<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="invitado in random_participants|limitTo:6">
     			<div class="tarjeta_jugador wow fadeInLeft">
     				<a class="link2modal"  href data-toggle="modal" data-target="#invitado-{{invitado.id}}">
     					<img ng-src="http://images.collab-dev.com/300x320/smart/slam/{{invitado.cover_photo}}">
@@ -275,7 +275,7 @@
                 			<h4 class="bold">{{invitado.name}} {{invitado.lastname}}</h4>
                 		</a>
                 		<h5>{{invitado.place}}</h5>
-                		<p>{{invitado.about}}</p>
+                		<p>{{invitado.about|words:10}}</p>
 					</div>
 				</div>
 
@@ -418,19 +418,106 @@
 
 	<div class="info_contenedor wow bounceInRight entrada-0s5">
 
-		<h2><i class="fa fa-star"></i>INFORMACIÓN</h2>
+		<h2><i class="fa fa-star"></i>COMUNES</h2>
 
-		<h3>Texto informativo</h3>
+		<h3>Los caminos de la colaboración</h3>
 
-		<p>Loren ipsum verbala itsangur rutinae marisinico andarolio amaru yla costandi.  </p>
+		<p>Se realiza en la antesala del simposio internacional “The Sharing Game. Exchange in Culture and Society” que el Goethe-Institut organiza en junio de 2016 en Weimar (Alemania) y forma parte de la programación argentina de la 3ra. Edición de la Semana de la Economía Colaborativa promovida por Minka.  </p>
 
-		<a style="visibility: visible; animation-name: fadeInUpBig;" class="wow fadeInUpBig btn animated" href="#about_menu" role="button">VER MÁS</a>
+		<a style="visibility: visible; animation-name: fadeInUpBig;" class="wow fadeInUpBig btn animated" href="#about_menu" role="button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform">INSCRIBITE</a>
 
 	</div>
 
     <div class="mini_gap"></div>
 
 </div>
+
+
+<!-- SEC: VIEDEO -->
+<div id="sec_videos" class="seccion fondo_gris">
+
+	<!--<div class="first_line wow fadeInDown"></div>-->
+
+    <div class="contenedor_sec">
+
+	    <div class="titulo wow fadeInDown">
+
+	      	<h2 class="sombra_gris_blanco">
+	        	
+	        	<i class="fa fa-play-circle"></i>Videos
+	      	
+	      	</h2>
+	    
+	    </div>
+
+	    <div class="ver_mas wow bounceInRight entrada-1s5">
+
+	    	<a href="/#/videos" class="link_simple">
+
+	    		<h3><i class="fa fa-caret-right"></i>ver todos los videos</h3>
+	    	
+	    	</a>
+	    	
+	    </div>
+
+    	<div class="row">
+
+    		<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/HoAi9jjm43w" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Lala Deheinzelin</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KkZZlSHU8-E" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>Neal Gorenflo</strong></h4>
+
+				</div>
+
+			</div>
+
+			<div class="col-xs-11 col-md-6 col-lg-4">
+
+    			<div class="tarjeta_video wow fadeInLeft">
+
+    				<div class="embed-responsive embed-responsive-16by9">
+
+					  	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WtxNtG0FNTs" allowfullscreen></iframe>
+
+					</div>
+
+					<h4><strong>David de Ugarte</strong></h4>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn btn_fondo_claro eventime_button animated" href="/#/videos" role="button">VER TODOS</a>
+
+	</div>
+
+</div>
+
 
 
 <!-- SEC: APOYO -->
@@ -450,40 +537,96 @@
 
 	    <div class="gap"></div>
 
-    	<div class="row top_line organizan width_90">
+    	<div class="top_line logos width_90">
 
     		<h4>Organizan: </h4>
 
-    		<div class="mini_gap"></div>
+    		<div class="row logos">
 
-   			<img class="width_100p" src="/images/LOGO-goethe.png">
+    			<div class="col-xs-3 col-md-2">
 
-   			<img src="/images/LOGO-Minka.png">
+                    <img class="width_60" src="/images/LOGO-goethe.png">
 
-   			<img src="/images/LOGO-planC.png">
+                </div>
 
-   			<img src="/images/LOGO-CulturaSenda.png">
+                <div class="col-xs-3 col-md-2">
+
+                    <img src="/images/LOGO-Minka.png">
+
+                </div>
+
+                <div class="col-xs-3 col-md-3">
+
+                    <img class="width_80" src="/images/LOGO-planC.png">
+
+                </div>
+
+                <div class="col-xs-3 col-md-2">
+
+                    <img src="/images/LOGO-CulturaSenda.png">
+
+                </div>
+
+    		</div>
 
    			<div class="gap"></div>
 
     	</div>
 
 
-    	<div id="apoyan" class="row top_line organizan width_90">
+    	<div id="apoyan" class="top_line width_90">
 
     		<h4>Apoyan: </h4>
 
+    		<div class="row logos">
+
+    			<div class="col-xs-3 col-md-1">
+
+                    <img src="/images/LOGO-Usina.png">
+
+                </div>
+
+                <div class="col-xs-4 col-md-2">
+
+                    <img class="width_60" src="/images/LOGO-Matienzo.png">
+
+                </div>
+
+                <div class="col-xs-5 col-md-2">
+
+                    <img src="/images/LOGO-CEEBA.jpg">
+
+                </div>
+
+                <div class="col-xs-6 col-md-2">
+
+                    <img class="width_60" src="/images/LOGO-Recursos.png">
+
+                </div>
+
+                <div class="col-xs-4 col-md-1">
+
+                    <img src="/images/LOGO-Coperable.png">
+
+                </div>
+
+                <div class="col-xs-3 col-md-1">
+
+                    <img src="/images/LOGO-Akapacha.png">
+
+                </div>
+
+                <div class="col-xs-4 col-md-2">
+
+                    <img class="width_80" src="/images/LOGO-Faccion.png">
+
+                </div>
+
+    		</div>
+
     		<div class="mini_gap"></div>
 
-   			<img src="/images/LOGO-CEEBA.jpg">
-
-   			<img class="width_100p" src="/images/LOGO-Usina.png">
-
-   			<img class="width_100p" src="/images/LOGO-Matienzo.png">
-
-   			<img class="width_100p" src="/images/LOGO-Coperable.png">
-
-   		</div>
+   		</div-->
 
    		<div class="gap"></div>
 
@@ -615,8 +758,7 @@
 	      	</h2>
       <div class="first_description">
         <p>
-           The Design Days Conference will take place at the Main Conference Hall New York, located at 151 East Wacker NY 60601. <br>
-           Come and enjoy the unique atmosphere of one of the most beautiful theatres in Bratislava, and the city which has so much to offer.
+           El encuentro ¨Comunes. Los caminos de la colaboración¨ tiene lugar en varios espacios de Buenos Aires, elegidos para mostrar diversas experiencias y modelos de gestión en colaboración, descentralizar las actividades y facilitar el intercambio con iniciativas diversas.
         </p>
       </div>
       <div class="mini_gap">
@@ -628,56 +770,76 @@
       -->
       
       <div class="contact_information">
-        <h6 class="wow fadeIn">
-        VENUE </h6>
+        
+        <h6 class="wow fadeIn">LOCALES</h6>
+
+        <h4><strong>Centro Cultural de la Cooperación Floreal Gorini</strong></h4>
+        <h4><i class="fa fa-map-marker"></i> Av. Corrientes 1543, Buenos Aires</h4>
+
         <p class="wow fadeIn">
-           One of the oldest Halls in NY has been praised by hosting actors from Hungary, Austria and Germany for ages. Situated on the south bank of the river and surrounded by a park, Arena Hals is just a few moments away from the historical center of NY. Be it for its beautiful historic look or super convenient location, we are very delighted to host our conference at this exceptional venue. <br>
-          <br>
-           <span class="texticon fa fa-home"></span>Address: 151 East Wacker NY 60601 <br>
-           <span class="texticon fa fa-street-view"></span>GPS coordinates: 438.135696,317.114645
+
+           Un espacio para el desarrollo de una intelectualidad crítica, con orientación anticapitalista, afirmada en los principios y valores de la cooperación.<br>
+
+           <a href="www.centrocultural.coop/"><i class="fa fa-caret-right"></i>www.centrocultural.coop/</a> 
+        
         </p>
-        <h6 class="wow fadeIn">
-        NEARBY ACCOMODATION </h6>
-        <p class="wow fadeIn">
-           Are you looking for a place to stay? <br>
-          <br>
-           NY has the accommodation for everyone, whatever your budget. We recommend, when selecting a hotel, going for one of the many hotels in the city center. Most of them offer a spectacular view of the historic part of town and the city landmarks. Thanks to the convenient central location, you will be able to experience the city's most charismatic areas firsthand.
+
+       	<div class="mini_gap"></div>
+
+        <h4><strong>Club Cultural Matienzo</strong></h4>
+        <h4><i class="fa fa-map-marker"></i> Pringles 1249, Buenos Aires</h4>
+
+        <p class="wow fadeIn">Club Cultural Matienzo es un espacio, un equipo productor de contenidos culturales, y un proyecto independiente de arte, cultura y sociedad. Desde 2008, un equipo de actualmente 80 personas gestionamos Matienzo en forma colectiva, organizados en áreas de trabajo vinculadas entre sí. A través de ellas creamos y/o producimos actividades y proyectos que tienen lugar tanto en nuestro espacio como fuera y más allá de él.<br>
+
+           <a target="_blank" href="http://ccmatienzo.com.ar/wp/"><i class="fa fa-caret-right"></i>http://ccmatienzo.com.ar</a> 
+        
         </p>
+
+       	<div class="mini_gap"></div>
+
+        <h4><strong>Punto de encuentro</strong></h4>
+        <h4><i class="fa fa-map-marker"></i> Pringles 1249, Buenos Aires</h4>
+
+        <p class="wow fadeIn">De jueves a sábado, a partir de las 20 hs nos reunimos en la Terraza del Club Cultural Matienzo, un espacio ideal para  compartir comidas caseras, cervezas y tragos. Acercate y compartí con nuestros invitados, amigos y colaboradores.
+        </p>
+
       </div>
+      
       <div class="contact_information">
-        <h6 class="wow fadeIn">
-        Food & Drink </h6>
+      
+        <h6 class="wow fadeIn">DATOS DE CONTACTO </h6>
+
+        <b class="wow fadeIn">Prensa:</b>
+        
         <p class="wow fadeIn">
-           We prepared for you the best tips on nice places to eat & drink at NY Main Hall. Everything can be reached on foot in a few minutes.
+             Belén Charpentier 
         </p>
-        <h6 class="wow fadeIn">
-        Contacts </h6>
-        <b class="wow fadeIn">Aaron Doe</b>
+        
+        <b class="wow fadeIn">Cobertura Colaborativa:</b>
+        
         <p class="wow fadeIn">
-             <span class="texticon fa fa-comment"></span>All media inquiries related to the Design Community
-        <br>
-           <span class="texticon fa fa-envelope"></span> doe@examle.com 
-           <br>
-           <span class="texticon fa fa-phone"></span> 919-123-1233 or 123-123-123
+        Ma. José Giovo
         </p>
-        <b class="wow fadeIn">Lyn Doe</b>
+        
+        <b class="wow fadeIn">Inscripciones y programación:</b>
+        
         <p class="wow fadeIn">
-           Event Customer Service Manager<br>
-           <span class="texticon fa fa-comment"></span>Questions about conference registration. <br>
-           <span class="texticon fa fa-envelope"></span>designlive@example.com
-           <br>
-            <span class="texticon fa fa-phone"></span>1-123-123-1233, option 2
+        Adriana Benzaquen <br>
+        <i class="fa fa-caret-right"></i>encuentrocomunes@gmail.com
         </p>
+        
         <a href="#" class="contact_icon fa fa-facebook wow fadeInUp">
         </a>
         <a href="#" class="contact_icon fa fa-twitter wow fadeInUp">
         </a>
-        <a href="#" class="contact_icon fa fa-google-plus wow fadeInUp">
+
+        <!--a href="#" class="contact_icon fa fa-google-plus wow fadeInUp">
         </a>
         <a href="#" class="contact_icon fa fa-pinterest-p wow fadeInUp">
         </a>
         <a href="#" class="contact_icon fa fa-sellsy wow fadeInUp">
-        </a>
+        </a-->
+
       </div>
       <div class="mini_gap">
       </div>

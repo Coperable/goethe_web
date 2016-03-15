@@ -52,7 +52,7 @@
 
                 		<h5>{{invitado.place}}</h5>
 
-                		<p>{{invitado.about}}</p>
+                		<p>{{invitado.about|words:10}}</p>
                 		
 					</div>
 
@@ -72,7 +72,7 @@
 							<div class="modal-body">
                                 <img ng-src="http://images.collab-dev.com/300x320/smart/slam/{{invitado.cover_photo}}">
 								<div class="mini_gap"></div>
-                                <p>{{invitado.about}}</p>
+                                <p ng-bind-html="newlines(invitado.about)"></p>
 								<p class="links" ng-if="invitado.google">
 									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
 								</p>

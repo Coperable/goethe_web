@@ -4,4 +4,9 @@ angular.module('slamApp')
         return moment(dateString).locale('es').format(format);
     };
 })
+.filter('newlines', function(){
+    return function(text) {
+        return text.replace(/\n/g, '<br/>');
+    };
+});
 

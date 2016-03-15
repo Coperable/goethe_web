@@ -11,7 +11,9 @@ angular.module('slamApp')
 .controller('MainCtrl', function ($scope, $rootScope, $http, $sce, api_host, Region, Account) {
 	$rootScope.home_page = true;
 
-    $scope.summary = {};
+    $scope.summary = $rootScope.region_summary;
+
+    $scope.random_participants = [];
 
     $scope.setup_components = function() {
         setTimeout(function() {
@@ -33,6 +35,10 @@ angular.module('slamApp')
             });
 
         }, 1000);
+        if($scope.summary) {
+            $scope.random_participants = _.shuffle($scope.summary.participants);
+        }
+
     };
 
     $scope.setup_components();
@@ -41,6 +47,7 @@ angular.module('slamApp')
 
     $rootScope.$on("region_summary", function(event, summary) {
         $scope.summary = summary;
+        $scope.random_participants = _.shuffle($scope.summary.participants);
     });
 
     $scope.getYoutubeSrc = function(video) {
@@ -98,7 +105,7 @@ angular.module('slamApp')
 .controller('sessionBar', function ($scope, $rootScope, $http, $route, $location, Region, Account) {
     $scope.regions = [];
     $scope.region = {};
-    $scope.summary = {};
+    $scope.summary = $rootScope.region_summary;
 
     $scope.is_authenticated = false;
     $scope.account = false;
@@ -196,6 +203,8 @@ angular.module('slamApp')
 
 })
 .controller('invitado-list', function ($scope, $rootScope, $http, api_host, Region, Account) {
+
+    $scope.summary = $rootScope.region_summary;
 	$rootScope.home_page = false;
 
 	$scope.predicate = 'lastname';
@@ -205,11 +214,19 @@ angular.module('slamApp')
         $scope.reverse = direction;
     };
 
+    $scope.newlines = function(text) {
+        return text.replace(/\n/g, '<br/>');
+    };
+
     $scope.sort = function(field) {
 
     };
 
     $scope.participants = [];
+
+    $rootScope.$on("region_summary", function(event, summary) {
+        $scope.processSummary();
+    });
 
     $scope.processSummary = function() {
         if($rootScope.region_summary) {

@@ -132,6 +132,7 @@ angular.module('slamApp')
             //this.broadcastRegion();
         },
         fetchRegionSummary: function() {
+            console.log('fech ');
             $http.get(api_host+'/api/region/'+this.current_region.id+'/summary').success(function(summary_data) {
                 $rootScope.region_summary = summary_data;
                 $rootScope.$broadcast("region_summary", summary_data);
