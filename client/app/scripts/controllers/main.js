@@ -15,6 +15,10 @@ angular.module('slamApp')
 
     $scope.random_participants = [];
 
+    $scope.newlines = function(text) {
+        return text.replace(/\n/g, '<br/>');
+    };
+
     $scope.setup_components = function() {
         setTimeout(function() {
             jQuery("#home_slider_2").carousel({

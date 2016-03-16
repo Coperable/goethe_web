@@ -18,7 +18,7 @@ return [
 
 	'url' => env('URL_BASE', 'http://localhost'),
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Argentina/Buenos_Aires',
 
     'locale' => 'en',
 
