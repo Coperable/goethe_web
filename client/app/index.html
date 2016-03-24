@@ -52,8 +52,11 @@
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-fixed-top nav_mask" data-ng-controller="sessionBar">
+
         <div class="navi_container">
+
             <div class="navbar-header">
+
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">
                         Toggle navigation 
@@ -62,46 +65,71 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
+            </div>
+
+            <div class="navbar-logo">
+
+                <div>
                 
-                <a class="navbar-brand" ng-href="/#/">
+                    <a ng-href="/#/">
 
-                    <img src="/images/LOGO-COMUNES.png">
+                        <img src="/images/LOGO_COMUNES_01.png">
 
-                </a>
+                    </a>
+
+                </div>
 
             </div>
             
             <div id="navbar" class="navbar-collapse collapse">
             
                 <ul class="nav navbar-nav">
+
                     <li>
-                        <a href="/#/"> <!-- para tooltip: data-toggle="tooltip" data-placement="bottom" title="Torneos" -->
+                        <a href ng-click="scrollTo('acerca_de_posicion')"> <!-- para tooltip: data-toggle="tooltip" data-placement="bottom" title="Torneos" -->
                             <i class="fa fa-certificate"></i> PRESENTACIÓN
                         </a>
                     </li>
+
                     <li>
                         <a href="/#/invitados">
                             <i class="fa fa-users"></i> INVITADOS
                         </a>
                     </li>
+
                     <li>
                         <a href="/#/actividades">
                             <i class="fa fa-calendar"></i> PROGRAMACIÓN
                         </a>
                     </li>
-                    <li>
-                        <a  href="http://facebook.com/minka" target="_blank">
-                            <i class="fa fa-star"></i> NOVEDADES
-                        </a>
-                    </li>
+
                     <li>
                         <a  href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank">
                             <i class="fa fa-pencil"></i> INSCRIPCIÓN
                         </a>
                     </li>
+
                     <li>
                         <a href ng-click="scrollTo('sec_apoyo')">
                             <i class="fa fa-thumbs-up"></i> APOYOS
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href ng-click="scrollTo('contact_menu')">
+                            <i class="fa fa-user-plus"></i> Contacto
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  href="http://facebook.com/minka" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a  href="http://facebook.com/minka" target="_blank">
+                            <i class="fa fa-twitter"></i>
                         </a>
                     </li>
 
@@ -119,9 +147,9 @@
             
             <div class="item active ">
                 
-                <!--div class="fill" style="background-image:url('images/IMG-HEADER10.jpg');"></div-->
+                <div class="fill" style="background-image:url('images/FONDO-LOGOS.png');"></div>
 
-                <div class="fill" style="background-color: #e65a3f;"></div>
+                <div class="fill" style="background-color: #2fc9db;"></div>
 
                 <div class="logo-principal">
 
@@ -147,9 +175,9 @@
                         
                         </div-->
                         <div class="buttons ">
-                            <a class="wow fadeInLeft btn eventime_button" href ng-click="scrollTo('about_menu')" role="button">
+                            <a class="btn eventime_button" href ng-click="scrollTo('acerca_de_posicion')" role="button">
                                 Conocer más </a>
-                            <a class="wow fadeInRight btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button">
+                            <a class="btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button">
                                 Registrate 
                             </a>
                         </div>
@@ -179,7 +207,7 @@
                             </p>
                         </div>
                         <div class="buttons ">
-                            <a ng-if="slider.about_action == 1" class="wow fadeInLeft btn eventime_button" href="#about_menu" role="button">
+                            <a ng-if="slider.about_action == 1" class="wow fadeInLeft btn eventime_button" href="#acerca_de_posicion" role="button">
                                 Conocer más 
                             </a>
                             <a ng-if="slider.signup_action == 1" class="wow fadeInRight btn eventime_button" href="#planilla-registro" role="button">
@@ -251,45 +279,123 @@
 
         <div class="footer">
 
-            <div class="logos row">
+            <div class="hidden-xs">
 
-                <div class="col-xs-3 col-md-1">
+                <div class="logos row v-center">
 
-                    <img src="/images/LOGO-COMUNES-blanco.png">
+                    <div class="col-xs-2 col-md-2"> 
+
+                        <img class="width_80" src="/images/LOGO_COMUNES_02.png">
+
+                    </div>
+
+                    <div class="visible-lg-block col-lg-1"> 
+
+                    </div>
+
+                    <div class="col-xs-1 col-md-1">
+
+                        <img class="width_80" src="/images/LOGO-goethe-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-1 col-md-1">
+
+                        <img src="/images/LOGO-Minka-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-2 col-md-2 col-lg-1">
+
+                        <img class="width_80" src="/images/LOGO-planC-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-1 col-md-1">
+
+                        <img src="/images/LOGO-cSenda-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-2 col-md-2">
+
+                        <img class="width_80" src="/images/LOGO-CCC_blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-1 col-md-1">
+
+                    </div>
+
+                    <div class="col-xs-2 col-md-2 wow fadeInRight entrada-1s">
+
+                        <a target="_blank" href="coperable.org"><img class="coperable" src="/images/LOGO-coperable-blanco.png"></a>
+
+                    </div>
 
                 </div>
 
-                <div class="col-xs-3 col-md-1">
+            </div>
+
+            <div class="visible-xs-block">
+
+                <div class="row logos">
+
+                    <div class="col-xs-4"></div>
+
+                    <div class="col-xs-4">
+
+                        <img class="width_60" src="/images/LOGO_COMUNES_02.png">
+
+                    </div>
+
+                    <div class="col-xs-4"></div>
 
                 </div>
 
-                <div class="col-xs-3 col-md-1">
+                <div class="mini_gap"></div>
 
-                    <img class="width_80" src="/images/LOGO-goethe-blanco.png">
+                <div class="logos row v-center">
+
+                    <div class="col-xs-2">
+
+                        <img class="width_80" src="/images/LOGO-goethe-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-2">
+
+                        <img src="/images/LOGO-Minka-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-3">
+
+                        <img class="width_80" src="/images/LOGO-planC-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-2">
+
+                        <img src="/images/LOGO-cSenda-blanco.png">
+
+                    </div>
+
+                    <div class="col-xs-3">
+
+                        <img class="width_80" src="/images/LOGO-CCC_blanco.png">
+
+                    </div>
 
                 </div>
 
-                <div class="col-xs-3 col-md-1">
+                <div class="row logos">
 
-                    <img src="/images/LOGO-Minka-blanco.png">
+                    <div class="col-xs-4">
 
-                </div>
+                        <a target="_blank" href="coperable.org"><img class="coperable" src="/images/LOGO-coperable-blanco.png"></a>
 
-                <div class="col-xs-6 col-md-2">
-
-                    <img class="width_80" src="/images/LOGO-planC-blanco.png">
-
-                </div>
-
-                <div class="col-xs-3 col-md-1">
-
-                    <img src="/images/LOGO-cSenda-blanco.png">
-
-                </div>
-
-                <div class="col-xs-3 col-md-5">
-
-                    <img class="coperable" src="/images/LOGO-coperable-blanco.png">
+                    </div>
 
                 </div>
 

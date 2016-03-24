@@ -1,9 +1,9 @@
 
 <div id="sec_torneosAnteriores" class="seccion fondo_gris">
 
-    <div class="contenedor_sec wow fadeInLeftBig">
+    <div class="contenedor_sec">
 
-	    <div class="titulo wow fadeInDown">
+	    <div class="titulo wow fadeIn">
 
 	      	<h2 class="sombra_gris_blanco">
 	        	
@@ -23,9 +23,9 @@
 	    	
 	    </div>
 
-    	<div class="row width_90">
+    	<div class="row width_90 wow fadeInLeftBig">
 
-    		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="actividad in summary.competitions">
+    		<div class="col-xs-12 col-sm-5 col-md-4 container_tarj_act" ng-repeat="actividad in summary.competitions">
 
     			<div class="tarjeta_actividad">
 
@@ -53,9 +53,11 @@
 
 	                    </div>
 
-	                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
+	                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <br>
+	                    	<i class="fa fa-caret-right-o fa-fw"></i> <span style="font-size:14pt"><strong>{{actividad.event_date | moment: 'HH:mm'}}</strong></span></h5>
 
-	                    <h5><i class="fa fa-map-marker fa-fw"></i>{{actividad.place}} | {{actividad.location.formatted_address}}</h5>
+	                    <h5><i class="fa fa-map-marker fa-fw alineado"></i><strong class="alineado">{{actividad.place}}</strong></h5>
+	                    <h5 class="segunda-ln"><i class="fa fa-angle-right-o fa-fw alineado"></i><span class="alineado"> {{actividad.location.formatted_address}}</span></h5>
 
 	                </div>
 
@@ -66,9 +68,13 @@
 
 	    </div>
 
+	    <h4><strong><a href="" class="link_simple"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
+
 	    <div class="mini_gap"></div>
 
-	    <a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn btn_fondo_claro eventime_button animated" href="/#/actividades" role="button">VER TODAS</a>
+	    <a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/actividades" role="button">VER TODAS</a>
+
+	    <div class="mini_gap" id="acerca_de_posicion"></div>
 
 	    <div class="mini_gap"></div>
 	
@@ -90,7 +96,7 @@
 
 		        <li class="active">
 
-		        	<a class="wow fadeInDown btn eventime_button graybtn active" data-toggle="tab" role="button" data-target="#sectionA">
+		        	<a class="btn eventime_button graybtn active" data-toggle="tab" role="button" data-target="#sectionA">
 		        		ACERCA DE 
 		        	</a>
 
@@ -98,7 +104,7 @@
 
 		        <li>
 
-		        	<a class="wow fadeInDown btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionB">
+		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionB">
 		        		TEMAS 
 		        	</a>
 
@@ -106,7 +112,7 @@
 
 		        <li>
 
-		        	<a class="wow fadeInDown btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionC">
+		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionC">
 		        		PARTICIPAR 
 		        	</a>
 
@@ -211,15 +217,9 @@
 
 			            <li class="list con_sangria">
 
-				            <h4 class="uppercase">Inscribite al evento completando el formulario de registro.</h4>
+				            <h4 class="uppercase">Inscribite al evento completando el <a class="link_simple" href="#planilla-registro" target="_blank"><strong> Formulario de registro</strong></a>.</h4>
 
 				            <div class="mini_gap"></div>
-
-				            <ol><li>
-
-				            	texto..
-
-				            </li></ol>
 				        
 				        </li>
 
@@ -241,7 +241,7 @@
 
     <div class="contenedor_sec">
 
-	    <div class="titulo wow fadeInDown">
+	    <div class="titulo wow fadeIn">
 
 	      	<h2 class="sombra_gris_blanco">
 
@@ -297,9 +297,11 @@
 									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
 								</p>
 								<p class="links">
+
+							        <!--
 									<a href="https://twitter.com/{{invitado.twitter}}" class="link_simple fa fa-2x fa-facebook-square" target="_blank" ng-if="invitado.twitter"> </a> &nbsp;
 							        <a href="https://www.facebook.com/{{invitado.facebook}}" class="link_simple fa fa-2x fa-twitter-square" target="_blank" ng-if="invitado.facebook"> </a> &nbsp;
-									<a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a> 
+									<a href="https://www.instagram.com/{{invitado.instagram}}" class="link_simple fa fa-2x fa-instagram-square" target="_blank" ng-if="invitado.instagram"> </a>-->
 						        </p>
 					        </div>
 
@@ -317,7 +319,7 @@
 
 		<div class="mini_gap"></div>
 
-		<a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn btn_fondo_claro eventime_button animated entrada-0s5" href="/#/invitados" role="button">VER TODOS</a>
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated entrada-0s5" href="/#/invitados" role="button">VER TODOS</a>
 
 	</div>
 
@@ -440,7 +442,7 @@
 
     <div class="contenedor_sec">
 
-	    <div class="titulo wow fadeInDown">
+	    <div class="titulo wow fadeIn">
 
 	      	<h2 class="sombra_gris_blanco">
 	        	
@@ -512,7 +514,7 @@
 
 		</div>
 
-		<a style="visibility: visible; animation-name: fadeInLeft;" class="wow fadeInLeft btn btn_fondo_claro eventime_button animated" href="/#/videos" role="button">VER TODOS</a>
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/videos" role="button">VER TODOS</a>
 
 	</div>
 
@@ -525,7 +527,7 @@
 
     <div class="contenedor_sec">
 
-	    <div class="titulo wow fadeInDown">
+	    <div class="titulo wow fadeIn">
 
 	      	<h2 class="sombra_gris_blanco">
 
@@ -541,29 +543,35 @@
 
     		<h4>Organizan: </h4>
 
-    		<div class="row logos">
+    		<div class="row logos v-center wow fadeInLeftBig">
 
-    			<div class="col-xs-3 col-md-2">
+    			<div class="col-xs-2 col-md-2">
 
-                    <img class="width_60" src="/images/LOGO-goethe.png">
+                    <a target="_blank" href="http://www.goethe.de/buenosaires"><img class="width_60" src="/images/LOGO-goethe.png"></a>
 
                 </div>
 
-                <div class="col-xs-3 col-md-2">
+                <div class="col-xs-2 col-md-2">
 
-                    <img src="/images/LOGO-Minka.png">
+                    <a target="_blank" href="http://www.minka.me/"><img src="/images/LOGO-Minka.png"></a>
 
                 </div>
 
                 <div class="col-xs-3 col-md-3">
 
-                    <img class="width_80" src="/images/LOGO-planC.png">
+                    <a target="_blank" href="http://www.elplanc.net/"><img class="width_80" src="/images/LOGO-planC.png"></a>
 
                 </div>
 
-                <div class="col-xs-3 col-md-2">
+                <div class="col-xs-2 col-md-2">
 
-                    <img src="/images/LOGO-CulturaSenda.png">
+                    <a target="_blank" href="www.facebook.com/culturasenda"><img src="/images/LOGO-CulturaSenda.png"></a>
+
+                </div>
+
+                <div class="col-xs-3 col-md-3">
+
+                    <a target="_blank" href="http://www.centrocultural.coop/"><img src="/images/LOGO-CCC.png"></a>
 
                 </div>
 
@@ -574,51 +582,81 @@
     	</div>
 
 
-    	<div id="apoyan" class="top_line width_90">
+    	<div id="apoyan" class="top_line width_90 ">
 
     		<h4>Apoyan: </h4>
 
-    		<div class="row logos">
+    		<div class="row logos v-center wow fadeInLeftBig">
 
-    			<div class="col-xs-3 col-md-1">
+    			<div class="col-xs-2 col-md-2">
 
-                    <img src="/images/LOGO-Usina.png">
-
-                </div>
-
-                <div class="col-xs-4 col-md-2">
-
-                    <img class="width_60" src="/images/LOGO-Matienzo.png">
+                    <a target="_blank" href="http://www.lausinacultura.com.ar/"><img src="/images/LOGO-Usina.png"></a>
 
                 </div>
 
-                <div class="col-xs-5 col-md-2">
+                <div class="col-xs-2 col-md-2">
 
-                    <img src="/images/LOGO-CEEBA.jpg">
-
-                </div>
-
-                <div class="col-xs-6 col-md-2">
-
-                    <img class="width_60" src="/images/LOGO-Recursos.png">
+                    <a target="_blank" href="http://www.ccmatienzo.com.ar/"><img class="width_80" src="/images/LOGO-Matienzo.png"></a>
 
                 </div>
 
-                <div class="col-xs-4 col-md-1">
+                <div class="col-xs-3 col-md-3">
 
-                    <img src="/images/LOGO-Coperable.png">
-
-                </div>
-
-                <div class="col-xs-3 col-md-1">
-
-                    <img src="/images/LOGO-Akapacha.png">
+                    <a target="_blank" href="http://www.cceba.org.ar/"> <img class="width_80" src="/images/LOGO-CEEBA.jpg"></a>
 
                 </div>
 
-                <div class="col-xs-4 col-md-2">
+                <div class="col-xs-2 col-md-2">
 
-                    <img class="width_80" src="/images/LOGO-Faccion.png">
+                    <a target="_blank" href="http://recursosculturales.com/"><img class="width_90" src="/images/LOGO-Recursos.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://coperable.org"><img class="width_90" src="/images/LOGO-Coperable.png"></a>
+
+                </div>
+
+                <div class="col-xs-1 col-md-1">
+
+                </div>
+
+            </div>
+
+            <div class="row logos v-center wow fadeInLeftBig">
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://www.akapachachascomus.com.ar/"><img class="width_80" src="/images/LOGO-Akapacha.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="http://faccionlatina.org/"><img class="width_80" src="/images/LOGO-Faccion.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="www.facebook.com/hospedacultura"><img src="/images/LOGO-HospedaCultura.png"></a>
+
+                </div>
+
+                <div class="col-xs-2 col-md-2">
+
+                    <a target="_blank" href="https://www.facebook.com/PopUpNetworking/?pnref=lhc"><img class="width_80" src="/images/LOGO-POPUP.png"></a>
+
+                </div>
+
+                <div class="col-xs-3 col-md-3">
+
+                    <a target="_blank" href="http://semana.minka.me/"><img src="/images/LOGO-SEC.png"></a>
+
+                </div>
+
+                <div class="col-xs-1 col-md-1">
 
                 </div>
 

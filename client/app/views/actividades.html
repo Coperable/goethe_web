@@ -37,33 +37,50 @@
 
     	<div class="row">
 
+            <div class="col-xs-12 col-sm-5 col-md-4 container_tarj_act" ng-repeat="actividad in summary.competitions| orderBy:predicate:reverse">
 
-    		<div class="col-xs-10 col-sm-5 col-md-4" ng-repeat="actividad in summary.competitions| orderBy:predicate:reverse">
-            <div class="tarjeta_actividad">
-                <a ng-href="/#/actividad/{{actividad.id}}">
-                    <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
-                </a>
+                <div class="tarjeta_actividad">
 
-                <div class="inner">
                     <a ng-href="/#/actividad/{{actividad.id}}">
-                        <h4 class="bold">{{actividad.title}}</h4>
+                        
+                        <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
+
                     </a>
 
-                    <h5>{{actividad.description|words:10}}</h5>
-                    <div class="etiquetas">
-                        <i class="fa fa-tag"></i>
-                        <span class="etiqueta" ng-if="actividad.hashtag">{{actividad.hashtag}}</span>
+                    <div class="inner">
+                        
+                        <a ng-href="/#/actividad/{{actividad.id}}">
+
+                            <h4 class="bold">{{actividad.title}}</h4>
+
+                        </a>
+
+                        <h5>{{actividad.description|words:10}}</h5>
+
+                        <div class="etiquetas" ng-if="actividad.hashtag">
+
+                            <i class="fa fa-tag"></i>
+
+                            <span class="etiqueta">{{actividad.hashtag}}</span>
+
+                        </div>
+
+                        <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <br>
+                            <i class="fa fa-caret-right-o fa-fw"></i> <span style="font-size:14pt"><strong>{{actividad.event_date | moment: 'HH:mm'}}</strong></span></h5>
+
+                        <h5><i class="fa fa-map-marker fa-fw alineado"></i><strong class="alineado">{{actividad.place}}</strong></h5>
+                        <h5 class="segunda-ln"><i class="fa fa-angle-right-o fa-fw alineado"></i><span class="alineado"> {{actividad.location.formatted_address}}</span></h5>
+
                     </div>
 
-                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <i class="fa fa-caret-right"></i> <span style="font-size:14pt">{{actividad.event_date | moment: 'HH:mm'}}</span></h5>
-                    <h5><i class="fa fa-map-marker fa-fw"></i>{{actividad.place}} | {{actividad.location.formatted_address}}</h5>
                 </div>
 
-            </div>
             </div>
 
 	
         </div>
+
+        <h4><strong><a href="" class="link_simple"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
 
 	    <div class="mini_gap"></div>
 
