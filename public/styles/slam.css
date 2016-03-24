@@ -111,7 +111,7 @@ body {
   margin-right: auto;
 }
 .width_90 {
-  width: 100;
+  width: 100%;
   /* Small devices (tablets, 768px and up) */
   /* Medium devices (desktops, 992px and up) */
 }
@@ -120,7 +120,7 @@ body {
     width: 100%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1370px) {
   .width_90 {
     width: 90%;
     margin-left: auto;
@@ -497,7 +497,7 @@ a.btn.btn_simple:hover {
 }
 /* ! Navigation Settings */
 .navi_container {
-  width: 84%;
+  width: 90%;
   margin-left: 8%;
 }
 .navi_container .indicador-pais {
@@ -548,18 +548,35 @@ nav {
   font-size: 25px;
   font-weight: 300;
   margin-top: 5px;
-  min-width: 120px;
-  max-width: 180px;
 }
 .navbar-brand img {
-  width: 25%;
   position: fixed;
-  top: 10px;
+  top: 0px;
+  margin-top: -8px;
+  border-radius: 0 60px 60px 60px;
+  padding: 5px;
+  min-width: 65px;
+  max-width: 80px;
+  width: 7.5%;
 }
-@media (min-width: 768px) {
-  .navbar-brand {
-    width: 10%;
+@media (min-width: 1370px) {
+  .navbar-brand img {
+    width: 6%;
   }
+}
+.navbar-logo {
+  display: table;
+  height: 63px;
+  position: absolute;
+  top: 0;
+  left: 2%;
+}
+.navbar-logo div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.navbar-logo div img {
+  max-height: 63px;
 }
 .nav_mask {
   min-height: 59px;
@@ -569,17 +586,27 @@ nav {
   margin-top: 1%;
 }
 .navbar-nav > li > a {
-  font-size: 10pt;
+  font-size: 8pt;
   font-weight: 400;
 }
+@media (min-width: 1370px) {
+  .navbar-nav > li > a {
+    font-size: 10pt;
+  }
+}
 .navbar-nav > li > a i {
-  font-size: 18pt;
   position: relative;
   display: inline-block;
   width: 1em;
   height: 1em;
   line-height: 1em;
   vertical-align: middle;
+  font-size: 13pt;
+}
+@media (min-width: 1370px) {
+  .navbar-nav > li > a i {
+    font-size: 18pt;
+  }
 }
 .navbar_bg {
   -webkit-transition: all 0.5s ease;
@@ -710,8 +737,8 @@ nav {
   position: relative;
   left: -50%;
   max-width: 500px;
-  width: 50%;
-  margin-left: 38%;
+  width: 30%;
+  margin-left: 47%;
 }
 .details {
   font-size: 18px;
@@ -741,6 +768,9 @@ nav {
     05.HOME 
 
 --------------------------------------------------------------------- */
+.container_tarj_act {
+  height: 500px;
+}
 .tarjeta_actividad {
   background-color: #ffffff;
   border-radius: 0.6em;
@@ -749,6 +779,13 @@ nav {
 }
 .tarjeta_actividad .inner {
   padding: 15px 20px 20px 20px;
+}
+.tarjeta_actividad .inner .alineado {
+  display: table-cell;
+}
+.tarjeta_actividad .inner .segunda-ln {
+  margin-top: -6px;
+  font-size: 13px;
 }
 .tarjeta_actividad img {
   width: 100%;
@@ -1855,12 +1892,17 @@ footer .first_line,
 }
 .footer {
   background: #e65a3f;
+  padding: 30px 5% 10px 5%;
+}
+@media (min-width: 1370px) {
+  .footer {
+    padding: 30px 10% 10px 10%;
+  }
 }
 .nav_mask_full {
   background: #000000;
 }
 .fill_mask {
-  background-color: rgba(0, 0, 0, 0.55);
   background-image: url('../images/mask.svg');
 }
 .mask {
@@ -1900,31 +1942,91 @@ a:focus {
   margin-top: 20px;
   text-align: center;
 }
-.logos img {
+.logos img,
+.logos a > img {
   width: 90%;
 }
-.logos img.width_100p {
+.logos img.width_100p,
+.logos a > img.width_100p {
   width: 100px !important;
 }
-.logos img.width_200p {
+.logos img.width_200p,
+.logos a > img.width_200p {
   width: 200px !important;
 }
-.logos img.width_80 {
-  width: 80%;
+@media (min-width: 992px) {
+  .logos img.width_80,
+  .logos a > img.width_80 {
+    width: 80%;
+  }
 }
-.logos img.width_60 {
-  width: 60%;
+@media (min-width: 1370px) {
+  .logos img.width_80,
+  .logos a > img.width_80 {
+    width: 70%;
+  }
 }
-.logos img.coperable {
+@media (min-width: 992px) {
+  .logos img.width_90,
+  .logos a > img.width_90 {
+    width: 90%;
+  }
+}
+@media (min-width: 1370px) {
+  .logos img.width_90,
+  .logos a > img.width_90 {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .logos img.width_60,
+  .logos a > img.width_60 {
+    width: 60%;
+  }
+}
+.logos img.coperable,
+.logos a > img.coperable {
   float: right;
-  width: 100%;
-  /* Small devices (tablets, 768px and up) */
   border-left: 1px solid #fff;
   padding: 20px 0px 20px 20px;
+  width: 100%;
+  /* Small devices (tablets, 768px and up) */
 }
 @media (min-width: 768px) {
-  .logos img.coperable {
-    width: 30%;
+  .logos img.coperable,
+  .logos a > img.coperable {
+    width: 100%;
+  }
+}
+@media (min-width: 1370px) {
+  .logos img.coperable,
+  .logos a > img.coperable {
+    width: 80%;
+    margin-top: -10px;
+  }
+}
+.v-center {
+  display: table!important;
+  height: 125px;
+}
+@media (min-width: 1370px) {
+  .v-center {
+    height: 200px;
+  }
+}
+.v-center div[class*='col-'] {
+  display: table-cell !important;
+  vertical-align: middle;
+  float: none;
+}
+.v-center img,
+.v-center a > img {
+  max-height: 125px;
+}
+@media (min-width: 1370px) {
+  .v-center img,
+  .v-center a > img {
+    max-height: 200px;
   }
 }
 #torneo-descripcion {
