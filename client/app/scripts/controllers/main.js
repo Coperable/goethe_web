@@ -456,7 +456,6 @@ angular.module('slamApp')
                 fechas_map[code] = true;
             }
         });
-        console.dir(fechas);
         
     };
 
