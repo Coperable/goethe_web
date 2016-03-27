@@ -24,7 +24,7 @@
 	    	<a class="btn btn_filtro" href role="button" ng-click="direction(true)"><i class="fa fa-sort-alpha-desc"></i></a>
 
 	    	<div class="input-group busqueda">
-	    		<input type="text" ng-model="search_term" class="form-control" id="direccion" placeholder="BÚSQUEDA">
+	    		<input type="text" ng-model="search_term" class="form-control" id="direccion" placeholder="BÚSQUEDA" ng-enter="doSearch()">
 	    		<div class="input-group-addon" ng-click="doSearch()"><i class="fa fa-search"></i></div>
 	    	</div>
 

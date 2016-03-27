@@ -769,7 +769,7 @@ nav {
 
 --------------------------------------------------------------------- */
 .container_tarj_act {
-  height: 500px;
+  min-height: 500px;
 }
 .tarjeta_actividad {
   background-color: #ffffff;
@@ -2021,7 +2021,7 @@ a:focus {
 }
 .v-center img,
 .v-center a > img {
-  max-height: 125px;
+  max-height: 160px;
 }
 @media (min-width: 1370px) {
   .v-center img,

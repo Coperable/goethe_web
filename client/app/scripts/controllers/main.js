@@ -8,7 +8,7 @@
  * Controller of the slamApp
  */
 angular.module('slamApp')
-.controller('MainCtrl', function ($scope, $rootScope, $http, $sce, api_host, Region, Account) {
+.controller('MainCtrl', function ($scope, $rootScope, $http, $sce, $timeout, api_host, Region, Account) {
 	$rootScope.home_page = true;
 
     $scope.summary = $rootScope.region_summary;
@@ -83,7 +83,7 @@ angular.module('slamApp')
 
 
 })
-.controller('site-controller', function ($scope, $rootScope, $http, $auth, $location, $anchorScroll, Region, Account) {
+.controller('site-controller', function ($scope, $rootScope, $http, $auth, $location, $anchorScroll, $timeout, Region, Account) {
     /*
     $scope.current_region = {};
 
@@ -97,6 +97,27 @@ angular.module('slamApp')
 
     $scope.isAuthenticated = function() {
         return $auth.isAuthenticated();
+    };
+
+    $scope.goPresentacion = function() {
+        $location.path('/');
+        $timeout(function() {
+            $scope.scrollTo('acerca_de_posicion');
+        }, 1000);
+    };
+
+    $scope.goApoyos = function() {
+        $location.path('/');
+        $timeout(function() {
+            $scope.scrollTo('sec_apoyo');
+        }, 1000);
+    };
+
+    $scope.goContacto = function() {
+        $location.path('/');
+        $timeout(function() {
+            $scope.scrollTo('contact_menu');
+        }, 1000);
     };
 
     $scope.scrollTo = function(id) {
@@ -179,6 +200,7 @@ angular.module('slamApp')
         if($rootScope.region_summary) {
             $scope.summary = $rootScope.region_summary;
             $scope.videos = $scope.summary.videos;
+            $scope.competitions = $scope.summary.competitions;
         }
 
         jQuery("#preloader").fadeOut("fast",function(){
@@ -403,11 +425,66 @@ angular.module('slamApp')
         $scope.processSummary();
     });
 
+    $scope.competitions = [];
+    $scope.espacios = [];
+    $scope.fechas = [];
+
+
     $scope.processSummary = function() {
-        $scope.summary = $rootScope.region_summary;
-        jQuery("#preloader").fadeOut("fast",function(){
-            jQuery(this).remove()
+        if($rootScope.region_summary) {
+            $scope.summary = $rootScope.region_summary;
+            $scope.competitions = $scope.summary.competitions;
+            $scope.espacios  = $scope.summary.espacios;
+            jQuery("#preloader").fadeOut("fast",function(){
+                jQuery(this).remove()
+            });
+            $scope.processFechas();
+        }
+    };
+
+    $scope.processFechas = function() {
+        $scope.fechas = [];
+        var fechas_map = {};
+        _.each($scope.summary.competitions, function(model) {
+            var fecha_moment = moment(model.event_date),
+                code = 'd'+fecha_moment.format('DDDD');
+            if(!fechas_map[code]) {
+                $scope.fechas.push({
+                    code: code,
+                    formatted: fecha_moment.format('ddd D')
+                });
+                fechas_map[code] = true;
+            }
         });
+        console.dir(fechas);
+        
+    };
+
+    $scope.doFilterFecha = function(fecha) {
+        $scope.current_espacio = false;
+        if(fecha) {
+            $scope.current_fecha = fecha.code;
+            $scope.competitions = _.filter($scope.summary.competitions, function(model) {
+                return 'd'+moment(model.event_date).format('DDDD') == fecha.code;
+            });
+        } else {
+            $scope.current_fecha = false;
+            $scope.competitions = $scope.summary.competitions;
+        }
+    };
+
+
+    $scope.doFilter = function(espacio) {
+        $scope.current_fecha = false;
+        if(espacio) {
+            $scope.current_espacio = espacio.code;
+            $scope.competitions = _.filter($scope.summary.competitions, function(model) {
+                return model.region_id == espacio.id;
+            });
+        } else {
+            $scope.current_espacio = false;
+            $scope.competitions = $scope.summary.competitions;
+        }
     };
 
     $scope.processSummary();
@@ -428,6 +505,20 @@ angular.module('slamApp')
         }
     };
 
+    $scope.search_term = '';
+
+    $scope.competitions = [];
+
+    $scope.doSearch = function() {
+        if($scope.search_term.trim() == '') {
+            $scope.competitions = $scope.summary.competitions;
+            return;
+        }
+        var pattern = new RegExp($scope.search_term, "gi");
+        $scope.competitions = _.filter($scope.summary.competitions, function(model) {
+            return pattern.test(JSON.stringify(model));
+        });
+    };
 
 
 })
