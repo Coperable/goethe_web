@@ -356,7 +356,9 @@ footer .first_line,
 
 .nav_mask {
 
-    background: rgba(0, 0, 0, 0.8);
+    //background: rgba(0, 0, 0, 0.8);
+
+    background: rgba(47, 201, 219, 0.8); 
 
 }
 
@@ -367,11 +369,7 @@ footer .first_line,
 }
 
 .fill_mask {
-
-    background-color: rgba(0, 0, 0, 0.55);
-
     background-image: url('../images/mask.svg');
-
 }
 
 .mask {
