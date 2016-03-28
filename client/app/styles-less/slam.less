@@ -82,7 +82,7 @@ PÁGINAS INTERNAS:
 @color-gris-fondo:  #f9f9e8;
 
 
-@color-celeste: 	#37abc8;
+@color-celeste: 	#2fc9db;
 @color-rojo:		#ee441e;
 @color-verde:		#8fc521;
 @color-amarillo:	#f6bf19; //#d4aa00;
@@ -1368,23 +1368,29 @@ nav {
 
     position: absolute;
 
-    left: 44%;
+    left: 45%;
 
-    top: 22%; 
+    top: 10%; 
 
     img {
 
         position: relative;
 
-        left: -50%; 
-
-        max-width: 500px;
-
-        width: 30%;
-
-        margin-left: 47%; 
+        margin-left: 45%; 
 
         //margin-left: 80px;
+
+        left: -70%; 
+
+        width: 66%;
+
+        @media (min-width: 1280px) {
+
+            width: 40%; 
+
+            left: -55%; 
+
+        }
 
     }
 
@@ -1439,7 +1445,7 @@ nav {
 
 .container_tarj_act {
 
-    min-height: 500px; 
+    height: 500px; 
 }
 
 .tarjeta_actividad {
@@ -3619,7 +3625,7 @@ footer .first_line,
 
 .nav_mask {
 
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(47, 201, 219, 0.8) !important;
 
 }
 
@@ -3831,7 +3837,7 @@ a, a:hover, a:active, a:focus {
 
         @media (min-width: @screen-lg-min) {
 
-            max-height:200px;
+            max-height: 200px;
 
         }
     }
