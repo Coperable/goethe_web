@@ -76,7 +76,7 @@ angular.module('slamApp')
         $scope.sliders = sliders;
         $timeout(function() {
             jQuery("#home_slider_main").carousel({
-                interval:7e3
+                interval: 3000
             });
         });
     });

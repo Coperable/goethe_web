@@ -13,6 +13,7 @@ angular
     'ngTouch',
     'ui.router',
     //'ui.bootstrap',
+    'pascalprecht.translate',
     'satellizer'
 ])
 .config(function($routeProvider, $authProvider, $locationProvider) {
@@ -120,6 +121,17 @@ angular
     });
 
 })
+.config(function ($translateProvider) {
+
+    //$translateProvider.useMissingTranslationHandlerLog();
+
+    $translateProvider.useUrlLoader('/api/translation');
+    $translateProvider.preferredLanguage('es_ES');
+
+    //$translateProvider.useLocalStorage();
+
+})
+
 .directive('ngEnter', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {
