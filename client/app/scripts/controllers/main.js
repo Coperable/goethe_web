@@ -465,7 +465,7 @@ angular.module('slamApp')
         $scope.tipos = [];
         var tipos_map = {};
         _.each($scope.summary.competitions, function(model) {
-            if(!tipos_map[model.type]) {
+            if(model.type && !tipos_map[model.type]) {
                 $scope.tipos.push({
                     code: model.type
                 });

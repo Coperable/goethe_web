@@ -341,6 +341,19 @@ a.link2modal {
   background-color: #e65a3f;
   color: #ffffff;
 }
+.btn_ccc {
+  padding: 5px 10px;
+  border: 2px solid #2fc9db;
+  border-radius: 0.4em;
+  color: #2fc9db;
+}
+.btn_ccc:hover {
+  color: #2fc9db;
+}
+.btn_ccc.active {
+  background-color: #2fc9db;
+  color: #ffffff;
+}
 .eventime_button,
 .reservation_button {
   border-width: 3px;
@@ -730,15 +743,20 @@ nav {
 }
 .logo-principal {
   position: absolute;
-  left: 44%;
-  top: 22%;
+  left: 45%;
+  top: 10%;
 }
 .logo-principal img {
   position: relative;
-  left: -50%;
-  max-width: 500px;
-  width: 30%;
-  margin-left: 47%;
+  margin-left: 45%;
+  left: -70%;
+  width: 66%;
+}
+@media (min-width: 1280px) {
+  .logo-principal img {
+    width: 40%;
+    left: -55%;
+  }
 }
 .details {
   font-size: 18px;
@@ -769,7 +787,7 @@ nav {
 
 --------------------------------------------------------------------- */
 .container_tarj_act {
-  min-height: 500px;
+  height: 500px;
 }
 .tarjeta_actividad {
   background-color: #ffffff;
@@ -1287,6 +1305,14 @@ mask {
 }
 #info01 {
   background: #3088b3;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#info02 {
+  background: #ee441e;
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1888,7 +1914,7 @@ footer .first_line,
 }
 /*!------------------------------ Background settings | Transparents in RGBA and Background images ------------------------------*/
 .nav_mask {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(47, 201, 219, 0.8) !important;
 }
 .footer {
   background: #e65a3f;
