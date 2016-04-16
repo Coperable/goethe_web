@@ -21,6 +21,7 @@
 
 	    	<a class="btn btn_filtro" href role="button" ng-click="direction(true)"><i class="fa fa-sort-alpha-desc"></i></a>
 
+	    	<a class="btn btn_filtro" ng-class="{'active': tipo.code == current_tipo}" href ng-click="doFilterTipo(tipo)" role="button" ng-repeat="tipo in tipos" > {{tipo.code}}</a>
 
 	    	<div class="input-group busqueda">
 
@@ -35,7 +36,7 @@
 	    </div>
 	    <div class="form-group ">
 	    	<a class="btn btn_filtro" ng-class="{'active': !current_espacio}" href ng-click="doFilter(false)" role="button"> Todos los espacios</a>
-	    	<a class="btn btn_filtro" ng-class="{'active': espacio.code == current_espacio}" href ng-click="doFilter(espacio)" role="button" ng-repeat="espacio in espacios" > {{espacio.name}}</a>
+	    	<a class="btn" ng-class="{'active': espacio.code == current_espacio, 'btn_filtro': espacio.code == 'CCM', 'btn_ccc': espacio.code == 'CCC'}" href ng-click="doFilter(espacio)" role="button" ng-repeat="espacio in espacios" ng-if="espacio.code != 'ARG'" > {{espacio.code}}-{{espacio.name}}</a>
 	    </div>
 	    <div class="form-group ">
 	    	<a class="btn btn_filtro" ng-class="{'active': !current_fecha }" href ng-click="doFilterFecha(false)" role="button"> Todas las fechas</a>
@@ -64,11 +65,11 @@
 
                         <h5>{{actividad.description|words:10}}</h5>
 
-                        <div class="etiquetas" ng-if="actividad.hashtag">
+                        <div class="etiquetas" ng-if="actividad.type">
 
                             <i class="fa fa-tag"></i>
 
-                            <span class="etiqueta">{{actividad.hashtag}}</span>
+                            <span class="etiqueta">{{actividad.type}}</span>
 
                         </div>
 

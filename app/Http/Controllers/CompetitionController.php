@@ -51,9 +51,14 @@ class CompetitionController extends Controller {
             $geo = $this->processGeoValue($request->input('location'));
             $location = Location::firstOrCreate($geo);
             $location->save();
+            $competition->type = $request->input('type');
             $competition->region_id = $request->input('region_id');
             $competition->title = $request->input('title');
+            $competition->title_en = $request->input('title_en');
+            $competition->title_de = $request->input('title_de');
             $competition->description = $request->input('description');
+            $competition->description_en = $request->input('description_en');
+            $competition->description_de = $request->input('description_de');
             $competition->cover_photo = $request->input('cover_photo');
             
             $competition->users_limit = $request->has('users_limit') ? $request->input('users_limit') : false;
@@ -65,6 +70,8 @@ class CompetitionController extends Controller {
             $competition->instagram = $request->input('instagram');
             $competition->youtube = $request->input('youtube');
             $competition->rules = $request->input('rules');
+            $competition->rules_en = $request->input('rules_en');
+            $competition->rules_de = $request->input('rules_de');
             $arr = explode(".", $request->input('event_date'), 2);
             $event_date = str_replace("T", " ", $arr[0]);
             $competition->event_date = Carbon::createFromFormat('Y-m-d H:i:s', $event_date);
@@ -90,13 +97,20 @@ class CompetitionController extends Controller {
                     $competition->location_id = $location->id;
                 }
             }
+            $competition->type = $request->input('type');
             $competition->region_id = $request->input('region_id');
             $competition->title = $request->input('title');
+            $competition->title_en = $request->input('title_en');
+            $competition->title_de = $request->input('title_de');
             $competition->description = $request->input('description');
+            $competition->description_en = $request->input('description_en');
+            $competition->description_de = $request->input('description_de');
             $competition->cover_photo = $request->input('cover_photo');
             $competition->users_limit = $request->has('users_limit') ? $request->input('users_limit') : false;
             $competition->users_amount = $request->input('users_amount');
             $competition->rules = $request->input('rules');
+            $competition->rules_en = $request->input('rules_en');
+            $competition->rules_de = $request->input('rules_de');
             $arr = explode(".", $request->input('event_date'), 2);
             $event_date = str_replace("T", " ", $arr[0]);
             $competition->event_date = Carbon::createFromFormat('Y-m-d H:i:s', $event_date);

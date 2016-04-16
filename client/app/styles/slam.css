@@ -341,6 +341,17 @@ a.link2modal {
   background-color: #e65a3f;
   color: #ffffff;
 }
+.btn_filtro.CCM {
+  border: 2px solid #2fc9db;
+  color: #2fc9db;
+}
+.btn_filtro.CCM:hover {
+  color: #2fc9db;
+}
+.btn_filtro.CCM.active {
+  background-color: #2fc9db;
+  color: #ffffff;
+}
 .eventime_button,
 .reservation_button {
   border-width: 3px;

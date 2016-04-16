@@ -46,6 +46,8 @@ Route::post('api/media/videos/search', ['uses' => 'MediaController@videosSearch'
 Route::get('api/media/videos/search', ['uses' => 'MediaController@videosSearch']);
 Route::get('api/media/videos/view/{youtubeId}', ['uses' => 'MediaController@parseVideoId']);
 
+Route::resource('api/parametric/languages', 'LanguageController');
+Route::get('api/translation', ['uses' => 'LanguageController@translation']);
 
 Route::get('/', function () {
     return view('welcome');

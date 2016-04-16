@@ -45,13 +45,22 @@
 
 	                    <h5>{{actividad.description|words:10}}</h5>
 
-	                    <div class="etiquetas" ng-if="actividad.hashtag">
+	                    <div class="etiquetas" ng-if="actividad.type">
+
+	                    	<i class="fa fa-tag"></i>
+
+	                    	<span class="etiqueta">{{actividad.type}}</span>
+
+	                    </div>
+
+
+	                    <!--div class="etiquetas" ng-if="actividad.hashtag">
 
 	                    	<i class="fa fa-tag"></i>
 
 	                    	<span class="etiqueta">{{actividad.hashtag}}</span>
 
-	                    </div>
+	                    </div-->
 
 	                    <h5><i class="fa fa-clock-o fa-fw"></i>{{actividad.event_date | moment: 'dddd DD [de] MMMM'}} <br>
 	                    	<i class="fa fa-caret-right-o fa-fw"></i> <span style="font-size:14pt"><strong>{{actividad.event_date | moment: 'HH:mm'}}</strong></span></h5>
@@ -1056,7 +1065,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
         <p class="wow fadeIn">
             Belén Charpentier 
             <br/>prensa@encuentrocomunes.com
-            <br/><a href="/documents/kitprensa.pdf" target="_blank">Kit Prensa</a>
+            <br/><a href="/documents/comunes_kitprensa.pdf" target="_blank">Kit Prensa</a>
         </p>
 
         <b class="wow fadeIn">

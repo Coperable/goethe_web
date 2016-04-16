@@ -428,6 +428,7 @@ angular.module('slamApp')
     $scope.competitions = [];
     $scope.espacios = [];
     $scope.fechas = [];
+    $scope.tipos = [];
 
 
     $scope.processSummary = function() {
@@ -439,6 +440,7 @@ angular.module('slamApp')
                 jQuery(this).remove()
             });
             $scope.processFechas();
+            $scope.processTipos();
         }
     };
 
@@ -459,8 +461,23 @@ angular.module('slamApp')
         
     };
 
+    $scope.processTipos = function() {
+        $scope.tipos = [];
+        var tipos_map = {};
+        _.each($scope.summary.competitions, function(model) {
+            if(!tipos_map[model.type]) {
+                $scope.tipos.push({
+                    code: model.type
+                });
+                tipos_map[model.type] = true;
+            }
+        });
+        
+    };
+
     $scope.doFilterFecha = function(fecha) {
         $scope.current_espacio = false;
+        $scope.current_tipo = false;
         if(fecha) {
             $scope.current_fecha = fecha.code;
             $scope.competitions = _.filter($scope.summary.competitions, function(model) {
@@ -472,9 +489,23 @@ angular.module('slamApp')
         }
     };
 
+    $scope.doFilterTipo = function(tipo) {
+        $scope.current_espacio = false;
+        if(tipo) {
+            $scope.current_tipo = tipo.code;
+            $scope.competitions = _.filter($scope.summary.competitions, function(model) {
+                return model.type == tipo.code;
+            });
+        } else {
+            $scope.current_tipo = false;
+            $scope.competitions = $scope.summary.competitions;
+        }
+    };
+
 
     $scope.doFilter = function(espacio) {
         $scope.current_fecha = false;
+        $scope.current_tipo = false;
         if(espacio) {
             $scope.current_espacio = espacio.code;
             $scope.competitions = _.filter($scope.summary.competitions, function(model) {
