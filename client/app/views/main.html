@@ -7,7 +7,7 @@
 
 	      	<h2 class="sombra_gris_blanco">
 	        	
-	        	<i class="fa fa-calendar"></i>ACTIVIDADES DESTACADAS
+	        	<i class="fa fa-calendar"></i><span translate="actividades-destacadas" translate-keep-content>ACTIVIDADES DESTACADAS</span>
 	      	
 	      	</h2>
 	    
@@ -17,7 +17,7 @@
 
 	    	<a class="link_simple" href="/#/actividades">
 
-	    		<h3><i class="fa fa-caret-right "></i>ver todas las Actividades</h3>
+	    		<h3><i class="fa fa-caret-right "></i><span translate="ver-todas-actividades">ver todas las Actividades</span></h3>
 	    	
 	    	</a>
 	    	
@@ -39,11 +39,19 @@
 	                 	
 	                    <a ng-href="/#/actividad/{{actividad.id}}">
 
-	                    	<h4 class="bold">{{actividad.title}}</h4>
+                            <div ng-switch on="usedLanguage">
+                                <h4 class="bold" ng-switch-when="en_EN">{{actividad.title_en}}</h4>
+                                <h4 class="bold" ng-switch-when="de_DE">{{actividad.title_de}}</h4>
+                                <h4 class="bold" ng-switch-default>{{actividad.title}}</h4>
+                            </div>
 
 	                    </a>
 
-	                    <h5>{{actividad.description|words:10}}</h5>
+                        <div ng-switch on="usedLanguage">
+                            <h5 ng-switch-when="en_EN">{{actividad.description_en|words:10}}</h5>
+                            <h5 ng-switch-when="de_DE">{{actividad.description_de|words:10}}</h5>
+                            <h5 ng-switch-default>{{actividad.description|words:10}}</h5>
+                        </div>
 
 	                    <div class="etiquetas" ng-if="actividad.type">
 
@@ -81,7 +89,7 @@
 
 	    <div class="mini_gap"></div>
 
-	    <a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/actividades" role="button">VER TODAS</a>
+	    <a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/actividades" role="button" translate="ver-todas">VER TODAS</a>
 
 	    <div class="mini_gap" id="acerca_de_posicion"></div>
 
@@ -95,7 +103,7 @@
 
 	<div class="info_contenedor wow bounceInRight entrada-0s5">
 
-		<h2><i class="fa fa-star"></i>TODAS LAS ACTIVIDADES SON DE ENTRADA LIBRE Y GRATUITA</h2>
+		<h2><i class="fa fa-star"></i><span translate="actividades-entrada-libre">TODAS LAS ACTIVIDADES SON DE ENTRADA LIBRE Y GRATUITA</span></h2>
 
 	</div>
 
@@ -118,7 +126,7 @@
 
 		        <li class="active">
 
-		        	<a class="btn eventime_button graybtn active" data-toggle="tab" role="button" data-target="#sectionA">
+		        	<a class="btn eventime_button graybtn active" data-toggle="tab" role="button" data-target="#sectionA" translate="acerca-de">
 		        		ACERCA DE 
 		        	</a>
 
@@ -126,7 +134,7 @@
 
 		        <li>
 
-		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionB">
+		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionB" translate="temas">
 		        		TEMAS 
 		        	</a>
 
@@ -134,7 +142,7 @@
 
 		        <li>
 
-		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionC">
+		        	<a class="btn eventime_button graybtn" data-toggle="tab" role="button" data-target="#sectionC" translate="participa">
 		        		PARTICIPA 
 		        	</a>
 
@@ -152,10 +160,9 @@
 
 		        	 	<li class="list right">
 
-		        	 		<h4 class="uppercase">Los sistemas de <strong>producción</strong>, <strong>distribución</strong> y <strong>consumo</strong> están cambiando, y nosotros con ellos.</h4>
+		        	 		<h4 class="uppercase" translate="sistemas-produccion">Los sistemas de <strong>producción</strong>, <strong>distribución</strong> y <strong>consumo</strong> están cambiando, y nosotros con ellos.</h4>
 
-	        	 			<ol><li>
-
+	        	 			<ol><li translate="nuevos-modelos-intercambio">
         	 					Nuevos modelos de intercambio y tecnologías abren el juego y nos invitan a repensar cómo nos comunicamos, cómo aprendemos y cómo compartimos recursos de todo tipo. Siguiendo el modelo de producción del software libre, se generan formas de creación entre pares que proponen nuevos roles participativos. En ese horizonte cobra fuerza la idea de los comunes y del procomún, la riqueza compartida con independencia del mercado y del estado.
 
 	        	 			</li></ol>
@@ -164,15 +171,15 @@
 
 			            <li class="list con_sangria">
 
-				            <h4><i class="fa fa-caret-right"></i>¿Qué significa hablar de economías colaborativas, y qué relación tienen con los comunes? </h4>
+				            <h4><i class="fa fa-caret-right"></i><span translate="que-significa">¿Qué significa hablar de economías colaborativas, y qué relación tienen con los comunes? </span></h4>
 
 				            <div class="mini_gap"></div>
 
-				            <h4><i class="fa fa-caret-right"></i>¿Por qué hablamos cada vez más de compartir?</h4>
+				            <h4><i class="fa fa-caret-right"></i><span translate="porque-hablamos"> ¿Por qué hablamos cada vez más de compartir?</span></h4>
 				            
 				            <div class="mini_gap"></div>
 
-				            <h4><i class="fa fa-caret-right"></i>¿Quiénes hablan hoy de economías colaborativas y qué modelo de vida nos proponen? </h4>
+				            <h4><i class="fa fa-caret-right"></i><span translate="quienes-hablan">¿Quiénes hablan hoy de economías colaborativas y qué modelo de vida nos proponen? </span></h4>
 
 				            <ol><li>
 
@@ -282,7 +289,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 	      	<h2 class="sombra_gris_blanco">
 
-	        	<i class="fa fa-users"></i>INVITADOS
+	        	<i class="fa fa-users"></i><span translate="invitados">INVITADOS</span>
 
 	      	</h2>
 
@@ -292,7 +299,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 	    	<a class="link_simple" ng-href="/#/invitados">
 
-	    		<h3><i class="fa fa-caret-right"></i>ver todos los Invitados</h3>
+	    		<h3><i class="fa fa-caret-right"></i><span translate="ver-invitados">ver todos los Invitados</span></h3>
 
 	    	</a>
 
@@ -312,7 +319,11 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
                 			<h4 class="bold">{{invitado.name}} {{invitado.lastname}}</h4>
                 		</a>
                 		<h5>{{invitado.place}}</h5>
-                		<p>{{invitado.about|words:10}}</p>
+                        <div ng-switch on="usedLanguage">
+                            <p ng-switch-when="en_EN">{{invitado.about_en|words:10}}</p>
+                            <p ng-switch-when="de_DE">{{invitado.about_de|words:10}}</p>
+                            <p ng-switch-default>{{invitado.about|words:10}}</p>
+                        </div>
 					</div>
 				</div>
 
@@ -329,7 +340,11 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 							<div class="modal-body">
                                 <img ng-src="http://images.collab-dev.com/300x/smart/slam/{{invitado.cover_photo}}">
 								<div class="mini_gap"></div>
-                                <p ng-bind-html="newlines(invitado.about)"></p>
+                                <div ng-switch on="usedLanguage">
+                                    <p ng-switch-when="en_EN" ng-bind-html="newlines(invitado.about_en)"></p>
+                                    <p ng-switch-when="de_DE" ng-bind-html="newlines(invitado.about_de)"></p>
+                                    <p ng-switch-default ng-bind-html="newlines(invitado.about)"></p>
+                                </div>
 								<p class="links" ng-if="invitado.google">
 									<i class="fa fa-caret-right fa-fw"></i><a class="link_simple" ng-href="{{invitado.google}}" target="_blank"><strong>{{invitado.google}}</strong></a>
 								</p>
@@ -343,7 +358,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 					        </div>
 
 					        <div class="modal-footer">
-						        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+						        <button type="button" class="btn btn-default" data-dismiss="modal" translate="cerrar">Cerrar</button>
 					    	</div>
 						</div>
 					</div>
@@ -356,7 +371,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 		<div class="mini_gap"></div>
 
-		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated entrada-0s5" href="/#/invitados" role="button">VER TODOS</a>
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated entrada-0s5" href="/#/invitados" role="button" translate="ver-todos">VER TODOS</a>
 
 	</div>
 
@@ -459,11 +474,11 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 		<h2><i class="fa fa-star"></i>COMUNES</h2>
 
-		<h3>Los caminos de la colaboración</h3>
+		<h3 translate="los-caminos-colaboracion">Los caminos de la colaboración</h3>
 
-		<p>Se realiza en la antesala del simposio internacional “The Sharing Game. Exchange in Culture and Society” que el Goethe-Institut organiza en junio de 2016 en Weimar (Alemania) y forma parte de la programación argentina de la 3ra. Edición de la Semana de la Economía Colaborativa promovida por Minka.  </p>
+		<p translate="se-realiza">Se realiza en la antesala del simposio internacional “The Sharing Game. Exchange in Culture and Society” que el Goethe-Institut organiza en junio de 2016 en Weimar (Alemania) y forma parte de la programación argentina de la 3ra. Edición de la Semana de la Economía Colaborativa promovida por Minka.  </p>
 
-		<a style="visibility: visible; animation-name: fadeInUpBig;" class="wow fadeInUpBig btn animated" role="button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform">INSCRIBITE</a>
+		<a style="visibility: visible; animation-name: fadeInUpBig;" class="wow fadeInUpBig btn animated" role="button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" translate="inscribite">INSCRIBITE</a>
 
 	</div>
 
@@ -483,7 +498,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 	      	<h2 class="sombra_gris_blanco">
 	        	
-	        	<i class="fa fa-play-circle"></i>Videos
+	        	<i class="fa fa-play-circle"></i><span translate="videos">Videos</span>
 	      	
 	      	</h2>
 	    
@@ -493,7 +508,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 	    	<a href="/#/videos" class="link_simple">
 
-	    		<h3><i class="fa fa-caret-right"></i>ver todos los videos</h3>
+	    		<h3><i class="fa fa-caret-right"></i><span translate="ver-todos-videos">ver todos los videos</span></h3>
 	    	
 	    	</a>
 	    	
@@ -551,7 +566,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 		</div>
 
-		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/videos" role="button">VER TODOS</a>
+		<a style="visibility: visible; animation-name: fadeInLeft;" class="btn btn_fondo_claro eventime_button animated" href="/#/videos" role="button" translate="ver-todos">VER TODOS</a>
 
 	</div>
 
@@ -568,7 +583,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 	      	<h2 class="sombra_gris_blanco">
 
-	        	<i class="fa fa-users"></i>APOYOS
+	        	<i class="fa fa-users"></i><span translate="apoyos">APOYOS</span>
 
 	      	</h2>
 
@@ -578,7 +593,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
     	<div class="top_line logos width_90">
 
-    		<h4>Organizan: </h4>
+    		<h4 translate="organizan">Organizan: </h4>
 
     		<div class="hidden-xs">
 
@@ -675,7 +690,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
     	<div id="apoyan" class="top_line width_90 ">
 
-    		<h4>Apoyan: </h4>
+    		<h4 translate="apoyan">Apoyan: </h4>
 
     		<div class="hidden-xs">
 
@@ -978,11 +993,11 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 	      	<h2 class="contacto_tit">
 	        	
-	        	<i class="fa fa-user-plus"></i>CONTACTO
+	        	<i class="fa fa-user-plus"></i><span translate="contacto">CONTACTO</span>
 	      	
 	      	</h2>
       <div class="first_description">
-        <p>
+        <p translate="el-encuentro">
            El encuentro ¨Comunes. Los caminos de la colaboración¨ tiene lugar en varios espacios de Buenos Aires, elegidos para mostrar diversas experiencias y modelos de gestión en colaboración, descentralizar las actividades y facilitar el intercambio con iniciativas diversas.
         </p>
       </div>
@@ -996,12 +1011,12 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
       
       <div class="contact_information">
         
-        <h6 class="wow fadeIn">LOCALES</h6>
+        <h6 class="wow fadeIn" translate="locales">LOCALES</h6>
 
         <h4><strong>Centro Cultural de la Cooperación Floreal Gorini</strong></h4>
         <h4><i class="fa fa-map-marker"></i> Av. Corrientes 1543, Buenos Aires</h4>
 
-        <p class="wow fadeIn">
+        <p class="wow fadeIn" translate="ccc-descripcion">
 
            Un espacio para el desarrollo de una intelectualidad crítica, con orientación anticapitalista, afirmada en los principios y valores de la cooperación.<br>
 
@@ -1014,7 +1029,7 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
         <h4><strong>Club Cultural Matienzo</strong></h4>
         <h4><i class="fa fa-map-marker"></i> Pringles 1249, Buenos Aires</h4>
 
-        <p class="wow fadeIn">Club Cultural Matienzo es un espacio, un equipo productor de contenidos culturales, y un proyecto independiente de arte, cultura y sociedad. Desde 2008, un equipo de actualmente 80 personas gestionamos Matienzo en forma colectiva, organizados en áreas de trabajo vinculadas entre sí. A través de ellas creamos y/o producimos actividades y proyectos que tienen lugar tanto en nuestro espacio como fuera y más allá de él.<br>
+        <p class="wow fadeIn" translate="ccm-descripcion">Club Cultural Matienzo es un espacio, un equipo productor de contenidos culturales, y un proyecto independiente de arte, cultura y sociedad. Desde 2008, un equipo de actualmente 80 personas gestionamos Matienzo en forma colectiva, organizados en áreas de trabajo vinculadas entre sí. A través de ellas creamos y/o producimos actividades y proyectos que tienen lugar tanto en nuestro espacio como fuera y más allá de él.<br>
 
            <a target="_blank" href="http://ccmatienzo.com.ar/wp/"><i class="fa fa-caret-right"></i>http://ccmatienzo.com.ar</a> 
         
@@ -1022,10 +1037,10 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
        	<div class="mini_gap"></div>
 
-        <h4><strong>Punto de encuentro</strong></h4>
+        <h4><strong translate="punto-encuentro">Punto de encuentro</strong></h4>
         <h4><i class="fa fa-map-marker"></i> Pringles 1249, Buenos Aires</h4>
 
-        <p class="wow fadeIn">De jueves a sábado, a partir de las 20 hs nos reunimos en la Terraza del Club Cultural Matienzo, un espacio ideal para  compartir comidas caseras, cervezas y tragos. Acercate y compartí con nuestros invitados, amigos y colaboradores.
+        <p class="wow fadeIn" translate="punto-encuentro-descripcion">De jueves a sábado, a partir de las 20 hs nos reunimos en la Terraza del Club Cultural Matienzo, un espacio ideal para  compartir comidas caseras, cervezas y tragos. Acercate y compartí con nuestros invitados, amigos y colaboradores.
         </p>
 
       </div>

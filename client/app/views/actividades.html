@@ -9,7 +9,7 @@
 
 	      	<h2 class="sombra_gris_blanco">
 
-	        	<i class="fa fa-calendar fa-lg fa-fw"></i>Actividades
+	        	<i class="fa fa-calendar fa-lg fa-fw"></i><span translate="actividades">Actividades</span>
 
 	      	</h2>
 
@@ -59,11 +59,19 @@
                         
                         <a ng-href="/#/actividad/{{actividad.id}}">
 
-                            <h4 class="bold">{{actividad.title}}</h4>
+                            <div ng-switch on="usedLanguage">
+                                <h4 class="bold" ng-switch-when="en_EN">{{actividad.title_en}}</h4>
+                                <h4 class="bold" ng-switch-when="de_DE">{{actividad.title_de}}</h4>
+                                <h4 class="bold" ng-switch-default>{{actividad.title}}</h4>
+                            </div>
 
                         </a>
 
-                        <h5>{{actividad.description|words:10}}</h5>
+                        <div ng-switch on="usedLanguage">
+                            <h5 ng-switch-when="en_EN">{{actividad.description_en|words:10}}</h5>
+                            <h5 ng-switch-when="de_DE">{{actividad.description_de|words:10}}</h5>
+                            <h5 ng-switch-default>{{actividad.description|words:10}}</h5>
+                        </div>
 
                         <div class="etiquetas" ng-if="actividad.type">
 

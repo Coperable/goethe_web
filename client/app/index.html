@@ -88,38 +88,53 @@
 
                     <li>
                         <a href ng-click="goPresentacion()">
-                            <i class="fa fa-certificate"></i> PRESENTACIÓN
+                            <i class="fa fa-certificate"></i> <span translate="presentacion">PRESENTACIÓN</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#/invitados">
-                            <i class="fa fa-users"></i> INVITADOS
+                            <i class="fa fa-users"></i> <span translate="invitados"> INVITADOS</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="/#/actividades">
-                            <i class="fa fa-calendar"></i> PROGRAMACIÓN
+                            <i class="fa fa-calendar"></i> <span translate="programacion"> PROGRAMACIÓN</span>
                         </a>
                     </li>
 
                     <li>
                         <a  href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank">
-                            <i class="fa fa-pencil"></i> INSCRIPCIÓN
+                            <i class="fa fa-pencil"></i> <span translate="inscripcion"> INSCRIPCIÓN</span>
                         </a>
                     </li>
 
                     <li>
                         <a href ng-click="goApoyos()">
-                            <i class="fa fa-thumbs-up"></i> APOYOS
+                            <i class="fa fa-thumbs-up"></i> <span translate="apoyos"> APOYOS</span>
                         </a>
                     </li>
 
                     <li>
                         <a href ng-click="goContacto()">
-                            <i class="fa fa-user-plus"></i> Contacto
+                            <i class="fa fa-user-plus"></i> <span translate="contacto"> Contacto</span>
                         </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{descriptionLanguage()}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href ng-click="selectLanguage('es_ES')">Español</a></li>
+                            <li><a href ng-click="selectLanguage('en_EN')">English</a></li>
+                            <li><a href ng-click="selectLanguage('de_DE')">Deutsch</a></li>
+                        </ul>
+
+
+
                     </li>
 
                     <li>
@@ -155,7 +170,7 @@
 
                         <h2 class="details inicial wow fadeInDown entrada-0s5">
 
-                            Encuentro internacional de Economías Colaborativas y Cultura Libre
+                            <span translate="encuentro_internacional">Encuentro internacional de Economías Colaborativas y Cultura Libre<span>
                         
                         </h2>
                         
@@ -167,9 +182,9 @@
                         
                         </div-->
                         <div class="buttons ">
-                            <a class="btn eventime_button" href ng-click="scrollTo('acerca_de_posicion')" role="button">
+                            <a class="btn eventime_button" href ng-click="scrollTo('acerca_de_posicion')" role="button" translate="conocer-mas">
                                 Conocer más </a>
-                            <a class="btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button">
+                            <a class="btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button" translate="inscribite">
                                 Inscribite
                             </a>
                         </div>
@@ -207,9 +222,9 @@
                         
                         </div-->
                         <div class="buttons ">
-                            <a class="btn eventime_button" href ng-click="scrollTo('acerca_de_posicion')" role="button">
+                            <a class="btn eventime_button" href ng-click="scrollTo('acerca_de_posicion')" role="button" translate="conocer-mas">
                                 Conocer más </a>
-                            <a class="btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button">
+                            <a class="btn eventime_button" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank" role="button" translate="inscribite">
                                Inscribite 
                             </a>
                         </div>

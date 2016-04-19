@@ -12,7 +12,11 @@
 
 	            <div class="titulo">
 
-	            	<h2>{{competition.title}}</h2> 
+                    <div ng-switch on="usedLanguage">
+                        <h2 class="bold" ng-switch-when="en_EN">{{competition.title_en}}</h2>
+                        <h2 class="bold" ng-switch-when="de_DE">{{competition.title_de}}</h2>
+                        <h2 class="bold" ng-switch-default>{{competition.title}}</h2>
+                    </div>
 
 	           		<h4>{{competition.type}}</h4>
 
@@ -211,9 +215,11 @@
   	<div class="tab-content contenedor_sec">
     	<div role="tabpanel" class="tab-pane fade in active" id="tab_info">
     		<div class="descripcion">
-				<p>
-                    {{competition.description}}
-				</p>
+                <div ng-switch on="usedLanguage">
+                    <p ng-switch-when="en_EN">{{competition.description_en}}</p>
+                    <p ng-switch-when="de_DE">{{competition.description_de}}</p>
+                    <p ng-switch-default>{{competition.description}}</h5>
+                </div>
 			</div>
 
 			<div class="gap"></div>
@@ -223,9 +229,11 @@
 	    <div role="tabpanel" class="tab-pane fade" id="tab_detalle">
 
             <div class="descripcion">
-				<p>
-                    {{competition.rules}}
-				</p>
+                <div ng-switch on="usedLanguage">
+                    <p ng-switch-when="en_EN">{{competition.rules_en}}</p>
+                    <p ng-switch-when="de_DE">{{competition.rules_de}}</p>
+                    <p ng-switch-default>{{competition.rules}}</h5>
+                </div>
 			</div>
 
 			<div class="gap"></div>

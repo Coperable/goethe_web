@@ -18,6 +18,28 @@ class LanguageController extends Controller {
 
 	public function index() {
         $languages = Language::all();
+
+        if($languages->count() == 0) {
+            Language::create(array(
+                'name' => 'Español',
+                'iso_code' => 'es_ES',
+                'description' => 'Español',
+                'disabled' => 0
+            ));
+            Language::create(array(
+                'name' => 'English',
+                'iso_code' => 'en_EN',
+                'description' => 'English',
+                'disabled' => 0
+            ));
+            Language::create(array(
+                'name' => 'Deutsch',
+                'iso_code' => 'de_DE',
+                'description' => 'Deustsch',
+                'disabled' => 0
+            ));
+        }
+
         return $languages;
 	}
 
@@ -54,18 +76,18 @@ class LanguageController extends Controller {
     public function translation(Request $request) {
         $words = DB::table('translate_values')
             ->join('translate_namespaces', function($join) {
-                 $join->on('translate_values.namespace_id', '=', 'translate_namespaces.id')->where('translate_namespaces.type', '=', 'GLOBAL');
+                 $join->on('translate_values.namespace_id', '=', 'translate_namespaces.id')->where('translate_namespaces.type', '=', 'WEB');
             })
             ->join('languages', function($join) use($request) {
                  $join->on('translate_values.language_id', '=', 'languages.id')->where('languages.iso_code', '=', $request->input('lang'));
             })
-            ->select(DB::raw('translate_namespaces.module, translate_namespaces.sub_module, translate_namespaces.key, translate_values.text'))
+            ->select(DB::raw('translate_namespaces.key, translate_values.text'))
             ->get();
 
 
         $collection = Collection::make($words);
         $translations = $collection->map(function ($item, $key) {
-            $key_trans = $item->module.'.'.(isset($item->sub_module) && $item->sub_module != '' ? $item->sub_module.'.' : '').$item->key;
+            $key_trans = $item->key;
             return array($key_trans => $item->text);
         });
         Log::info($translations);

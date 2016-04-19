@@ -121,15 +121,24 @@ angular
     });
 
 })
-.config(function ($translateProvider) {
+.config(function ($translateProvider, api_host) {
 
     //$translateProvider.useMissingTranslationHandlerLog();
 
-    $translateProvider.useUrlLoader('/api/translation');
+    $translateProvider.useUrlLoader(api_host+'/api/translation');
     $translateProvider.preferredLanguage('es_ES');
+    $translateProvider.useMissingTranslationHandlerLog();
+
 
     //$translateProvider.useLocalStorage();
 
+})
+.constant('LOCALES', {
+    'locales': {
+        'es_ES': 'Español',
+        'en_US': 'English'
+    },
+    'preferredLocale': 'es_ES'
 })
 
 .directive('ngEnter', function () {

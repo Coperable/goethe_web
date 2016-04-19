@@ -68,7 +68,6 @@ angular.module('slamApp')
         });
     };
 
-
 })
 .controller('slider-controller', function ($scope, $auth, $timeout, Slider) {
     $scope.sliders = [];
@@ -83,14 +82,7 @@ angular.module('slamApp')
 
 
 })
-.controller('site-controller', function ($scope, $rootScope, $http, $auth, $location, $anchorScroll, $timeout, Region, Account) {
-    /*
-    $scope.current_region = {};
-
-    Account.listenRegion(function(region) {
-        $scope.current_region = region;
-    });
-    */
+.controller('site-controller', function ($scope, $rootScope, $http, $auth, $location, $anchorScroll, $timeout, $translate , Region, Account) {
     $scope.refresh = function() {
         Account.fetchRegionSummary();
     };
@@ -124,6 +116,26 @@ angular.module('slamApp')
       $location.hash(id);
       $anchorScroll();
    }
+
+    $scope.selectLanguage = function(code) {
+        $translate.use(code);
+        $scope.usedLanguage = code;
+    };
+
+    $scope.descriptionLanguage = function() {
+        switch($scope.usedLanguage) {
+            case 'es_ES':
+                return 'Español';
+            case 'en_EN':
+                return 'English';
+            case 'de_DE':
+                return 'Deutsch';
+            default:
+                return 'Español';
+        }
+    };
+
+    $scope.usedLanguage = $translate.proposedLanguage();
 
 
 })
