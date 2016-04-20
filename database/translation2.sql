@@ -2,8 +2,6 @@ INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 
 INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'actividades-entrada-libre');
 INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'apoyan');
 INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'apoyos');
-INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'bg_about.jpg');
-INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'bg_contact.jpg');
 INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'ccc-descripcion');
 INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'ccm-descripcion');
 INSERT INTO translate_namespaces (type, module, `key`) VALUES ('WEB', 'goethe', 'cerrar');
