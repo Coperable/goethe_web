@@ -430,7 +430,7 @@ angular.module('slamApp')
 
 })
 
-.controller('actividad-list', function ($scope, $rootScope, $http, api_host, Region, Account) {
+.controller('actividad-list', function ($scope, $rootScope, $http, $timeout, api_host, Region, Account) {
 	$rootScope.home_page = false;
 
     $rootScope.$on("region_summary", function(event, summary) {
@@ -444,7 +444,11 @@ angular.module('slamApp')
 
 
     $scope.processSummary = function() {
+        console.log('process summary: ?'+$rootScope.region_summary);
         if($rootScope.region_summary) {
+            console.log('ADENTRO');
+
+            console.dir($scope.region_summary.competitions);
             $scope.summary = $rootScope.region_summary;
             $scope.competitions = $scope.summary.competitions;
             $scope.espacios  = $scope.summary.espacios;
@@ -453,6 +457,9 @@ angular.module('slamApp')
             });
             $scope.processFechas();
             $scope.processTipos();
+            $timeout(function() {
+                $scope.doFilterFecha(false);
+            });
         }
     };
 
