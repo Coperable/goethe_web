@@ -810,7 +810,6 @@ nav {
   border-radius: 0.6em 0.6em 0 0;
 }
 .tarjeta_actividad div .etiquetas {
-  min-height: 82px;
   max-height: 82px;
 }
 #sec_torneoPrincipal {
