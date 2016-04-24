@@ -341,14 +341,16 @@ a.link2modal {
   background-color: #e65a3f;
   color: #ffffff;
 }
-.btn_filtro.CCM {
+.btn_ccc {
+  padding: 5px 10px;
   border: 2px solid #2fc9db;
+  border-radius: 0.4em;
   color: #2fc9db;
 }
-.btn_filtro.CCM:hover {
+.btn_ccc:hover {
   color: #2fc9db;
 }
-.btn_filtro.CCM.active {
+.btn_ccc.active {
   background-color: #2fc9db;
   color: #ffffff;
 }

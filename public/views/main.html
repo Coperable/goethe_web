@@ -84,11 +84,15 @@
 
 
 	    </div>
-        <div ng-switch on="usedLanguage">
-            <h4 ng-switch-when="es_ES"><strong><a href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
-            <h4 ng-switch-when="en_EN"><strong><a href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
-            <h4 ng-switch-when="de_DE"><strong><a href="/documents/desglose/Programm_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
-        </div>
+
+	    <div class="mini_gap"></div>
+        <h4>
+            <strong ng-switch on="usedLanguage">
+                <a ng-switch-when="es_ES" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                <a ng-switch-when="en_EN" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                <a ng-switch-when="de_DE" href="/documents/desglose/Programm_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+            </strong>
+        </h4>
 
 	    <div class="mini_gap"></div>
 
