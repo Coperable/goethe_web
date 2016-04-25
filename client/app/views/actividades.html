@@ -7,14 +7,25 @@
 
 	    <div class="titulo ">
 
+            <div class="row">
 	      	<h2 class="sombra_gris_blanco">
 
 	        	<i class="fa fa-calendar fa-lg fa-fw"></i><span translate="actividades">Actividades</span>
 
 	      	</h2>
+            <h4 class="pull-right">
+                <strong ng-switch on="usedLanguage">
+                    <a ng-switch-when="es_ES" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                    <a ng-switch-when="en_EN" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                    <a ng-switch-when="de_DE" href="/documents/desglose/Programm_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                </strong>
+            </h4>
+            </div>
+
 
 	    </div>
 
+	    	<div class="mini_gap"></div>
 	    <div class="form-group ">
 
 	    	<a class="btn btn_filtro" href role="button" ng-click="direction(false)"><i class="fa fa-sort-alpha-asc"></i></a>
@@ -31,7 +42,6 @@
 
 	    	</div>
 
-	    	<div class="mini_gap"></div>
 
 	    </div>
 	    <div class="form-group ">
@@ -96,7 +106,6 @@
 	
         </div>
 
-        <h4><strong><a href="" class="link_simple"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a></strong></h4>
 
 	    <div class="mini_gap"></div>
 
