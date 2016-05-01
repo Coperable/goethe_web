@@ -16,7 +16,10 @@ angular.module('slamApp')
     $scope.random_participants = [];
 
     $scope.newlines = function(text) {
-        return text.replace(/\n/g, '<br/>');
+        if(text) {
+            return text.replace(/\n/g, '<br/>');
+        } 
+        return '';
     };
 
     $scope.setup_components = function() {

@@ -17,7 +17,7 @@
                 <strong ng-switch on="usedLanguage">
                     <a ng-switch-when="es_ES" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
                     <a ng-switch-when="en_EN" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
-                    <a ng-switch-when="de_DE" href="/documents/desglose/Programm_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                    <a ng-switch-when="de_DE" href="/documents/desglose/Programm_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Zum vollständigen Programm</a>
                 </strong>
             </h4>
             </div>
@@ -45,11 +45,11 @@
 
 	    </div>
 	    <div class="form-group ">
-	    	<a class="btn btn_filtro" ng-class="{'active': !current_espacio}" href ng-click="doFilter(false)" role="button"> Todos los espacios</a>
+	    	<a class="btn btn_filtro" ng-class="{'active': !current_espacio}" href ng-click="doFilter(false)" role="button" translate="todos-espacios"> Todos los espacios</a>
 	    	<a class="btn" ng-class="{'active': espacio.code == current_espacio, 'btn_filtro': espacio.code == 'CCM', 'btn_ccc': espacio.code == 'CCC'}" href ng-click="doFilter(espacio)" role="button" ng-repeat="espacio in espacios" ng-if="espacio.code != 'ARG'" > {{espacio.code}}-{{espacio.name}}</a>
 	    </div>
 	    <div class="form-group ">
-	    	<a class="btn btn_filtro" ng-class="{'active': !current_fecha }" href ng-click="doFilterFecha(false)" role="button"> Todas las fechas</a>
+	    	<a class="btn btn_filtro" ng-class="{'active': !current_fecha }" href ng-click="doFilterFecha(false)" role="button" translate="todas-fechas"> Todas las fechas</a>
 	    	<a class="btn btn_filtro" ng-class="{'active': fecha.code == current_fecha}" href ng-click="doFilterFecha(fecha)" role="button" ng-repeat="fecha in fechas" > {{fecha.formatted}}</a>
 	    </div>
 

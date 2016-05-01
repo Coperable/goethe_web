@@ -90,7 +90,7 @@
             <strong ng-switch on="usedLanguage">
                 <a ng-switch-when="es_ES" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
                 <a ng-switch-when="en_EN" href="/documents/desglose/Programa_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
-                <a ng-switch-when="de_DE" href="/documents/desglose/Programm_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                <a ng-switch-when="de_DE" href="/documents/desglose/Programm_Comunes.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Zum vollständigen Programm</a>
             </strong>
         </h4>
 
@@ -199,48 +199,124 @@
 		        </div>
 
 			    <div id="sectionB" class="tab-pane fade">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h5>
-Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y difusión de contenidos libres, producción conjunta, intercambios entre pares, intercambios sin dinero y préstamos entre pares -entre otros nuevos y no tan nuevos sistemas colaborativos- se suman a experiencias específicamente cooperativas y solidarias, iniciativas para el rescate de los bienes comunes y la protección de un ambiente sustentable.
+                    <div ng-switch on="usedLanguage">
 
-                        </h5>
+                        <div ng-switch-when="es_ES"> 
+                            <div class="col-md-8 col-md-offset-2">
+                                <h5>
+        Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y difusión de contenidos libres, producción conjunta, intercambios entre pares, intercambios sin dinero y préstamos entre pares -entre otros nuevos y no tan nuevos sistemas colaborativos- se suman a experiencias específicamente cooperativas y solidarias, iniciativas para el rescate de los bienes comunes y la protección de un ambiente sustentable.
+
+                                </h5>
+                            </div>
+                              <ul class="about_columns">
+
+                                <li class="list right">
+
+                                    <h4 class="uppercase">Inspirados tanto por prácticas ancestrales como por tecnologías innovadoras, <strong>nuevos conceptos</strong> toman el centro de la escena, en un entramado complejo de <strong>tendencias</strong> y <strong>cambios sociales</strong>.</h4>
+                                
+                                </li>
+
+                                <li class="list con_sangria">
+
+        <h4><i class="fa fa-caret-right"></i>economías colaborativas </h4>
+        <h4><i class="fa fa-caret-right"></i>cultura libre</h4>
+        <h4><i class="fa fa-caret-right"></i>comunes </h4>
+        <h4><i class="fa fa-caret-right"></i>producción de pares </h4>
+        <h4><i class="fa fa-caret-right"></i>cultura cooperativa </h4>
+        <h4><i class="fa fa-caret-right"></i>nuevos derechos </h4>
+        <h4><i class="fa fa-caret-right"></i>tecnologías colaborativas </h4>
+        <h4><i class="fa fa-caret-right"></i>abundancia </h4>
+        <h4><i class="fa fa-caret-right"></i>comunidad </h4>
+        <h4><i class="fa fa-caret-right"></i>cultura de red </h4>
+        <h4><i class="fa fa-caret-right"></i>economías emergentes</h4>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div ng-switch-when="en_EN"> 
+                            <div class="col-md-8 col-md-offset-2">
+                                <h5>
+    Crowdfunding platforms, ride-sharing, learning and dissemination of open access contents, joint production, peer trading, moneyless exchange and peer-to-peer lending are some of the new –and not so new – collaborative systems that have joined the catalogue of specifically cooperative and solidarity experiences aimed at reinstating common goods and the protection of a sustainable environment. 
+                                </h5>
+                            </div>
+                              <ul class="about_columns">
+
+                                <li class="list right">
+
+                                    <h4 class="uppercase">
+    INSPIRED BY BOTH AGE-OLD PRACTICES AND INNOVATIVE TECHNOLOGIES, <strong>NEW CONCEPTS</strong> TAKE CENTER STAGE, IN A COMPLEX FABRIC OF <strong>TRENDS</strong> AND <strong>SOCIAL CHANGE</strong>.
+    </h4>
+                                </li>
+
+                                <li class="list con_sangria">
+    <h4><i class="fa fa-caret-right"></i>sharing economies</h4>
+    <h4><i class="fa fa-caret-right"></i>free culture</h4>
+    <h4><i class="fa fa-caret-right"></i>commons</h4>
+    <h4><i class="fa fa-caret-right"></i>peer production</h4>
+    <h4><i class="fa fa-caret-right"></i>cooperative culture</h4>
+    <h4><i class="fa fa-caret-right"></i>new rights</h4>
+    <h4><i class="fa fa-caret-right"></i>collaborative technologies</h4>
+    <h4><i class="fa fa-caret-right"></i>abundance</h4>
+    <h4><i class="fa fa-caret-right"></i>community</h4>
+    <h4><i class="fa fa-caret-right"></i>network culture</h4>
+    <h4><i class="fa fa-caret-right"></i>emerging economies</h4>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div ng-switch-when="de_DE"> 
+                            <div class="col-md-8 col-md-offset-2">
+                                <h5>
+    Neue und nicht mehr ganz so neue Modelle der "Shared Economy”, wie Plattformen für kollaborative Finanzierung, Car-Sharing, Lernen und Verbreiten freier (Online-) Inhalte, gemeinschaftliche Produktion, Tauschgeschäfte ohne Geld und Direktleihe, Peer-to-Peer-Austausch, schließen sich spezifischen kooperativen und solidarischen Modellen an, die als Ziel eine Verbesserung des Gemeinwohls, die Stärkung der Zivilgesellschaft und Förderung eines nachhaltigen Umweltschutzes haben.
+
+                                </h5>
+                            </div>
+                              <ul class="about_columns">
+
+                                <li class="list right">
+
+                                    <h4 class="uppercase">
+    SOWOHL VON URSPRÜNGLICHEN ALS AUCH INNOVATIVEN TECHNOLOGIEN INSPIRIERT, STEHEN NUN IM ZENTRUM DER DISKUSSIONEN <strong>NEUE MODELLE</strong>, DIE MIT <strong>TRENDS</strong> UND <strong>SOZIALEN VERÄNDERUNGEN</strong> KOMPLEX VERFLOCHTEN SIND.
+                                    </h4>
+                                
+                                </li>
+
+                                <li class="list con_sangria">
+
+    <h4><i class="fa fa-caret-right"></i>kollaborative Wirtschaft</h4>
+    <h4><i class="fa fa-caret-right"></i>freie Kultur</h4>
+    <h4><i class="fa fa-caret-right"></i>Commons </h4>
+    <h4><i class="fa fa-caret-right"></i>Peer-Produktion  </h4>
+    <h4><i class="fa fa-caret-right"></i>kollaborative Kultur </h4>
+    <h4><i class="fa fa-caret-right"></i>neue Rechte  </h4>
+    <h4><i class="fa fa-caret-right"></i>kollaborative Technologien</h4>
+    <h4><i class="fa fa-caret-right"></i>Überfluss  </h4>
+    <h4><i class="fa fa-caret-right"></i>Gemeinschaften</h4>
+    <h4><i class="fa fa-caret-right"></i>Netzwerkkultur </h4>
+    <h4><i class="fa fa-caret-right"></i>aufstrebende Wirtschaftsformen</h4>
+                                
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+
                     </div>
-			          <ul class="about_columns">
-
-		        	 	<li class="list right">
-
-		        	 		<h4 class="uppercase">Inspirados tanto por prácticas ancestrales como por tecnologías innovadoras, <strong>nuevos conceptos</strong> toman el centro de la escena, en un entramado complejo de <strong>tendencias</strong> y <strong>cambios sociales</strong>.</h4>
-			            
-			            </li>
-
-			            <li class="list con_sangria">
-
-<h4><i class="fa fa-caret-right"></i>economías colaborativas </h4>
-<h4><i class="fa fa-caret-right"></i>cultura libre</h4>
-<h4><i class="fa fa-caret-right"></i>comunes </h4>
-<h4><i class="fa fa-caret-right"></i>producción de pares </h4>
-<h4><i class="fa fa-caret-right"></i>cultura cooperativa </h4>
-<h4><i class="fa fa-caret-right"></i>nuevos derechos </h4>
-<h4><i class="fa fa-caret-right"></i>tecnologías colaborativas </h4>
-<h4><i class="fa fa-caret-right"></i>abundancia </h4>
-<h4><i class="fa fa-caret-right"></i>comunidad </h4>
-<h4><i class="fa fa-caret-right"></i>cultura de red </h4>
-<h4><i class="fa fa-caret-right"></i>economías emergentes</h4>
-
-				            <ol><li>
-
-				            </li></ol>
-				        
-				        </li>
-
-			        </ul>
 
 			    </div>
 
 
-			    <div id="sectionC" class="tab-pane fade">
+			    <div id="sectionC" class="tab-pane fade" ng-switch on="usedLanguage">
 
-			    	<ul class="about_columns">
+			    	<ul class="about_columns" ng-switch-when="es_ES" >
 
 		        	 	<li class="list right">
 
@@ -250,15 +326,13 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
         	 				</h4>
 
-	        	 			<ol><li>
-
-	        	 			</li></ol>
-			            
 			            </li>
 
 			            <li class="list con_sangria">
 
-				            <h4 class="uppercase">Inscribite al evento completando el <a class="link_simple" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank"><strong> Formulario de registro</strong></a>.</h4>
+				            <h4 class="uppercase">
+                                Inscribite al evento completando el <a class="link_simple" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank"><strong> Formulario de registro</strong></a>.
+                            </h4>
                             <h4>
                             ¿Querés presentar tu trabajo? Además de participar en las charlas, debates y talleres te invitamos a presentar proyectos a través de una charla relámpago de 5 minutos. Para participar registrá tu iniciativa en este <a class="link_simple" href="https://docs.google.com/forms/d/16HKBxcP6TWLykeptljBTRygqP8VSoLwFvJNBNLDhKGM/edit" target="_blank"><strong> formulario</strong></a>. 
                             </h4>
@@ -268,13 +342,77 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
                             ¡Te esperamos! Todas las actividades son con entrada libre y gratuita
                             </h4>
 
+				            <div class="mini_gap"></div>
+				        
+				        </li>
 
+			        </ul>
+
+			    	<ul class="about_columns" ng-switch-when="en_EN" >
+
+		        	 	<li class="list right">
+
+	        	 			<h4>
+
+
+With the aim to bring national and international experiences to the forefront and discuss the challenges of the collaborative culture, <strong>Goethe-Institut</strong>, <strong>Minka</strong>, <strong>El plan C</strong> and <strong>Cultura Senda</strong> invite you to be part of <strong>“COMMONS. The Ways of Collaboration.”</strong> 
+
+        	 				</h4>
+
+			            </li>
+
+			            <li class="list con_sangria">
+
+				            <h4 class="uppercase">
+                                TO REGISTER FOR THE EVENT, PLEASE FILL IN THE <a class="link_simple" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank"><strong>REGISTRATION FORM</strong></a>.
+                            </h4>
+                            <h4>
+Would you like to present your project? In addition to participating in conferences, debates and workshops, we invite you to present your new project in a five-minute pitch. To participate with your project, please submit this <a class="link_simple" href="https://docs.google.com/forms/d/16HKBxcP6TWLykeptljBTRygqP8VSoLwFvJNBNLDhKGM/edit" target="_blank"><strong> form</strong></a>. Join us and share!
+                            </h4>
+                            <h4>
+Join our collaborative coverage! You have the opportunity to join the communication team of this unique event: learn to launch social media campaigns, create visual poetics, narratives, collective records, and more. Fill in this form and join the team led by Facción Buenos Aires. 
+</h4>
+                            <h4>
+                            Team with us! All activities are free. 
+                            </h4>
 
 				            <div class="mini_gap"></div>
 				        
 				        </li>
 
 			        </ul>
+			    	<ul class="about_columns" ng-switch-when="de_DE" >
+
+		        	 	<li class="list right">
+
+	        	 			<h4>
+
+                                Mit dem Ziel, nationale und internationale Versuche zu veranschaulichen und über die Herausforderungen der kollaborativen Kultur nachzudenken, laden Sie das <strong>Goethe-Institut</strong>, <strong>Minka</strong>, <strong>El plan C</strong> und <strong>Cultura Senda</strong> ein, am Projekt <strong>"Commons. Neue soziale Praktiken des Tauschens und Teilens“</strong> teilzunehmen.
+
+        	 				</h4>
+
+			            </li>
+
+			            <li class="list con_sangria">
+
+				            <h4 class="uppercase">
+                                ZUR ANMELDUNG FÜLLEN SIE BITTE DAS <a class="link_simple" href="https://docs.google.com/forms/d/1dLajm12q3NigIqyMdvUH56lk0dRONxlzNAk6JRrvkjY/viewform" target="_blank"><strong>REGISTRIERUNGSFORMULAR AUS</strong></a>.
+                            </h4>
+                            <h4>
+                            Möchten Sie Ihre Arbeit vorstellen? Neben der Teilnahme an Vorträgen, Diskussionen und Workshops laden wir Sie ein, Ihre Projekte in einem Blitzvortrag („Lightning Talk“) von fünf Minuten zu präsentieren. Um teilzunehmen, melden Sie Ihre Initiative in diesem <a class="link_simple" href="https://docs.google.com/forms/d/16HKBxcP6TWLykeptljBTRygqP8VSoLwFvJNBNLDhKGM/edit" target="_blank"><strong> Formular</strong></a> an.  Machen Sie mit und leben Sie die Kollaboration!
+                            </h4>
+                            <h4>
+Schließen Sie sich dem kollaborativen Projektmanagement an! Werden Sie ein Teil des Kommunikationsteams dieser einzigartigen Veranstaltung: Lernen Sie, wie man auf sozialen Netzwerken eine Kampagne durchführt,  wie man visuelle Formen des Erzählens kreiert, und kollektiv kommuniziert. Melden Sie sich mit diesem Formular an und werden Sie Teil des Teams der Gruppe in Buenos Aires. 
+                            <h4>
+                Wir freuen uns auf Sie!  Für alle Aktivitäten ist der Eintritt frei und gratis.
+                            </h4>
+
+				            <div class="mini_gap"></div>
+				        
+				        </li>
+
+			        </ul>
+
 
 			    </div>
 
@@ -793,6 +931,10 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
 
 	                </div>
 
+	                <div class="col-md-2">
+	                    <a target="_blank" href="http://www.afluenta.com"><img src="/images/logo_unamed.jpg"></a>
+	                </div>
+
 
                 </div>
 
@@ -1057,33 +1199,33 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
       <div class="contact_information">
       
 
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="produccion-general">
             Producción general y programación:
         </b>
         <p class="wow fadeIn">
             Adriana Benzaquen (Minka/ Cultura Senda), Marcela Basch (El plan C), Carla Imbrogno y Uwe Mohr (Goethe-Institut)
         </p>
         
-        <b class="wow fadeIn">Producción ejecutiva:</b>
+        <b class="wow fadeIn" translate="produccion-ejecutiva">Producción ejecutiva:</b>
         <p class="wow fadeIn">
             Adriana Benzaquen
         </p>
 
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="asistente-produccion">
             Asistente de producción:
         </b>
         <p class="wow fadeIn">
             Kevin Liendo 
         </p>
 
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="equipo-colaboradores">
             Equipo de colaboradores: 
         </b>
         <p class="wow fadeIn">
             Melisa Cañas, Julián López, Facción, Clara Miravalle, Claudio Gutman, Soledad Iojimo, Johana Sánchez Armas, Luis Sanjurjo, Camila Zapata, Pamela Brownell, Maxi Giraldes (Goethe- Institut)
         </p>
 
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="prensa">
             Prensa:
         </b>
         <p class="wow fadeIn">
@@ -1092,32 +1234,32 @@ Plataformas de financiamiento colaborativo, traslados compartidos, aprendizaje y
             <br/><a href="/documents/comunes_kitprensa.pdf" target="_blank">Kit Prensa</a>
         </p>
 
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="redes-sociales">
             Redes sociales: 
         </b>
         <p class="wow fadeIn">
             Ma. José Giovo (Facción) y Patricio Imbrogno (Goethe-Institut) 
         </p>
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="registro-cobertura">
             Registro y Cobertura colaborativa: 
         </b>
         <p class="wow fadeIn">
             Facción Buenos Aires 
         </p>
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="graphic-design">
             Diseño gráfico: 
         </b>
         <p class="wow fadeIn">
             Julián López- PopUp Colombia, Mario López y Camilo Mello
         </p>
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="web-design">
             Web: 
         </b>
         <p class="wow fadeIn">
             Coperable.org 
         </p>
 
-        <b class="wow fadeIn">
+        <b class="wow fadeIn" translate="contact-contact">
             Contacto:
         </b>
         <p class="wow fadeIn">
