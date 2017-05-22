@@ -1913,8 +1913,9 @@ footer .first_line,
   color: #838383;
 }
 /*!------------------------------ Background settings | Transparents in RGBA and Background images ------------------------------*/
+/*background: rgba(47, 201, 219, 0.8) !important;*/
 .nav_mask {
-  background: rgba(47, 201, 219, 0.8) !important;
+  background: rgba(173, 13, 146, 0.8) !important;
 }
 .footer {
   background: #e65a3f;
