@@ -352,8 +352,9 @@ footer .first_line,
 
 
 
-.nav_mask,
-
+.nav_mask {
+    background: rgba(47, 201, 219, 0.8) !important; 
+}
 .footer {
 
     background: rgba(0, 0, 0, 0.8);
