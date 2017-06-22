@@ -1,5 +1,5 @@
 
-<!--div id="sec_torneosAnteriores" class="seccion fondo_gris">
+<div id="sec_torneosAnteriores" class="seccion fondo_gris">
 
     <div class="contenedor_sec">
 
@@ -10,7 +10,14 @@
 	        	<i class="fa fa-calendar"></i><span translate="actividades-destacadas" translate-keep-content>ACTIVIDADES DESTACADAS</span>
 	      	
 	      	</h2>
-	    
+            <h4 class="pull-left">
+                <strong ng-switch on="usedLanguage">
+                      <a ng-switch-when="es_ES" href="/documents/programacion.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                      <a ng-switch-when="en_EN" href="/documents/programacion.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                      <a ng-switch-when="de_DE" href="/documents/programacion.pdf" class="link_simple" target="_blank"><i class="fa fa-caret-right fa-fw"></i>Descargar programación completa</a>
+                </strong>
+            </h4>
+ 
 	    </div>
 
 	    <div class="ver_mas wow bounceInRight entrada-1s">
@@ -25,13 +32,13 @@
 
     	<div class="row width_90 wow fadeInLeftBig">
 
-    		<div class="col-xs-12 col-sm-5 col-md-4 container_tarj_act" ng-repeat="actividad in summary.next_competitions |limitTo: 5">
+    		<div class="col-xs-12 col-sm-5 col-md-4 container_tarj_act mb-30" ng-repeat="actividad in summary.next_competitions |limitTo: 5">
 
     			<div class="tarjeta_actividad">
 
     				<a ng-href="/#/actividad/{{actividad.id}}">
     					
-    					<img ng-src="http://images.collab-dev.com/300x/smart/slam/{{actividad.cover_photo}}">
+    					<img ng-src="http://images.collab-dev.com/300x200/smart/slam/{{actividad.cover_photo}}">
 
     				</a>
 
@@ -88,7 +95,7 @@
 	
 	</div>
 
-</div-->
+</div>
 <!-- SEC: INFORMACIÓN -->
 <div id="info02" class="info_seccion wow slideInRight">
 
