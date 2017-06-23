@@ -475,6 +475,7 @@ angular.module('slamApp')
             if(!fechas_map[code]) {
                 $scope.fechas.push({
                     code: code,
+                    event_date: model.event_date,
                     formatted: fecha_moment.format('ddd D')
                 });
                 fechas_map[code] = true;
