@@ -575,6 +575,19 @@ angular.module('slamApp')
 
 
 })
+.controller('libro-view', function ($scope, $rootScope, $http, $timeout, api_host, Region, Account) {
+	$rootScope.home_page = false;
+
+
+    $scope.init = function() {
+
+    };
+
+    $scope.init();
+
+
+})
+
 
 
 

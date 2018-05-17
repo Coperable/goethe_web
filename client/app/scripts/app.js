@@ -32,6 +32,10 @@ angular
         templateUrl: 'views/profile.html',
         controller: 'profile-view'
     })
+    .when('/libro', {
+        templateUrl: 'views/libro.html',
+        controller: 'libro-view'
+    })
     .when('/foro', {
         templateUrl: 'views/foro.html',
         controller: 'foro-view'
